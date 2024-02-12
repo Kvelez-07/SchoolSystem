@@ -65,43 +65,43 @@
 
 .main-menu a
 {
-text-decoration: none; /* Rids underline */
-color: black; /* Changes color */
+text-decoration: none; /* Quita subrayado */
+color: black; /* Cambia color */
 }
 
 .login-form form select {
-    border: 1px solid #ccc; /* ComboBox border */
-    border-radius: 1px; /* Shadowed borders */
+    border: 1px solid #ccc; /* ComboBox borde */
+    border-radius: 1px; /* Sombra border */
     position: absolute; /* Absolute positioning */
-    top: 20px; /* Upper distance */
-    left: 90px; /* Left distance */
+    top: 20px; /* Distancia superior */
+    left: 90px; /* Distancia inferior */
 }
 
 .login-form input[type="text"] {
-    border: 1px solid #ccc; /* Border of the input */
-    border-radius: 1px; /* Rounded corners */
+    border: 1px solid #ccc; /* Borde input */
+    border-radius: 1px; /* Borde redondo */
     position: absolute; /* Absolute positioning */
-    top: 55px; /* Upper distance */
-    left: 90px; /* Left distance */
+    top: 55px; /* Distancia superior */
+    left: 90px; /* Distancia inferior */
     font-family: "Arial";
 }
 
 .login-form input[type="password"] {
-    border: 1px solid #ccc; /* Input border */
-    border-radius: 1px; /* Rounded corners */
+    border: 1px solid #ccc; /* Borde input */
+    border-radius: 1px; /* Borde redondo */
     position: absolute; /* Absolute positioning */
-    top: 95px; /* Upper distance */
-    left: 90px; /* Left distance */
+    top: 95px; /* Distancia superior */
+    left: 90px; /* Distancia inferior */
     font-family: "Arial";
 }
 
 .login-form input[type="submit"] {
     padding: 8px 10px;
     font-family: "arial";
-    border: 1px solid #ccc; /* Border of the input */
-    border-radius: 1px; /* Rounded corners */
+    border: 1px solid #ccc; /* Borde input */
+    border-radius: 1px; /* Borde redondo */
     position: absolute; /* Absolute positioning */
-    top: 130px; /* Upper distance */
-    left: 90px; /* Left distance */
+    top: 130px; /* Distancia superior */
+    left: 90px; /* Distancia inferior */
     
 }
