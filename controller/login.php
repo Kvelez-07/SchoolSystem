@@ -15,9 +15,16 @@ if(isset($_POST["submit"])) {
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
 
-    if ($count > 0) {
-        header("Location: ../view/home.html");
-    } else {
-        header("Location: ../view/index.html");
+    if ($count > 0 && $user_type == "Admin"){
+        header("Location: ./admin.php");
+    }
+    else if ($count > 0 && $user_type == "Student"){
+        header("Location: ./student.php");
+    }
+    else if ($count > 0 && $user_type == "Teacher"){
+        header("Location: ./teacher.php");
+    }
+    else {
+        echo "Invalid username or password";
     }
 }
