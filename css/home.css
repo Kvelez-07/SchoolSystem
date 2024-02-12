@@ -1,0 +1,107 @@
+.logo{
+    display: inline-block;
+    background-color: yellow;
+    color: black;
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 2px solid red; /* Defines div border */
+
+}
+
+.main-menu{
+    display: inline-block;
+    background-color: whitesmoke;
+    color: black;
+    width: 300px;
+    height: 405px;
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    font-family: "Arial";
+    border: 2px solid red; /* Defines div border */
+}
+
+.login-form{
+    display: inline-block;
+    background-color: whitesmoke;
+    color: black;
+    width: 300px;
+    height: 190px;
+    position: absolute;
+    top: 450px;
+    left: 0px;
+    font-family: "Arial";
+    border: 2px solid red; /* Defines div border */
+}
+
+.footer-content{
+    display: inline-block;
+    background-color: whitesmoke;
+    color: black;
+    width: 1010px;
+    height: 640px;
+    position: absolute;
+    top: 0px;
+    left: 303px;
+    bottom: 0px;
+    right:0px;
+    border: 2px solid red; /* Defines div border */
+}
+
+.page-footer{
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    right: 0px;
+}
+
+.logo img {
+    width: 295px;
+    height: 140px;
+}
+
+.main-menu a
+{
+text-decoration: none; /* Rids underline */
+color: black; /* Changes color */
+}
+
+.login-form form select {
+    border: 1px solid #ccc; /* ComboBox border */
+    border-radius: 1px; /* Shadowed borders */
+    position: absolute; /* Absolute positioning */
+    top: 20px; /* Upper distance */
+    left: 90px; /* Left distance */
+}
+
+.login-form input[type="text"] {
+    border: 1px solid #ccc; /* Border of the input */
+    border-radius: 1px; /* Rounded corners */
+    position: absolute; /* Absolute positioning */
+    top: 55px; /* Upper distance */
+    left: 90px; /* Left distance */
+    font-family: "Arial";
+}
+
+.login-form input[type="password"] {
+    border: 1px solid #ccc; /* Input border */
+    border-radius: 1px; /* Rounded corners */
+    position: absolute; /* Absolute positioning */
+    top: 95px; /* Upper distance */
+    left: 90px; /* Left distance */
+    font-family: "Arial";
+}
+
+.login-form input[type="submit"] {
+    padding: 8px 10px;
+    font-family: "arial";
+    border: 1px solid #ccc; /* Border of the input */
+    border-radius: 1px; /* Rounded corners */
+    position: absolute; /* Absolute positioning */
+    top: 130px; /* Upper distance */
+    left: 90px; /* Left distance */
+    
+}

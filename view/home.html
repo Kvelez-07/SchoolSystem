@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/home.css">
+    <title>School</title>
+</head>
+
+<body>
+    <main>
+        <div class="logo">
+            <img src="https://uh.ac.cr/img/iso.png" alt="UH logo">
+        </div>
+
+        <div class="main-menu">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="#">
+                                <h3>Location</h3>
+                            </a></li> <!--links are missing-->
+                        <li><a href="#">
+                                <h3>Characteristics</h3>
+                            </a></li>
+                        <li><a href="#">
+                                <h3>Facilities</h3>
+                            </a></li>
+                        <li><a href="#">
+                                <h3>Services</h3>
+                            </a></li>
+                        <li><a href="#">
+                                <h3>About Us</h3>
+                            </a></li>
+                        <li><a href="#">
+                                <h3>Projects</h3>
+                            </a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="login-form">
+            <form action="./controller/login.php" method="post">
+                <h4>Type: </h4> <select id="cboType" name="cboType" title="cboType">
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Admin">Admin</option>
+                </select>
+                <h4>User:</h4><input type="text" id="username" name="username" placeholder="Username" />
+                <h4>Password:</h4> <input type="password" id="passwrod" name="password" placeholder="password" />
+                <input type="submit" value="submit">
+            </form>
+        </div>
+
+        <div class="footer-content"> Content
+            <footer class="page-footer">
+                <p>&copy; 2024 My Website. All rights reserved.</p>
+            </footer>
+        </div>
+    </main>
+</body>
+
+</html>
