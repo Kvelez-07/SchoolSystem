@@ -1,4 +1,9 @@
-.logo{
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
 display: inline-block;
 background-color: white;
 color: black;
@@ -11,7 +16,7 @@ border: 2px solid #4A8A97; /* Define el borde del div */
 
 }
 
-.menu{
+.menu {
 display: inline-block;
 background-color: whitesmoke;
 color: black;
@@ -24,7 +29,7 @@ font-family: "Arial";
 border: 2px solid #4A8A97; /* Define el borde del div */
 }
 
-.login{
+.login {
 display: inline-block;
 background-color: whitesmoke;
 color: black;
@@ -37,7 +42,7 @@ font-family: "Arial";
 border: 2px solid #4A8A97; /* Define el borde del div */
 }
 
-.contenido{
+.contenido {
 display: inline-block;
 background-color: whitesmoke;
 color: black;
@@ -50,7 +55,8 @@ bottom: 0px;
 right:0px;
 border: 2px solid #4A8A97; /* Define el borde del div */
 }
-.piePagina{
+
+.piePagina {
 position: fixed;
 bottom: 0px;
 text-align: center;
@@ -61,6 +67,7 @@ right: 0px;
     top: 0px;
     bottom: 0px;
 }
+
 img{
     width: 100%;
     height: 100%;
@@ -71,8 +78,7 @@ img{
     opacity: 0.8; 
 }
 
-a
-{
+a {
 text-decoration: none; /* Elimina el subrayado */
 color: black; /* Cambia el color del texto */
 }
