@@ -1,4 +1,4 @@
- .logo{
+.logo{
 display: inline-block;
 background-color: white;
 color: black;
@@ -8,11 +8,8 @@ position: absolute;
 top: 0px;
 left: 0px;
 border: 2px solid #4A8A97; /* Define el borde del div */
- 
-   
-}
-  
 
+}
 
 .menu{
 display: inline-block;
@@ -60,21 +57,18 @@ text-align: center;
 right: 0px;
 }
 
-
-
 .logo img {
- 
-  top: 0px;
-  bottom: 0px;
+    top: 0px;
+    bottom: 0px;
 }
 img{
-   width: 100%;
-  height: 100%;
-  position: absolute;
-  object-fit: cover;
-  top: 0; /* La imagen se ajusta a la parte superior del contenedor */
-  left: 0; /* La imagen se ajusta a la izquierda del contenedor */
-  opacity: 0.8; 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0; /* La imagen se ajusta a la parte superior del contenedor */
+    left: 0; /* La imagen se ajusta a la izquierda del contenedor */
+    opacity: 0.8; 
 }
 
 a
@@ -84,46 +78,41 @@ color: black; /* Cambia el color del texto */
 }
 
 select {
-    
     border: 1px solid #ccc; /* Define el borde del combobox */
     border-radius: 1px; /* Agrega bordes redondeados */
-    position: absolute; /* Define la posición absoluta para posicionarlo dentro del contenedor */
+    position: absolute; /* Define la posiciï¿½n absoluta para posicionarlo dentro del contenedor */
     top: 20px; /* Define la distancia desde la parte superior del contenedor */
     left: 90px; /* Define la distancia desde el lado izquierdo del contenedor */
 }
 
-
 input[type="text"] {
-    
-    
     border: 1px solid #ccc; /* Define el borde del input */
     border-radius: 1px; /* Agrega bordes redondeados */
-    position: absolute; /* Define la posición absoluta para posicionarlo dentro del contenedor */
+    position: absolute; /* Define la posiciï¿½n absoluta para posicionarlo dentro del contenedor */
     top: 55px; /* Define la distancia desde la parte superior del contenedor */
     left: 90px; /* Define la distancia desde el lado izquierdo del contenedor */
     font-family: "Arial";
 }
+
 input[type="password"] {
     
     
     border: 1px solid #ccc; /* Define el borde del input */
     border-radius: 1px; /* Agrega bordes redondeados */
-    position: absolute; /* Define la posición absoluta para posicionarlo dentro del contenedor */
+    position: absolute; /* Define la posiciï¿½n absoluta para posicionarlo dentro del contenedor */
     top: 95px; /* Define la distancia desde la parte superior del contenedor */
     left: 90px; /* Define la distancia desde el lado izquierdo del contenedor */
     font-family: "Arial";
 }
-
 
 input[type="submit"] {
     padding: 8px 10px;
     font-family: "arial";
     border: 1px solid #ccc; /* Define el borde del input */
     border-radius: 1px; /* Agrega bordes redondeados */
-    position: absolute; /* Define la posición absoluta para posicionarlo dentro del contenedor */
+    position: absolute; /* Define la posiciï¿½n absoluta para posicionarlo dentro del contenedor */
     top: 130px; /* Define la distancia desde la parte superior del contenedor */
     left: 90px; /* Define la distancia desde el lado izquierdo del contenedor */
-    
 }
 
 ul {
