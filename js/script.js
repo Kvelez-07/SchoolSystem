@@ -1,30 +1,46 @@
 function mostrarInformacion(idContenido) {
     var contenido = '';
 
- switch(idContenido) {
+ switch(contenido) {
         case 'mostrarLocalizacion':
-            contenido = 'LOCALIZACIONES';
+          
             break;
         case 'mostrarCaracteristicas':
-            contenido = 'CARACTERISTICAS';
+         
             break;
         case 'mostrarInstalaciones':
-            contenido = 'INSTALACIONES';
+       
             break;
         case 'mostrarServicios':
-            contenido = 'SERVICIOS';
+         
             break;
             case 'mostrarInformacion':
-            contenido = 'INFORMACION';
+         
             break;
             case 'mostrarProyectos':
-            contenido = 'PROYECTOS';
+         
             break;
             default:
-            contenido = 'Contenido no encontrado';
+           
             break;
             
             
     }
     document.getElementById('contenido').innerHTML = contenido;
     }
+
+var datos = {
+    mostrarLocalizacion: 'Aquí puedes encontrar nuestra ubicación y direcciones.',
+    mostrarCaracteristicas: 'Estas son las características principales de nuestro producto/servicio.',
+    mostrarInstalaciones: 'Nuestras instalaciones',
+    mostrarInformacion: 'Informacion importante.',
+    mostrarServicios: 'Nuestros servicios',
+    mostrarProyectos: 'Nuestros proyectos'
+    
+};
+
+// Función para mostrar la información en el div de contenido
+function mostrarInformacion(opcion) {
+    var contenidoDiv = document.getElementById('contenido');
+    contenidoDiv.innerHTML = datos[opcion] || 'No se encontraron datos para esta opción.';
+}
