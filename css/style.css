@@ -1,106 +1,121 @@
-.logo {
-    display: inline-block;
-    background-color: rgb(24, 150, 234);
-    color: black;
-    width: 300px;
-    height: 150px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border: 2px solid red; /* Defines div border */
+ .logo{
+display: inline-block;
+background-color: #9CC7D0;
+color: black;
+width: 300px;
+height: 150px;
+position: absolute;
+top: 0px;
+left: 0px;
+border: 2px solid #4A8A97; /* Define el borde del div */
+ 
+   
+}
+  
 
+
+.menu{
+display: inline-block;
+background-color: #9CC7D0;
+color: black;
+width: 300px;
+height: 405px;
+position: absolute;
+top: 150px;
+left: 0px;
+font-family: "Arial";
+border: 2px solid #4A8A97; /* Define el borde del div */
 }
 
-.menu {
-    display: inline-block;
-    background-color: whitesmoke;
-    color: black;
-    width: 300px;
-    height: 405px;
-    position: absolute;
-    top: 150px;
-    left: 0px;
-    font-family: "Arial";
-    border: 2px solid red; /* Defines div border */
+.login{
+display: inline-block;
+background-color: #9CC7D0;
+color: black;
+width: 300px;
+height: 190px;
+position: absolute;
+top: 450px;
+left: 0px;
+font-family: "Arial";
+border: 2px solid #4A8A97; /* Define el borde del div */
 }
 
-.login {
-    display: inline-block;
-    background-color: whitesmoke;
-    color: black;
-    width: 300px;
-    height: 190px;
-    position: absolute;
-    top: 450px;
-    left: 0px;
-    font-family: "Arial";
-    border: 2px solid red; /* Defines div border */
-    font-weight: bold;
+.contenido{
+display: inline-block;
+background-color: #C2E0E7;
+color: black;
+width: 1010px;
+height: 640px;
+position: absolute;
+top: 0px;
+left: 303px;
+bottom: 0px;
+right:0px;
+border: 2px solid #4A8A97; /* Define el borde del div */
+}
+.piePagina{
+position: fixed;
+bottom: 0px;
+text-align: center;
+right: 0px;
 }
 
-.contenido {
-    display: inline-block;
-    background-color: whitesmoke;
-    color: black;
-    width: 1010px;
-    height: 640px;
-    position: absolute;
-    top: 0px;
-    left: 303px;
-    bottom: 0px;
-    right:0px;
-    border: 2px solid red; /* Defines div border */
-}
 
-.pie-pagina {
-    position: fixed;
-    bottom: 0px;
-    text-align: center;
-    right: 0px;
-}
 
 .logo img {
-    width: 295px;
-    height: 140px;
+  width: 295px;
+  height: 140px;
 }
 
-.a {
-text-decoration: none; /* Quita subrayado */
-color: black; /* Cambia color */
+a
+{
+text-decoration: none; /* Elimina el subrayado */
+color: black; /* Cambia el color del texto */
 }
 
-.select {
-    border: 1px solid #ccc; /* ComboBox borde */
-    border-radius: 1px; /* Sombra border */
-    position: absolute; /* Absolute positioning */
-    top: 20px; /* Distancia superior */
-    left: 90px; /* Distancia inferior */
+select {
+    
+    border: 1px solid #ccc; /* Define el borde del combobox */
+    border-radius: 1px; /* Agrega bordes redondeados */
+    position: absolute; /* Define la posición absoluta para posicionarlo dentro del contenedor */
+    top: 20px; /* Define la distancia desde la parte superior del contenedor */
+    left: 90px; /* Define la distancia desde el lado izquierdo del contenedor */
 }
 
-.input[type="text"] {
-    border: 1px solid #ccc; /* Borde input */
-    border-radius: 1px; /* Borde redondo */
-    position: absolute; /* Absolute positioning */
-    top: 55px; /* Distancia superior */
-    left: 90px; /* Distancia inferior */
+
+input[type="text"] {
+    
+    
+    border: 1px solid #ccc; /* Define el borde del input */
+    border-radius: 1px; /* Agrega bordes redondeados */
+    position: absolute; /* Define la posición absoluta para posicionarlo dentro del contenedor */
+    top: 55px; /* Define la distancia desde la parte superior del contenedor */
+    left: 90px; /* Define la distancia desde el lado izquierdo del contenedor */
+    font-family: "Arial";
+}
+input[type="password"] {
+    
+    
+    border: 1px solid #ccc; /* Define el borde del input */
+    border-radius: 1px; /* Agrega bordes redondeados */
+    position: absolute; /* Define la posición absoluta para posicionarlo dentro del contenedor */
+    top: 95px; /* Define la distancia desde la parte superior del contenedor */
+    left: 90px; /* Define la distancia desde el lado izquierdo del contenedor */
     font-family: "Arial";
 }
 
-.input[type="password"] {
-    border: 1px solid #ccc; /* Borde input */
-    border-radius: 1px; /* Borde redondo */
-    position: absolute; /* Absolute positioning */
-    top: 95px; /* Distancia superior */
-    left: 90px; /* Distancia inferior */
-    font-family: "Arial";
-}
 
-.input[type="submit"] {
+input[type="submit"] {
     padding: 8px 10px;
     font-family: "arial";
-    border: 1px solid #ccc; /* Borde input */
-    border-radius: 1px; /* Borde redondo */
-    position: absolute; /* Absolute positioning */
-    top: 130px; /* Distancia superior */
-    left: 90px; /* Distancia inferior */
+    border: 1px solid #ccc; /* Define el borde del input */
+    border-radius: 1px; /* Agrega bordes redondeados */
+    position: absolute; /* Define la posición absoluta para posicionarlo dentro del contenedor */
+    top: 130px; /* Define la distancia desde la parte superior del contenedor */
+    left: 90px; /* Define la distancia desde el lado izquierdo del contenedor */
+    
+}
+
+ul {
+    list-style-type: square;
 }

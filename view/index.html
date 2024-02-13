@@ -14,53 +14,60 @@
             <img src="https://uh.ac.cr/img/iso.png" alt="Academy logo">
         </div>
 
-        <div class="menu">
-            <header>
-                <nav>
-                    <ul>
-                        <li><a href="#">
-                                <h3>Localización</h3>
-                            </a></li> <!--falta poner los vinculos-->
-                        <li><a href="#">
-                                <h3>Características</h3>
-                            </a></li>
-                        <li><a href="#">
-                                <h3>Instalaciones</h3>
-                            </a></li>
-                        <li><a href="#">
-                                <h3>Servicios</h3>
-                            </a></li>
-                        <li><a href="#">
-                                <h3>Información</h3>
-                            </a></li>
-                        <li><a href="#">
-                                <h3>Proyectos de Escuela</h3>
-                            </a></li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
+        <div class="menu"> <header>
+        <nav id="menu">
+            <ul>
+                <li><a href="#" onclick ="mostrarInformacion(`mostrarLocalizacion`)"><h3>Localización</h3></a></li> <!--falta poner los vinculos-->
+                <li><a href="#" onclick ="mostrarInformacion(`mostrarCaracteristicas`)"><h3>Características</h3></a></li>
+                <li><a href="#" onclick ="mostrarInformacion(`mostrarInstalaciones`)"><h3>Instalaciones</h3></a></li>
+                <li><a href="#" onclick ="mostrarInformacion(`mostrarServicios`)"><h3>Servicios</h3></a></li>
+                <li><a href="#" onclick ="mostrarInformacion(`mostrarInformacion`)"><h3>Información</h3></a></li>
+                <li><a href="#" onclick ="mostrarInformacion(`mostrarProyectos`)"><h3>Proyectos de Escuela</h3></a></li>
+            </ul>
+        </nav>
+    </header></div>
 
         <div class="login">
             <form action="../controller/login.php" method="post">
-                <h4>Tipo: <select id="user_type" name="user_type" title="user_type" required>
-                        <option value="Student">Student</option>
-                        <option value="Teacher">Teacher</option>
-                        <option value="Admin">Admin</option>
-                    </select>
-                    <h4>Usuario: <input type="text" id="username" name="username" placeholder="Username" required />
-                        <h4>Clave:</h4><input type="password" id="password" name="password" placeholder="Password"
-                            required />
-                        <input type="submit" name="submit" value="submit">
+                <h4>&nbsp;&nbsp;Tipo: </h4>   <select id="cboTipo" name="cboTipo">
+                <option value="Alumno">Alumno</option>
+                <option value="Profesor">Profesor</option>
+                <option value="Administrador">Administrador</option>
+            </select>
+            <h4>&nbsp;&nbsp;Usuario:</h4><input type="text" id="txtUsuario" name="txtUsuario"/>
+            <h4>&nbsp;&nbsp;Clave:</h4> <input type="password" id="clave" name="clave"/>
+            <input type="submit" value="Entrar"> 
             </form>
         </div>
 
-        <div class="contenido"> Content
-            <footer class="pie-pagina">
-                <p>&copy; 2024 My Website. All rights reserved.</p>
-            </footer>
+         <div class="contenido" id="contenido"> 
+            <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RASGOS DE IDENTIDAD</h2>
+            <br>
+            <br>
+            <ul> 
+                <li>Pluralismo</li>
+                <li>Demoracia</li>
+                <li>Ceoducación</li>
+                <li>Aconfesionalismo</li>
+                <li>Participación</li>
+                <li>Ecología</li>
+                <li>Integración</li>
+                <li>Paz</li>
+                <li>Solidaridad</li> 
+                <li>Cooperación</li>
+            </ul> 
+            
+        <footer class="piePagina">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>    
         </div>
+         <header>
+        <nav>
+           
+        </nav>
+    </header>
     </main>
+   <script src="../js/script.js"></script>
 </body>
 
 </html>
