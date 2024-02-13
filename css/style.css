@@ -1,4 +1,4 @@
-.logo{
+.logo {
     display: inline-block;
     background-color: rgb(24, 150, 234);
     color: black;
@@ -11,7 +11,7 @@
 
 }
 
-.main-menu{
+.menu {
     display: inline-block;
     background-color: whitesmoke;
     color: black;
@@ -24,7 +24,7 @@
     border: 2px solid red; /* Defines div border */
 }
 
-.login-form{
+.login {
     display: inline-block;
     background-color: whitesmoke;
     color: black;
@@ -37,7 +37,7 @@
     border: 2px solid red; /* Defines div border */
 }
 
-.footer-content{
+.contenido {
     display: inline-block;
     background-color: whitesmoke;
     color: black;
@@ -51,7 +51,7 @@
     border: 2px solid red; /* Defines div border */
 }
 
-.page-footer{
+.pie-pagina {
     position: fixed;
     bottom: 0px;
     text-align: center;
@@ -63,13 +63,12 @@
     height: 140px;
 }
 
-.main-menu a
-{
+.a {
 text-decoration: none; /* Quita subrayado */
 color: black; /* Cambia color */
 }
 
-.login-form form select {
+.select {
     border: 1px solid #ccc; /* ComboBox borde */
     border-radius: 1px; /* Sombra border */
     position: absolute; /* Absolute positioning */
@@ -77,7 +76,7 @@ color: black; /* Cambia color */
     left: 90px; /* Distancia inferior */
 }
 
-.login-form input[type="text"] {
+.input[type="text"] {
     border: 1px solid #ccc; /* Borde input */
     border-radius: 1px; /* Borde redondo */
     position: absolute; /* Absolute positioning */
@@ -86,7 +85,7 @@ color: black; /* Cambia color */
     font-family: "Arial";
 }
 
-.login-form input[type="password"] {
+.input[type="password"] {
     border: 1px solid #ccc; /* Borde input */
     border-radius: 1px; /* Borde redondo */
     position: absolute; /* Absolute positioning */
@@ -95,7 +94,7 @@ color: black; /* Cambia color */
     font-family: "Arial";
 }
 
-.login-form input[type="submit"] {
+.input[type="submit"] {
     padding: 8px 10px;
     font-family: "arial";
     border: 1px solid #ccc; /* Borde input */
@@ -103,5 +102,4 @@ color: black; /* Cambia color */
     position: absolute; /* Absolute positioning */
     top: 130px; /* Distancia superior */
     left: 90px; /* Distancia inferior */
-    
 }
