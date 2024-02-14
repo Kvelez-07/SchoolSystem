@@ -14,6 +14,12 @@ class Database {
     }
 }
 
+$server_name = "localhost";
+$uname = "root";
+$password = "";
+$db_name = "school_system";
+$port = 3306; // Default MySQL port
+
 // Usage
-$db = new Database('localhost', 'root', '', 'school_system');
+$db = new Database($server_name, $uname, $password, $db_name, $port);
 $conn = $db->getConnection();

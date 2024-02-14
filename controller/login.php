@@ -43,7 +43,7 @@ class UserAuthenticator {
 }
 
 // Create database connection
-$db = new Database('localhost', 'root', '', 'school_system');
+$db = new Database($server_name, $uname, $password, $db_name, $port);
 
 // Usage
 if(isset($_POST["submit"])) {
