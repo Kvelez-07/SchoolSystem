@@ -5,7 +5,7 @@ include("connection.php");
 if(isset($_POST["submit"])) {
     $user_type = $_POST["user_type"];
     $username = $_POST["username"];
-    $password = $_POST["password"];
+    $password = md5($_POST["password"]);
     $_SESSION["user_type"] = $user_type;
     $_SESSION["username"] = $username;
     $_SESSION["password"] = $password;
