@@ -48,8 +48,8 @@ $db = new Database($server_name, $uname, $password, $db_name, $port);
 // Usage
 if(isset($_POST["submit"])) {
     $userAuthenticator = new UserAuthenticator($db);
-    $user_type = $_POST["user_type"];
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    $user_type = htmlspecialchars($_POST["user_type"]);
+    $username = htmlspecialchars($_POST["username"]);
+    $password = htmlspecialchars($_POST["password"]);
     $userAuthenticator->authenticate($user_type, $username, $password);
 }
