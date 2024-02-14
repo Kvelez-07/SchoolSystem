@@ -1,33 +1,55 @@
 <?php
 session_start();
-include("connection.php");
+require_once("connection.php");
 
-if(isset($_POST["submit"])) {
-    $user_type = $_POST["user_type"];
-    $username = $_POST["username"];
-    $password = md5($_POST["password"]);
-    $_SESSION["user_type"] = $user_type;
-    $_SESSION["username"] = $username;
-    $_SESSION["password"] = $password;
+class UserAuthenticator {
+    private $db;
 
-    $sql = "SELECT * FROM users WHERE user_type = '$user_type' AND username = '$username' AND password = '$password'";
-    $result = mysqli_query($conn, $sql); // run the query
-    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    $count = mysqli_num_rows($result);
+    public function __construct($db) {
+        $this->db = $db;
+    }
 
-    if ($count > 0){
-        switch ($user_type) {
-            case "Admin":
-                header("Location: ./admin.php");
-                break;
-            case "Student":
-                header("Location: ./student.php");
-                break;
-            case "Teacher":
-                header("Location: ./teacher.php");
-                break;
-            default:
-                echo "Invalid user type";
+    public function authenticate($user_type, $username, $password) {
+        $conn = $this->db->getConnection();
+
+        // Sanitize inputs to prevent SQL injection
+        $user_type = mysqli_real_escape_string($conn, $user_type);
+        $username = mysqli_real_escape_string($conn, $username);
+        $password = md5(mysqli_real_escape_string($conn, $password));
+
+        // Prepare and execute the SQL query
+        $sql = "SELECT * FROM users WHERE user_type = '$user_type' AND username = '$username' AND password = '$password'";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        $count = mysqli_num_rows($result);
+
+        // Check if user exists and redirect accordingly
+        if ($count > 0){
+            switch ($user_type) {
+                case "Admin":
+                    header("Location: ./admin.php");
+                    exit();
+                case "Student":
+                    header("Location: ./student.php");
+                    exit();
+                case "Teacher":
+                    header("Location: ./teacher.php");
+                    exit();
+                default:
+                    echo "Invalid user type";
+            }
         }
     }
+}
+
+// Create database connection
+$db = new Database('localhost', 'root', '', 'school_system');
+
+// Usage
+if(isset($_POST["submit"])) {
+    $userAuthenticator = new UserAuthenticator($db);
+    $user_type = $_POST["user_type"];
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $userAuthenticator->authenticate($user_type, $username, $password);
 }

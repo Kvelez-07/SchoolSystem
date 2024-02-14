@@ -1,11 +1,19 @@
 <?php
-$server_name = 'localhost';
-$uname = 'root';
-$password = '';
-$db_name = 'school_system';
+class Database {
+    private $conn;
 
-// create connection (port # as preventive measure)
-$conn = mysqli_connect($server_name, $uname, $password, $db_name, 3306);
-if(!$conn){
-    die("Connection failed: " . mysqli_connect_error());
+    public function __construct($server_name, $uname, $password, $db_name, $port = 3306) {
+        $this->conn = mysqli_connect($server_name, $uname, $password, $db_name, $port);
+        if(!$this->conn){
+            die("Connection failed: " . mysqli_connect_error());
+        }
+    }
+
+    public function getConnection() {
+        return $this->conn;
+    }
 }
+
+// Usage
+$db = new Database('localhost', 'root', '', 'school_system');
+$conn = $db->getConnection();
