@@ -31,7 +31,7 @@ class UserRegistrar {
             $sql = "INSERT INTO users (username, password, user_type) VALUES ('$username', '$password', '$user_type')";
             $result = mysqli_query($conn, $sql);
             if($result) {
-                header("Location: ../view/index.html");
+                header("Location: ../view/login.html");
                 exit();
             } else {
                 header("Location: ../view/signup.html");

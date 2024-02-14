@@ -27,13 +27,13 @@ class UserAuthenticator {
         if ($count > 0){
             switch ($user_type) {
                 case "Admin":
-                    header("Location: ./admin.php");
+                    header("Location: ../view/admin.html");
                     exit();
                 case "Student":
-                    header("Location: ./student.php");
+                    header("Location: ../view/student.html");
                     exit();
                 case "Teacher":
-                    header("Location: ./teacher.php");
+                    header("Location: ../view/teacher.html");
                     exit();
                 default:
                     echo "Invalid user type";
