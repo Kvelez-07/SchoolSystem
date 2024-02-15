@@ -12,6 +12,10 @@ class Database {
     public function getConnection() {
         return $this->conn;
     }
+
+    public function closeConnection() {
+        $this->conn->close();
+    }
 }
 
 $server_name = "localhost";
