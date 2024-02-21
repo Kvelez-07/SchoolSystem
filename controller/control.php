@@ -1,6 +1,10 @@
 <?php
 require_once("libs/smarty-4.3.4/Config.php");
 
+// Communicates with the model SQL queries .php files.
+// Communicates with the view .tpl files.
+// Communicates with the controller .php files.
+
 class Control {
     private $view;
     private $model;
