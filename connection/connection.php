@@ -4,7 +4,7 @@
 $server = "localhost";
 $user = "root";
 $password = "";
-$database = "php_dev";
+$database = "shool_system";
 
 // create connection with exception handling
 try {
