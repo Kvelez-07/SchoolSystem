@@ -1,46 +1,30 @@
 <?php
-require_once("libs/smarty-4.3.4/Config.php");
 
-// Communicates with the model SQL queries .php files.
-// Communicates with the view .tpl files.
-// Communicates with the controller .php files.
+require_once "libs/smarty-4.4.1/Configuration.php";
 
 class Control {
-    private $view;
     private $model;
-    private $controller;
-    const FrameWork = 'MVC';
-    static $language = 'PHP';
-    public function __construct($view, $model, $controller) {
-        $this->view = new Config();
-        $this->model = $model;
-        $this->controller = $controller;
+    private $view;
+
+    public function __construct(){
+        $this->model = null;
+        $this->view = new Configuration(); // smarty configuration
     }
 
-    public function framework_manager() {
-        $this->view->setAssign('framework', self::FrameWork);
-        $this->view->setDisplay('test.tpl');
+    public function framework_manager(){
+        $this->view->setDisplay('sample.tpl');
     }
 
-    public function getModel() {
+    public function getModel(){
         return $this->model;
     }
-    public function setModel($model) {
+    public function setModel($model){
         $this->model = $model;
     }
-
-    public function getView() {
+    public function getView(){
         return $this->view;
     }
-    public function setView($view) {
+    public function setView($view){
         $this->view = $view;
     }
-
-    public function getController() {
-        return $this->controller;
-    }
-    public function setController($controller) {
-        $this->controller = $controller;
-    }
-
 }
