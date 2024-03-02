@@ -12,7 +12,7 @@ class Control {
     }
 
     public function framework_manager(){
-        $this->view->setDisplay('sample.tpl');
+        $this->view->setDisplay('login.tpl');
     }
 
     public function getModel(){
