@@ -12,7 +12,7 @@ class Control {
     }
 
     public function framework_manager(){
-        $this->view->setDisplay('login.tpl');
+        $this->userAccountActions();
     }
 
     public function getModel(){
@@ -26,5 +26,41 @@ class Control {
     }
     public function setView($view){
         $this->view = $view;
+    }
+
+    public function userAccountActions() {
+        if(isset($_REQUEST['login'])) {
+            $this->userLogin();
+        } else if(isset($_REQUEST['signup'])){
+            $this->userSignUp();
+        } else {
+            $this->view->setDisplay('login.tpl');
+        }
+    }
+
+    public function userLogin() {
+        $user_type = $_REQUEST['user_type'];
+        switch ($user_type) {
+            case 'Student':
+                $this->view->setDisplay('student.tpl');
+                $user_type = null;
+                break;
+            case 'Teacher':
+                $this->view->setDisplay('teacher.tpl');
+                $user_type = null;
+                break;
+            case 'Admin':
+                $this->view->setDisplay('admin.tpl');
+                $user_type = null;
+                break;
+            default:
+                $this->view->setDisplay('login.tpl');
+                $user_type = null;
+                break;
+        }
+    }
+
+    public function userSignUp() {
+        $this->view->setDisplay('signup.tpl');
     }
 }

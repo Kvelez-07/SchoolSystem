@@ -12,7 +12,7 @@
 <body>
     <main>
         <div class="logo">
-            <a href="login.tpl"> <img src="https://sess.cr/wp-content/uploads/2021/08/IMG_2214-300x136.png"
+            <a href="index.php"> <img src="https://sess.cr/wp-content/uploads/2021/08/IMG_2214-300x136.png"
                     alt="Academy logo"></a>
         </div>
 
@@ -39,9 +39,10 @@
                         <li><a href="#" onclick="mostrarInformacion(`mostrarProyectos`)">
                                 <h3>Proyectos de Escuela</h3>
                             </a></li>
-                        <li> <button type="submit" id="signup" name="signup"
-                                onclick="window.location.href='/view/signup.tpl'">Sign
-                                Up</button></li>
+                        <li>
+                            <form action="index.php" method="post"> <button type="submit" id="signup" name="signup">Sign
+                                    Up</button> </form>
+                        </li>
                     </ul>
                 </nav>
             </header>
@@ -58,7 +59,7 @@
                     required>
                 <h4>&nbsp;&nbsp;Clave:</h4> <input type="password" id="password" name="password" placeholder="Password"
                     required>
-                <input type="submit" name="submit" value="submit">
+                <input type="submit" name="login" value="Login">
             </form>
         </div>
 

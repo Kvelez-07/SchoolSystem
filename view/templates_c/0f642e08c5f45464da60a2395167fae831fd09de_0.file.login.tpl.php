@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-02 03:22:37
+/* Smarty version 4.4.1, created on 2024-03-02 04:19:33
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e28d6d469025_92200591',
+  'unifunc' => 'content_65e29ac51bfe81_65102238',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0f642e08c5f45464da60a2395167fae831fd09de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\login.tpl',
-      1 => 1709344492,
+      1 => 1709349570,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e28d6d469025_92200591 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65e29ac51bfe81_65102238 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +37,7 @@ function content_65e28d6d469025_92200591 (Smarty_Internal_Template $_smarty_tpl)
 <body>
     <main>
         <div class="logo">
-            <a href="login.tpl"> <img src="https://sess.cr/wp-content/uploads/2021/08/IMG_2214-300x136.png"
+            <a href="index.php"> <img src="https://sess.cr/wp-content/uploads/2021/08/IMG_2214-300x136.png"
                     alt="Academy logo"></a>
         </div>
 
@@ -64,9 +64,10 @@ function content_65e28d6d469025_92200591 (Smarty_Internal_Template $_smarty_tpl)
                         <li><a href="#" onclick="mostrarInformacion(`mostrarProyectos`)">
                                 <h3>Proyectos de Escuela</h3>
                             </a></li>
-                        <li> <button type="submit" id="signup" name="signup"
-                                onclick="window.location.href='/view/signup.tpl'">Sign
-                                Up</button></li>
+                        <li>
+                            <form action="index.php" method="post"> <button type="submit" id="signup" name="signup">Sign
+                                    Up</button> </form>
+                        </li>
                     </ul>
                 </nav>
             </header>
@@ -83,7 +84,7 @@ function content_65e28d6d469025_92200591 (Smarty_Internal_Template $_smarty_tpl)
                     required>
                 <h4>&nbsp;&nbsp;Clave:</h4> <input type="password" id="password" name="password" placeholder="Password"
                     required>
-                <input type="submit" name="submit" value="submit">
+                <input type="submit" name="login" value="Login">
             </form>
         </div>
 
