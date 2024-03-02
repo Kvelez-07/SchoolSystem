@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-02 22:36:17
+/* Smarty version 4.4.1, created on 2024-03-02 22:43:31
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\Profesores.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e39bd15c70d0_34306685',
+  'unifunc' => 'content_65e39d83a5c677_83546036',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6d462a840cfd31355427f08d7b0b7b3330b40c98' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\Profesores.tpl',
-      1 => 1709415373,
+      1 => 1709415809,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e39bd15c70d0_34306685 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65e39d83a5c677_83546036 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<?php'; ?>
 
 <!DOCTYPE html>
@@ -56,10 +56,9 @@ echo '<?php'; ?>
 </tr>
 </table>
 <div class="Exit1">
-<a id="link" href="Alum.tpl">
-  <button class="boton">Regresar</button ></a>
+<a id="link" href="Alum.tpl">Panel Estudiante</a>
+<button class="boton">Regresar</button ></a>
 </div>
-  <button type="submit" id="back" name="back" onclick="window.location.href='index.php'">Back</button>
 </form>
 </body>
 </html><?php }

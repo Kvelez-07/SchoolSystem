@@ -12,29 +12,28 @@
 	<title>Profesores</title>
         <style= background:white>
     <style> body{ background-image:url('img/8.jpg');
-                  background-repeat:no-repeat;
-                  background-attachment:fixed;                     
-                  background-size:cover;}
+        background-repeat:no-repeat;
+        background-attachment:fixed;                     
+        background-size:cover;}
     </style>
 </head>
 
 <body>            					
-<form>
-<table border="1">
-<tr>
-<td>Nombre del Profesor</td>
-<td>Materia que imparte</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</table>
-<div class="Exit1">
-<a id="link" href="Alum.tpl">
-  <button class="boton">Regresar</button ></a>
-</div>
-</form>
+	<form action="index.php" method="post">
+		<table border="1">
+			<tr>
+			<td>Nombre del Profesor</td>
+			<td>Materia que imparte</td>
+			</tr>
+			<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			</tr>
+		</table>
+		<div class="Exit1">
+		<a id="link" href="Alum.tpl"><button class="boton">Regresar</button ></a>
+		</div>
+	</form>
 </body>
 </html>
