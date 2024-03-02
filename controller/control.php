@@ -43,19 +43,15 @@ class Control {
         switch ($user_type) {
             case 'Student':
                 $this->view->setDisplay('student.tpl');
-                $user_type = null;
                 break;
             case 'Teacher':
                 $this->view->setDisplay('teacher.tpl');
-                $user_type = null;
                 break;
             case 'Admin':
                 $this->view->setDisplay('admin.tpl');
-                $user_type = null;
                 break;
             default:
                 $this->view->setDisplay('login.tpl');
-                $user_type = null;
                 break;
         }
     }

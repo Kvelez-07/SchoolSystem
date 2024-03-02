@@ -10,7 +10,7 @@
 
 <body>
     <div id="main-form">
-        <form action="controller/signup.php" method="post">
+        <form action="index.php" method="post">
             <h1>Registro</h1>
             <p>Favor de rellenar todos los campos</p>
             <input type="text" id="username" name="username" placeholder="Username" required>
@@ -19,7 +19,7 @@
                 <option value="Student">Alumno</option>
                 <option value="Teacher">Profesor</option>
             </select>
-            <input type="submit" name="submit" value="submit">
+            <input type="submit" name="addUser" value="AddUser">
         </form>
     </div>
 
