@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-02 04:19:33
+/* Smarty version 4.4.1, created on 2024-03-02 22:26:06
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e29ac51bfe81_65102238',
+  'unifunc' => 'content_65e3996e05ae12_23677957',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0f642e08c5f45464da60a2395167fae831fd09de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\login.tpl',
-      1 => 1709349570,
+      1 => 1709414704,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e29ac51bfe81_65102238 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65e3996e05ae12_23677957 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
     <?php echo '<script'; ?>
  defer src="js/script.js"><?php echo '</script'; ?>
 >

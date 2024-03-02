@@ -42,7 +42,7 @@ class Control {
         $user_type = $_REQUEST['user_type']; // form based
         switch ($user_type) {
             case 'Student':
-                $this->view->setDisplay('Alum.tpl');
+                $this->studentPanel();
                 break;
             case 'Teacher':
                 $this->view->setDisplay('teacher.tpl');
@@ -56,8 +56,12 @@ class Control {
         }
     }
 
+    public function studentPanel() {
+        $this->view->setDisplay('Alum.tpl');
+    }
+
     public function userSignUp() {
         // could be extended.
-        $this->view->setDisplay('Alum.tpl');
+        $this->view->setDisplay('signup.tpl');
     }
 }

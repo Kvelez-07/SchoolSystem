@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-02 03:50:56
+/* Smarty version 4.4.1, created on 2024-03-02 04:49:36
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e294102bd612_47764724',
+  'unifunc' => 'content_65e2a1d0efe331_75877949',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'be69c8d5a6360762df8f6a3183fdfe50f12973ae' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\admin.tpl',
-      1 => 1709347459,
+      1 => 1709348463,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e294102bd612_47764724 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65e2a1d0efe331_75877949 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +32,7 @@ function content_65e294102bd612_47764724 (Smarty_Internal_Template $_smarty_tpl)
 
 <body>
     <h1>Admin</h1>
-    <p>Admin section</p>
+    <p>Admin section or go <a href="index.php">back</a></p>
 </body>
 
 </html><?php }

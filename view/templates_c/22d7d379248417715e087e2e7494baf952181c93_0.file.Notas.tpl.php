@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.4.1, created on 2024-03-02 22:32:10
+  from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\Notas.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.4.1',
+  'unifunc' => 'content_65e39adad92657_05308774',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '22d7d379248417715e087e2e7494baf952181c93' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\Notas.tpl',
+      1 => 1709415126,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_65e39adad92657_05308774 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -37,10 +60,10 @@
       <h1>Materias</h1>
       <p>Favor seleccionar la asignatura</p>
       <select name="materias" id="lang" required>
-        <option value="javascript">Spanish</option>
-        <option value="php">Social Studies</option>
-        <option value="java">Chemistry</option>
-        <option value="golang">PHysics</option>
+        <option value="javascript">Spain</option>
+        <option value="php">Social studies</option>
+        <option value="java">Quimic</option>
+        <option value="golang">Fisic</option>
         <option value="python">French</option>
         <option value="c#">English</option>
         <option value="C++">C++</option>
@@ -71,4 +94,5 @@
     </div>
 </body>
 
-</html>
+</html><?php }
+}

@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.4.1, created on 2024-03-02 22:26:01
+  from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\Alum.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.4.1',
+  'unifunc' => 'content_65e399693552f9_89069003',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'f79d54aa3e09d8185d437a4fd236c1f6eecc74af' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\Alum.tpl',
+      1 => 1709414749,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_65e399693552f9_89069003 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -65,4 +88,5 @@
 	</div>
 </body>
 
-</html>
+</html><?php }
+}
