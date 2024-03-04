@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-04 15:10:50
-  from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\Profesores.tpl' */
+/* Smarty version 4.4.1, created on 2024-03-04 14:53:26
+  from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\Estudiantes.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e5d66a5fa797_66049334',
+  'unifunc' => 'content_65e5d2567d01b6_96966114',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '6d462a840cfd31355427f08d7b0b7b3330b40c98' => 
+    '2af1b1b27f09151cc805f7d3e9d4a61b744a4fcc' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\Profesores.tpl',
-      1 => 1709560538,
+      0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\Estudiantes.tpl',
+      1 => 1709560251,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e5d66a5fa797_66049334 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65e5d2567d01b6_96966114 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<?php'; ?>
 
 <!DOCTYPE html>
