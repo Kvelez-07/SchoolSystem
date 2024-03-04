@@ -8,18 +8,20 @@ body {
 	background: #1D202B;
 	color: #fff;
 	font-family: 'Roboto', sans-serif;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
 }
-
-
 
 .contenedor {
 	width: 90%;
 	max-width: 1200px;
 	margin: auto;
 	padding: 40px 0;
-        display: grid;
-        grid-template-columns:3fr 1fr;
-        gap:20px;
+    display: grid;
+    grid-template-columns:3fr 1fr;
+    gap:20px;
 }
 
 .titulo {
@@ -131,7 +133,6 @@ body {
     position:relative;
     top:700px;
 }  
-
 
 #main-form form {
     padding-top: 100px;
