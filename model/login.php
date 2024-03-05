@@ -18,17 +18,19 @@ if(isset($_POST['login'])) {
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':user_type', $user_type);
     $stmt->execute();
-    $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // Verify password and user existence
     if($user && password_verify($password, $user['password'])) {
         // Redirect based on user type
         if($user_type == "Student") {
-            header("Location: student_dashboard.php");
-            exit;
+            echo "Login successful!";
+            // header("Location: student_dashboard.php");
+            // exit;
         } elseif($user_type == "Teacher") {
-            header("Location: teacher_dashboard.php");
-            exit;
+            echo "Login successful!";
+            // header("Location: teacher_dashboard.php");
+            // exit;
         }
     } else {
         echo "Invalid username, password, or user type.";
@@ -47,7 +49,7 @@ if(isset($_POST['login'])) {
 <body>
 
     <h1>Login</h1>
-    <form action="index.php" method="POST">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
         <input type="text" name="username" placeholder="Username">
         <input type="password" name="password" placeholder="Password">
         <select name="user_type">
