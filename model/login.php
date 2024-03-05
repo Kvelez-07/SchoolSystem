@@ -34,6 +34,9 @@ if(isset($_POST['login'])) {
     } else {
         echo "Login failed, username or password is incorrect.";
     }
+
+    $stmt = null;
+    $conn = null;
 }
 
 ?>

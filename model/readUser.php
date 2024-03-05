@@ -33,6 +33,9 @@ if(isset($_REQUEST['read'])) {
         exit;
     }
 
+    $stmt = null;
+    $conn = null;
+
 } else {
     echo "User not found";
 }

@@ -28,6 +28,9 @@ if(isset($_REQUEST['delete'])) {
     } else {
         echo "User deleted successfully";
     }
+    
+    $stmt = null;
+    $conn = null;
 }
 
 ?>

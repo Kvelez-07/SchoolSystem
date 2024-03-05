@@ -43,6 +43,11 @@ if(isset($_POST['update'])){
         } else {
             echo "User not found.";
         }
+        
+        // Close connection
+        $conn = null;
+        $stmt_select = null;
+        $stmt_update = null;
     } else {
         echo "All fields are required.";
     }

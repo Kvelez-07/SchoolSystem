@@ -50,6 +50,8 @@ if(isset($_POST['create'])) {
             $stmt->execute([$username, $password, $user_type, $first_name, $last_name, $id_card, $nationality, $birth_date, $blood_type, $address, $email, $phone, $dad_name, $dad_phone, $mom_name, $mom_phone]);
             echo "User created successfully";
         }
+        $stmt = null;
+        $conn = null;
     }
 }
 
