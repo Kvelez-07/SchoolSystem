@@ -9,12 +9,12 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/student.css">
-	<title>Horario de Clases</title>
+	<title>Asistencia</title>
 </head>
 
 <body>
 	<div class="Exit1">
-		<a id="link" href="Alum.tpl">
+		<a id="link" href="students_dashboard.tpl">
 			<button class="boton">Regresar</button></a>
 	</div>
 </body>

@@ -66,7 +66,7 @@
       </tr>
     </table>
     <div class="Exit">
-      <a id="link" href="Alum.tpl">
+      <a id="link" href="students_dashboard.tpl">
         <button class="boton">Regresar</button></a>
     </div>
 </body>

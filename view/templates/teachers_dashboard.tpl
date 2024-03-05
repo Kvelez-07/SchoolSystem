@@ -30,7 +30,7 @@
 		<div class="contenedor-opciones">
 
 			<div class="card" style="background-image: url('img/2.jpg')">
-				<a id="link" href="Notas.tpl">Notas</a>
+				<a id="link" href="students_grades.tpl">Notas</a>
 				<div class="textos">
 					<h3></h3>
 
@@ -38,7 +38,7 @@
 			</div>
 			<div class="card" style="background-image: url('img/8.jpg')">
 
-				<a id="link" href="Profesores.tpl">Profesores</a>
+				<a id="link" href="other_teachers.tpl">Profesores</a>
 				<div class="textos">
 					<h3></h3>
 
@@ -46,7 +46,7 @@
 			</div>
 
 			<div class="card" style="background-image: url('img/4.jpg')">
-				<a id="link" href="Horario.tpl">Horarios</a>
+				<a id="link" href="teacher_schedule.tpl">Horarios</a>
 				<div class="textos">
 					<h3></h3>
 
@@ -54,7 +54,7 @@
 			</div>
 
 			<div class="card" style="background-image: url('img/6.jpg')">
-				<a id="link" href="Asistencia.tpl">Asistencia</a>
+				<a id="link" href="students_attendance.tpl">Asistencia</a>
 				<div class="textos">
 					<h3></h3>
 
@@ -63,7 +63,7 @@
 		</div>
 		<div class="card" style="background-image: url('img/students.jpeg')">
 
-			<a id="link" href="Estudiantes.tpl">Estudiantes</a>
+			<a id="link" href="my_students.tpl">Estudiantes</a>
 			<div class="textos">
 				<h3></h3>
 

@@ -32,7 +32,7 @@
 			</tr>
 		</table>
 		<div class="Exit1">
-		<a id="link" href="Alum.tpl"><button class="boton">Regresar</button ></a>
+		<a id="link" href="students_dashboard.tpl"><button class="boton">Regresar</button ></a>
 		</div>
 	</form>
 </body>
