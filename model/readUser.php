@@ -23,13 +23,9 @@ if(isset($_REQUEST['read'])) {
         exit;
     }
     
-    $sql = "SELECT * FROM users WHERE username = :username AND user_type = :user_type AND first_name = :first_name AND last_name = :last_name";
+    $sql = "SELECT * FROM users WHERE username = ? AND user_type = ? AND first_name = ? AND last_name = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bindValue(":username", $username);
-    $stmt->bindValue(":user_type", $user_type);
-    $stmt->bindValue(":first_name", $first_name);
-    $stmt->bindValue(":last_name", $last_name);
-    $stmt->execute();
+    $stmt->execute([$username, $user_type, $first_name, $last_name]);
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if(empty($result)) {

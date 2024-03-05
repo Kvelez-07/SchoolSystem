@@ -3,39 +3,31 @@
 require_once "database.php";
 
 if(isset($_REQUEST['delete'])) {
-    $username = $_REQUEST['username'];
-    $user_type = $_REQUEST['user_type'];
-    $first_name = $_REQUEST['first_name'];
-    $last_name = $_REQUEST['last_name'];
-
-    $username = filter_var($username, FILTER_SANITIZE_SPECIAL_CHARS);
-    $user_type = filter_var($user_type, FILTER_SANITIZE_SPECIAL_CHARS);
-    $first_name = filter_var($first_name, FILTER_SANITIZE_SPECIAL_CHARS);
-    $last_name = filter_var($last_name, FILTER_SANITIZE_SPECIAL_CHARS);
+    $username = filter_var($_REQUEST['username'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $user_type = filter_var($_REQUEST['user_type'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $first_name = filter_var($_REQUEST['first_name'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $last_name = filter_var($_REQUEST['last_name'], FILTER_SANITIZE_SPECIAL_CHARS);
 
     if(empty($username) || empty($user_type) || empty($first_name) || empty($last_name)) {
         echo "Please fill in all fields";
         exit;
     }
 
-
     if($user_type != "Student" && $user_type != "Teacher") {
         echo "Invalid user type";
         exit;
     }
 
-    $sql = "DELETE FROM users WHERE username = :username AND user_type = :user_type AND first_name = :first_name AND last_name = :last_name";
+    $sql = "DELETE FROM users WHERE username = ? AND user_type = ? AND first_name = ? AND last_name = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bindValue(':username', $username);
-    $stmt->bindValue(':user_type', $user_type);
-    $stmt->bindValue(':first_name', $first_name);
-    $stmt->bindValue(':last_name', $last_name);
-    $stmt->execute();
+    $stmt->execute([$username, $user_type, $first_name, $last_name]);
     $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    echo "User deleted successfully";
-} else {
-    echo "User not found";
+    if(!$user) {
+        echo "User not found";
+    } else {
+        echo "User deleted successfully";
+    }
 }
 
 ?>
@@ -60,7 +52,7 @@ if(isset($_REQUEST['delete'])) {
         <input type="text" name="first_name" placeholder="First Name">
         <input type="text" name="last_name" placeholder="Last Name">
         <input type="submit" name="delete" value="Delete">
-    </form>
+    </form> <br>
 
     <a href="login.php">Back</a>
 </body>

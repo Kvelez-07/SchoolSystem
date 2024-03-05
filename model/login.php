@@ -3,37 +3,34 @@
 require_once "database.php";
 
 if(isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $user_type = $_POST['user_type'];
-
     // Sanitize input
-    $username = filter_var($username, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $password = filter_var($password, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $user_type = filter_var($user_type, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $password = $_POST['password'];
+    $user_type = filter_var($_POST['user_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     // Prepare and execute SELECT query
-    $sql = "SELECT * FROM users WHERE username = :username AND user_type = :user_type";
+    $sql = "SELECT * FROM users WHERE username = ? AND user_type = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':username', $username);
-    $stmt->bindParam(':user_type', $user_type);
-    $stmt->execute();
+    $stmt->execute([$username, $user_type]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Verify password and user existence
-    if($user && password_verify($password, $user['password'])) {
-        // Redirect based on user type
-        if($user_type == "Student") {
-            echo "Login successful!";
-            // header("Location: student_dashboard.php");
-            // exit;
-        } elseif($user_type == "Teacher") {
-            echo "Login successful!";
-            // header("Location: teacher_dashboard.php");
-            // exit;
+    if($user) {
+        // Verify password
+        if(password_verify($password, $user['password'])) {
+            if($user_type == "Student") {
+                echo "Login successful.";
+                // header("Location: student_dashboard.php");
+                // exit();
+            } else {
+                echo "Login successful.";
+                // header("Location: teacher_dashboard.php");
+                // exit();
+            }
+        } else {
+            echo "Login failed, username or password is incorrect.";
         }
     } else {
-        echo "Invalid username, password, or user type.";
+        echo "Login failed, username or password is incorrect.";
     }
 }
 

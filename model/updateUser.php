@@ -29,27 +29,17 @@ if(isset($_POST['update'])){
         }
 
         // Prepare and execute SELECT query
-        $sql_select = "SELECT * FROM users WHERE username = :username AND user_type = :user_type";
+        $sql_select = "SELECT * FROM users WHERE username = ? AND user_type = ?";
         $stmt_select = $conn->prepare($sql_select);
-        $stmt_select->bindValue(':username', $username);
-        $stmt_select->bindValue(':user_type', $user_type);
-        $stmt_select->execute();
+        $stmt_select->execute([$username, $user_type]);
         $result = $stmt_select->fetchAll(PDO::FETCH_ASSOC);
 
         // If user exists, update user information
         if (count($result) > 0) {
-            $sql_update = "UPDATE users SET username = :new_username, user_type = :new_user_type, password = :new_password, email = :new_email, phone = :new_phone, first_name = :new_first_name, last_name = :new_last_name WHERE username = :username AND user_type = :user_type";
+            $sql_update = "UPDATE users SET username = ?, user_type = ?, password = ?, email = ?, phone = ?, first_name = ?, last_name = ? WHERE username = ? AND user_type = ?";
             $stmt_update = $conn->prepare($sql_update);
-            $stmt_update->bindValue(':new_username', $new_username);
-            $stmt_update->bindValue(':new_user_type', $new_user_type);
-            $stmt_update->bindValue(':new_password', $new_password);
-            $stmt_update->bindValue(':new_email', $new_email);
-            $stmt_update->bindValue(':new_phone', $new_phone);
-            $stmt_update->bindValue(':new_first_name', $new_first_name);
-            $stmt_update->bindValue(':new_last_name', $new_last_name);
-            $stmt_update->bindValue(':username', $username);
-            $stmt_update->bindValue(':user_type', $user_type);
-            $stmt_update->execute();
+            $stmt_update->execute([$new_username, $new_user_type, $new_password, $new_email, $new_phone, $new_first_name, $new_last_name, $username, $user_type]);
+            echo "User updated.";
         } else {
             echo "User not found.";
         }

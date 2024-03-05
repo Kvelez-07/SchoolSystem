@@ -35,14 +35,9 @@ if(isset($_POST['create'])) {
             die();
         }
     
-        $sql = "SELECT * FROM users WHERE first_name = :first_name AND last_name = :last_name AND user_type = :user_type AND username = :username";
+        $sql = "SELECT * FROM users WHERE first_name = ? AND last_name = ? AND user_type = ? AND username = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':first_name', $first_name);
-        $stmt->bindParam(':last_name', $last_name);
-        $stmt->bindParam(':user_type', $user_type);
-        $stmt->bindParam(':username', $username);
-        $stmt->execute();
+        $stmt->execute([$first_name, $last_name, $user_type, $username]);
         $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
         if($user) {
@@ -50,25 +45,9 @@ if(isset($_POST['create'])) {
         } elseif($user_type != "Student" && $user_type != "Teacher") {
             echo "Invalid user type";
         } else {
-            $sql = "INSERT INTO users (username, password, user_type, first_name, last_name, id_card, nationality, birth_date, blood_type, address, email, phone, dad_name, dad_phone, mom_name, mom_phone) VALUES (:username, :password, :user_type, :first_name, :last_name, :id_card, :nationality, :birth_date, :blood_type, :address, :email, :phone, :dad_name, :dad_phone, :mom_name, :mom_phone)";
+            $sql = "INSERT INTO users (username, password, user_type, first_name, last_name, id_card, nationality, birth_date, blood_type, address, email, phone, dad_name, dad_phone, mom_name, mom_phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':username', $username);
-            $stmt->bindParam(':password', $password);
-            $stmt->bindParam(':user_type', $user_type);
-            $stmt->bindParam(':first_name', $first_name);
-            $stmt->bindParam(':last_name', $last_name);
-            $stmt->bindParam(':id_card', $id_card);
-            $stmt->bindParam(':nationality', $nationality);
-            $stmt->bindParam(':birth_date', $birth_date);
-            $stmt->bindParam(':blood_type', $blood_type);
-            $stmt->bindParam(':address', $address);
-            $stmt->bindParam(':email', $email);
-            $stmt->bindParam(':phone', $phone);
-            $stmt->bindParam(':dad_name', $dad_name);
-            $stmt->bindParam(':dad_phone', $dad_phone);
-            $stmt->bindParam(':mom_name', $mom_name);
-            $stmt->bindParam(':mom_phone', $mom_phone);
-            $stmt->execute();
+            $stmt->execute([$username, $password, $user_type, $first_name, $last_name, $id_card, $nationality, $birth_date, $blood_type, $address, $email, $phone, $dad_name, $dad_phone, $mom_name, $mom_phone]);
             echo "User created successfully";
         }
     }
