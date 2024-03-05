@@ -1,6 +1,6 @@
 <?php
 
-require_once "database.php";
+require_once "connection/database.php";
 
 if(isset($_POST['login'])) {
     // Sanitize input
@@ -12,7 +12,7 @@ if(isset($_POST['login'])) {
     $sql = "SELECT * FROM users WHERE username = ? AND user_type = ?";
     $stmt = $conn->prepare($sql);
     $stmt->execute([$username, $user_type]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC); // Fetch only one row not fetchAll
 
     if($user) {
         // Verify password
@@ -21,10 +21,12 @@ if(isset($_POST['login'])) {
                 echo "Login successful.";
                 // header("Location: student_dashboard.php");
                 // exit();
-            } else {
+            } else if($user_type == "Teacher") {
                 echo "Login successful.";
                 // header("Location: teacher_dashboard.php");
                 // exit();
+            } else if($user_type == "Admin") {
+                echo "Login successful.";
             }
         } else {
             echo "Login failed, username or password is incorrect.";
@@ -52,6 +54,7 @@ if(isset($_POST['login'])) {
         <select name="user_type">
             <option value="Student">Student</option>
             <option value="Teacher">Teacher</option>
+            <option value="Admin">Admin</option>
         </select>
         <input type="submit" name="login" value="Login">
     </form> <br>

@@ -1,6 +1,6 @@
 <?php
 
-require_once "database.php";
+require_once "connection/database.php";
 
 if(isset($_POST['create'])) {
     if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['user_type']) && !empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['id_card']) && !empty($_POST['nationality']) && !empty($_POST['birth_date']) && !empty($_POST['blood_type']) && !empty($_POST['address']) && !empty($_POST['email']) && !empty($_POST['phone'])) {

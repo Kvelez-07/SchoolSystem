@@ -1,6 +1,6 @@
 <?php
 
-require_once "database.php"; // updates only with POST not REQUEST
+require_once "connection/database.php"; // updates only with POST not REQUEST
 
 if(isset($_POST['update'])){
     if(!empty($_POST['username']) && !empty($_POST['user_type']) && !empty($_POST['password']) && !empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['email']) && !empty($_POST['phone']) && !empty($_POST['new_username']) && !empty($_POST['new_user_type']) && !empty($_POST['new_password']) && !empty($_POST['new_first_name']) && !empty($_POST['new_last_name']) && !empty($_POST['new_email']) && !empty($_POST['new_phone'])) {

@@ -1,6 +1,6 @@
 <?php
 
-require_once "database.php";
+require_once "connection/database.php";
 
 if(isset($_REQUEST['read'])) {
     $username = $_REQUEST['username'];

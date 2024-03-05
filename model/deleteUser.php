@@ -1,6 +1,6 @@
 <?php
 
-require_once "database.php";
+require_once "connection/database.php";
 
 if(isset($_REQUEST['delete'])) {
     $username = filter_var($_REQUEST['username'], FILTER_SANITIZE_SPECIAL_CHARS);

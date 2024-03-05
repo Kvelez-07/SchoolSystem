@@ -1,14 +1,14 @@
 <?php
 
 // php connection variables
-$server = "localhost";
+$host = "localhost";
 $user = "root";
-$password = "";
-$database = "shool_system";
+$pass = "";
+$db = "php_dev";
 
 // create connection with exception handling
 try {
-    $conn = new PDO("mysql:host=$server;dbname=$database", $user, $password);
+    $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
