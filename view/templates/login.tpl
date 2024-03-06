@@ -5,75 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
-    <script defer src="js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script defer src="js/script.js">
+
+    </script>
     <title>School</title>
 </head>
 
 <body>
-    <main>
-        <div class="logo">
-            <a href="index.php"> <img src="https://sess.cr/wp-content/uploads/2021/08/IMG_2214-300x136.png"
-                    alt="Academy logo"></a>
-        </div>
+    <div class="opciones-superiores">
 
-        <div class="menu">
-            <header>
-                <nav id="menu">
-                    <ul>
-                        <li><a href="#" onclick="mostrarInformacion(`mostrarLocalizacion`)">
-                                <h3>Localización</h3>
-                            </a></li>
-                        <!--falta poner los vinculos-->
-                        <li><a href="#" onclick="mostrarInformacion(`mostrarCaracteristicas`)">
-                                <h3>Características</h3>
-                            </a></li>
-                        <li><a href="#" onclick="mostrarInformacion(`mostrarInstalaciones`)">
-                                <h3>Instalaciones</h3>
-                            </a></li>
-                        <li><a href="#" onclick="mostrarInformacion(`mostrarServicios`)">
-                                <h3>Servicios</h3>
-                            </a></li>
-                        <li><a href="#" onclick="mostrarInformacion(`mostrarInformacion`)">
-                                <h3>Información</h3>
-                            </a></li>
-                        <li><a href="#" onclick="mostrarInformacion(`mostrarProyectos`)">
-                                <h3>Proyectos de Escuela</h3>
-                            </a></li>
-                        <li>
-                            <form action="index.php" method="post"> <button type="submit" id="signup" name="signup">Sign
-                                    Up</button> </form>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
+        <header>
+            <h1>CENTRO EDUCATIVO SAINCTI SPIRITUS</h1>
+            <nav id="opciones">
 
-        <div class="login">
-            <form action="index.php" method="post">
-                <h4>&nbsp;&nbsp;Tipo: </h4> <select id="user_type" name="user_type" title="user_type" required>
-                    <option value="Student">Alumno</option>
-                    <option value="Teacher">Profesor</option>
-                    <option value="Admin">Administrador</option>
-                </select>
-                <h4>&nbsp;&nbsp;Usuario:</h4><input type="text" id="username" name="username" placeholder="User"
-                    required>
-                <h4>&nbsp;&nbsp;Clave:</h4> <input type="password" id="password" name="password" placeholder="Password"
-                    required>
-                <input type="submit" name="login" value="Login">
-            </form>
-        </div>
+                <ul class="menu-derecha">
 
-        <div class="contenido" id="contenido">
-            <ul>
-                <li><img src="img/institution.jpg" alt="Institution image" /></li>
-            </ul>
-        </div>
+                    <li><a href="#" onclick="mostrarContenidoInicial('contenido');">Hogar</a></li>
+                    <li><a href="#" onclick="mostrarSobreNosotros('contenido');">Sobre nosotros</a></li>
+                    <li><a href="#" onclick="MostrarUbicacion('contenido');">Contacto</a></li>
+                    <li><a href="#" onclick="MostrarInstalaciones('contenido');">Instalaciones</a></li>
+                    <li>
+                        <form action="index.php" method="post">
+                            <button type="submit" id="signup" name="signup" class='signup'>Ingresar</button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
 
-        <footer class="piePagina">
-            <p>&copy; 2024 My Website. All rights reserved.</p>
-        </footer>
-        </div>
-    </main>
+    <div class="contenido" id="contenido">
+
+        <li><img src="img/institution.jpg" alt="Institution image" /></li>
+
+    </div>
+
+
+    <footer class="piePagina">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

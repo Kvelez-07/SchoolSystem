@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-02 22:26:06
+/* Smarty version 4.4.1, created on 2024-03-06 17:22:15
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e3996e05ae12_23677957',
+  'unifunc' => 'content_65e898370077b6_63368600',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0f642e08c5f45464da60a2395167fae831fd09de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\login.tpl',
-      1 => 1709414704,
+      1 => 1709742133,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e3996e05ae12_23677957 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65e898370077b6_63368600 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -28,77 +28,48 @@ function content_65e3996e05ae12_23677957 (Smarty_Internal_Template $_smarty_tpl)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <?php echo '<script'; ?>
- defer src="js/script.js"><?php echo '</script'; ?>
+ defer src="js/script.js">
+
+    <?php echo '</script'; ?>
 >
     <title>School</title>
 </head>
 
 <body>
-    <main>
-        <div class="logo">
-            <a href="index.php"> <img src="https://sess.cr/wp-content/uploads/2021/08/IMG_2214-300x136.png"
-                    alt="Academy logo"></a>
-        </div>
+    <div class="opciones-superiores">
 
-        <div class="menu">
-            <header>
-                <nav id="menu">
-                    <ul>
-                        <li><a href="#" onclick="mostrarInformacion(`mostrarLocalizacion`)">
-                                <h3>Localización</h3>
-                            </a></li>
-                        <!--falta poner los vinculos-->
-                        <li><a href="#" onclick="mostrarInformacion(`mostrarCaracteristicas`)">
-                                <h3>Características</h3>
-                            </a></li>
-                        <li><a href="#" onclick="mostrarInformacion(`mostrarInstalaciones`)">
-                                <h3>Instalaciones</h3>
-                            </a></li>
-                        <li><a href="#" onclick="mostrarInformacion(`mostrarServicios`)">
-                                <h3>Servicios</h3>
-                            </a></li>
-                        <li><a href="#" onclick="mostrarInformacion(`mostrarInformacion`)">
-                                <h3>Información</h3>
-                            </a></li>
-                        <li><a href="#" onclick="mostrarInformacion(`mostrarProyectos`)">
-                                <h3>Proyectos de Escuela</h3>
-                            </a></li>
-                        <li>
-                            <form action="index.php" method="post"> <button type="submit" id="signup" name="signup">Sign
-                                    Up</button> </form>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
+        <header>
+            <h1>CENTRO EDUCATIVO SAINCTI SPIRITUS</h1>
+            <nav id="opciones">
 
-        <div class="login">
-            <form action="index.php" method="post">
-                <h4>&nbsp;&nbsp;Tipo: </h4> <select id="user_type" name="user_type" title="user_type" required>
-                    <option value="Student">Alumno</option>
-                    <option value="Teacher">Profesor</option>
-                    <option value="Admin">Administrador</option>
-                </select>
-                <h4>&nbsp;&nbsp;Usuario:</h4><input type="text" id="username" name="username" placeholder="User"
-                    required>
-                <h4>&nbsp;&nbsp;Clave:</h4> <input type="password" id="password" name="password" placeholder="Password"
-                    required>
-                <input type="submit" name="login" value="Login">
-            </form>
-        </div>
+                <ul class="menu-derecha">
 
-        <div class="contenido" id="contenido">
-            <ul>
-                <li><img src="img/institution.jpg" alt="Institution image" /></li>
-            </ul>
-        </div>
+                    <li><a href="#" onclick="mostrarContenidoInicial('contenido');">Hogar</a></li>
+                    <li><a href="#" onclick="mostrarSobreNosotros('contenido');">Sobre nosotros</a></li>
+                    <li><a href="#" onclick="MostrarUbicacion('contenido');">Contacto</a></li>
+                    <li><a href="#" onclick="MostrarInstalaciones('contenido');">Instalaciones</a></li>
+                    <li>
+                        <form action="index.php" method="post">
+                            <button type="submit" id="signup" name="signup" class='signup'>Ingresar</button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
 
-        <footer class="piePagina">
-            <p>&copy; 2024 My Website. All rights reserved.</p>
-        </footer>
-        </div>
-    </main>
+    <div class="contenido" id="contenido">
+
+        <li><img src="img/institution.jpg" alt="Institution image" /></li>
+
+    </div>
+
+
+    <footer class="piePagina">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
 </body>
 
 </html><?php }
