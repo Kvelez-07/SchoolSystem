@@ -36,9 +36,7 @@
     </div>
 
     <div class="contenido" id="contenido">
-
         <li><img src="img/institution.jpg" alt="Institution image" /></li>
-
     </div>
 
 

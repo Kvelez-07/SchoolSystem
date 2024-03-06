@@ -24,7 +24,7 @@
     </div>
 
     <div class="main-page">
-        <button type="submit" id="main" name="main" onclick="window.location.href='index.php'">Back</button>
+        <a href="index.php"><button id="main" name="main">Back</button></a>
     </div>
 </body>
 

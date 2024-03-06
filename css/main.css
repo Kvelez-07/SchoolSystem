@@ -299,7 +299,6 @@ color: black; /* Cambia el color del texto */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
 }
 
-
 .opciones-superiores form button.login:hover {
     background-color: #35637e; /* Cambia el color de fondo al pasar el mouse */
 }
@@ -329,6 +328,7 @@ ul {
     display: inline;
     margin-right: 20px; /* Aumenta el margen derecho a 20px */
 }
+
 .opciones-superiores ul.menu-derecha li a {
     text-decoration: none;
     color: #333;
@@ -450,7 +450,6 @@ ul {
     border: 2px solid #ddd; /* Borde */
     padding: 75px; /* Espaciado interno */
     border-radius: 10px; /* Bordes redondeados */
-    
     margin-bottom: 200px;
 }
 

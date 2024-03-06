@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-06 19:07:31
+/* Smarty version 4.4.1, created on 2024-03-06 23:40:34
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e8b0e38dee47_81828191',
+  'unifunc' => 'content_65e8f0e2d6de99_46421820',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0f642e08c5f45464da60a2395167fae831fd09de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\login.tpl',
-      1 => 1709748383,
+      1 => 1709764829,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e8b0e38dee47_81828191 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65e8f0e2d6de99_46421820 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +47,7 @@ function content_65e8b0e38dee47_81828191 (Smarty_Internal_Template $_smarty_tpl)
     </div>
 
     <div class="main-page">
-        <button type="submit" id="main" name="main" onclick="window.location.href='index.php'">Back</button>
+        <a href="index.php"><button id="main" name="main">Back</button></a>
     </div>
 </body>
 
