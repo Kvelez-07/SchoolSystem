@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-06 22:25:43
+/* Smarty version 4.4.1, created on 2024-03-06 23:19:11
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\my_grades.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e8df576df037_07356551',
+  'unifunc' => 'content_65e8ebdf1c6a03_87366182',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a42eaf5ab704acc68561a25873a7a0273cdc7f09' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\my_grades.tpl',
-      1 => 1709760180,
+      1 => 1709763540,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e8df576df037_07356551 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65e8ebdf1c6a03_87366182 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +37,7 @@ function content_65e8df576df037_07356551 (Smarty_Internal_Template $_smarty_tpl)
 
   <style>
     body {
-      background-image: url('img/7.jpg');
+      background-image: url('img/subjects.jpg');
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
@@ -60,12 +60,12 @@ function content_65e8df576df037_07356551 (Smarty_Internal_Template $_smarty_tpl)
       <h1>Materias</h1>
       <p>Favor seleccionar la asignatura</p>
       <select name="materias" id="lang" required>
-        <option value="javascript">Spanish</option>
-        <option value="php">Social Studies</option>
-        <option value="java">Chemistry</option>
-        <option value="golang">PHysics</option>
-        <option value="python">French</option>
-        <option value="c#">English</option>
+        <option value="javascript">Java</option>
+        <option value="php">PHP</option>
+        <option value="java">JS</option>
+        <option value="golang">C#</option>
+        <option value="python">HTML</option>
+        <option value="c#">CSS</option>
         <option value="C++">C++</option>
         <option value="erlang">Erlang</option>
         <input type="submit" name="submit" value="Consultar">

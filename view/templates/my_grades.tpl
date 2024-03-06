@@ -14,7 +14,7 @@
 
   <style>
     body {
-      background-image: url('img/7.jpg');
+      background-image: url('img/subjects.jpg');
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
@@ -37,12 +37,12 @@
       <h1>Materias</h1>
       <p>Favor seleccionar la asignatura</p>
       <select name="materias" id="lang" required>
-        <option value="javascript">Spanish</option>
-        <option value="php">Social Studies</option>
-        <option value="java">Chemistry</option>
-        <option value="golang">PHysics</option>
-        <option value="python">French</option>
-        <option value="c#">English</option>
+        <option value="javascript">Java</option>
+        <option value="php">PHP</option>
+        <option value="java">JS</option>
+        <option value="golang">C#</option>
+        <option value="python">HTML</option>
+        <option value="c#">CSS</option>
         <option value="C++">C++</option>
         <option value="erlang">Erlang</option>
         <input type="submit" name="submit" value="Consultar">

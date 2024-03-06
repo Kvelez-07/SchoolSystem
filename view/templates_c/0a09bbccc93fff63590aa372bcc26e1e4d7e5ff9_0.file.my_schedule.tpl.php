@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-06 22:26:04
+/* Smarty version 4.4.1, created on 2024-03-06 23:19:38
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\my_schedule.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e8df6ca417c7_31116207',
+  'unifunc' => 'content_65e8ebfa017922_33645221',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a09bbccc93fff63590aa372bcc26e1e4d7e5ff9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\my_schedule.tpl',
-      1 => 1709760196,
+      1 => 1709760787,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e8df6ca417c7_31116207 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65e8ebfa017922_33645221 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +32,7 @@ function content_65e8df6ca417c7_31116207 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/student.css">
-    <title>Horario</title>
+    <title>Horarios</title>
 </head>
 
 <body>

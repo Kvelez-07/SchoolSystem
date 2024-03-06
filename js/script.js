@@ -3,34 +3,34 @@
 
     switch(idContenido) {
         case 'mostrarUbicacion':
-            contenido = datos.mostrarUbicacion || 'No se encontraron datos para esta opción.';
+            contenido = datos.mostrarUbicacion || 'No se encontraron datos para esta opciï¿½n.';
             break;
         case 'mostrarCaracteristicas':
-            contenido = datos.mostrarCaracteristicas || 'No se encontraron datos para esta opción.';
+            contenido = datos.mostrarCaracteristicas || 'No se encontraron datos para esta opciï¿½n.';
             break;
         case 'mostrarInstalaciones':
-            contenido = datos.mostrarInstalaciones || 'No se encontraron datos para esta opción.';
+            contenido = datos.mostrarInstalaciones || 'No se encontraron datos para esta opciï¿½n.';
             break;
         case 'mostrarServicios':
-            contenido = datos.mostrarServicios || 'No se encontraron datos para esta opción.';
+            contenido = datos.mostrarServicios || 'No se encontraron datos para esta opciï¿½n.';
             break;
         case 'mostrarInformacion':
-            contenido = datos.mostrarInformacion || 'No se encontraron datos para esta opción.';
+            contenido = datos.mostrarInformacion || 'No se encontraron datos para esta opciï¿½n.';
             break;
         case 'mostrarProyectos':
-            contenido = datos.mostrarProyectos || 'No se encontraron datos para esta opción.';
+            contenido = datos.mostrarProyectos || 'No se encontraron datos para esta opciï¿½n.';
             break;
         default:
-            contenido = 'Opción no válida.';
+            contenido = 'Opciï¿½n no vï¿½lida.';
             break;
     }
     document.getElementById('contenido').innerHTML = contenido;
 }
 var datos = {
-    mostrarUbicacion: 'Aquí puedes encontrar nuestra ubicación y direcciones.',
-    mostrarCaracteristicas: 'Estas son las características principales de nuestro producto/servicio.',
+    mostrarUbicacion: 'Aquï¿½ puedes encontrar nuestra ubicaciï¿½n y direcciones.',
+    mostrarCaracteristicas: 'Estas son las caracterï¿½sticas principales de nuestro producto/servicio.',
     mostrarInstalaciones: 'Nuestras instalaciones',
-    mostrarInformacion: 'Información importante.',
+    mostrarInformacion: 'Informaciï¿½n importante.',
     mostrarServicios: 'Nuestros servicios',
     mostrarProyectos: 'Nuestros proyectos'
 };
@@ -40,7 +40,7 @@ function mostrarInformacion(opcion) {
     if (contenido) {
         document.getElementById('contenido').innerHTML = contenido;
     } else {
-        document.getElementById('contenido').innerHTML = 'No se encontraron datos para esta opción.';
+        document.getElementById('contenido').innerHTML = 'No se encontraron datos para esta opciï¿½n.';
     }
 }
 
@@ -95,13 +95,13 @@ function MostrarInstalaciones() {
     fotosContainer.id = "fotos-container"; // Agregar el ID para aplicar los estilos CSS
     contenidoDiv.appendChild(fotosContainer);
 
-    // Nombres de las imágenes de instalaciones
-    var nombresImagenes = ["imagen1", "imagen2", "imagen3","imagen4"];
+    // Nombres de las imï¿½genes de instalaciones
+    var nombresImagenes = ["sports", "pool", "computers","class"];
 
-    // Crear y agregar las imágenes de instalaciones
+    // Crear y agregar las imï¿½genes de instalaciones
     nombresImagenes.forEach(function(nombreImagen) {
         var img = document.createElement("img");
-        img.src = "img/" + nombreImagen + ".jpg"; // URL de la imagen de la instalación con el nombre correspondiente
+        img.src = "img/" + nombreImagen + ".jpg"; // URL de la imagen de la instalaciï¿½n con el nombre correspondiente
         fotosContainer.appendChild(img);
     });
 }
@@ -109,7 +109,7 @@ function mostrarSobreNosotros() {
     var contenidoDiv = document.getElementById("contenido");
     contenidoDiv.innerHTML = ''; // Limpiar contenido anterior
 
-    // Crear un cuadro de texto para mostrar la información sobre nosotros
+    // Crear un cuadro de texto para mostrar la informaciï¿½n sobre nosotros
     var cuadroTexto = document.createElement("div");
     cuadroTexto.classList.add("sobre-nosotros"); // Agregar clase para aplicar estilos CSS
     cuadroTexto.innerHTML = `

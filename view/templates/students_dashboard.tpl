@@ -12,7 +12,7 @@
 	<title>Alumno</title>
 	<style>
 		body {
-			background-image: url('img/5.jpg');
+			background-image: url('img/studentBackground.jpg');
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-size: cover;
@@ -24,13 +24,13 @@
 	<div class="contenedor">
 		<div class="contenedor-opciones">
 
-			<div class="card" style="background-image: url('img/2.jpg')">
+			<div class="card" style="background-image: url('img/grades.jpg')">
 				<a id="link" href="index.php?action=my_grades">Notas</a>
 				<div class="textos">
 					<h3></h3>
 				</div>
 			</div>
-			<div class="card" style="background-image: url('img/8.jpg')">
+			<div class="card" style="background-image: url('img/classroom.jpg')">
 
 				<a id="link" href="index.php?action=my_teachers">Profesores</a>
 				<div class="textos">
@@ -39,7 +39,7 @@
 				</div>
 			</div>
 
-			<div class="card" style="background-image: url('img/4.jpg')">
+			<div class="card" style="background-image: url('img/schedule.jpg')">
 				<a id="link" href="index.php?action=my_schedule">Horarios</a>
 				<div class="textos">
 					<h3></h3>
@@ -47,7 +47,7 @@
 				</div>
 			</div>
 
-			<div class="card" style="background-image: url('img/6.jpg')">
+			<div class="card" style="background-image: url('img/attendance.jpg')">
 				<a id="link" href="index.php?action=my_attendance">Asistencia</a>
 				<div class="textos">
 					<h3></h3>

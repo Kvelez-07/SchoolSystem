@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-06 23:08:04
+/* Smarty version 4.4.1, created on 2024-03-06 23:13:06
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\teachers_dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e8e9444f5e19_04857696',
+  'unifunc' => 'content_65e8ea72637c64_37710481',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1b9272fa652fe6e94decf552e60c72373ae750bc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\teachers_dashboard.tpl',
-      1 => 1709762847,
+      1 => 1709763154,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e8e9444f5e19_04857696 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65e8ea72637c64_37710481 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +47,7 @@ function content_65e8e9444f5e19_04857696 (Smarty_Internal_Template $_smarty_tpl)
 	<div class="contenedor">
 		<div class="contenedor-opciones">
 
-			<div class="card" style="background-image: url('img/2.jpg')">
+			<div class="card" style="background-image: url('img/grades.jpg')">
 				<a id="link" href="index.php?action=students_grades">Notas</a>
 				<div class="textos">
 					<h3></h3>

@@ -24,13 +24,13 @@
 	<div class="contenedor">
 		<div class="contenedor-opciones">
 
-			<div class="card" style="background-image: url('img/2.jpg')">
+			<div class="card" style="background-image: url('img/grades.jpg')">
 				<a id="link" href="index.php?action=students_grades">Notas</a>
 				<div class="textos">
 					<h3></h3>
 				</div>
 			</div>
-			<div class="card" style="background-image: url('img/8.jpg')">
+			<div class="card" style="background-image: url('img/classroom.jpg')">
 
 				<a id="link" href="index.php?action=other_teachers">Colaboradores</a>
 				<div class="textos">
@@ -39,7 +39,7 @@
 				</div>
 			</div>
 
-			<div class="card" style="background-image: url('img/4.jpg')">
+			<div class="card" style="background-image: url('img/schedule.jpg')">
 				<a id="link" href="index.php?action=teacher_schedule">Horarios</a>
 				<div class="textos">
 					<h3></h3>
@@ -47,7 +47,7 @@
 				</div>
 			</div>
 
-			<div class="card" style="background-image: url('img/6.jpg')">
+			<div class="card" style="background-image: url('img/attendance.jpg')">
 				<a id="link" href="index.php?action=students_attendance">Asistencia</a>
 				<div class="textos">
 					<h3></h3>

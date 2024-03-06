@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-06 22:52:24
+/* Smarty version 4.4.1, created on 2024-03-06 23:19:28
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\students_dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e8e598685bd4_09766182',
+  'unifunc' => 'content_65e8ebf08fcd05_67929740',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e3c666ec42f1de77a53492e6f12155311bdf9100' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\students_dashboard.tpl',
-      1 => 1709761779,
+      1 => 1709763422,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e8e598685bd4_09766182 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65e8ebf08fcd05_67929740 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +35,7 @@ function content_65e8e598685bd4_09766182 (Smarty_Internal_Template $_smarty_tpl)
 	<title>Alumno</title>
 	<style>
 		body {
-			background-image: url('img/5.jpg');
+			background-image: url('img/studentBackground.jpg');
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-size: cover;
@@ -47,13 +47,13 @@ function content_65e8e598685bd4_09766182 (Smarty_Internal_Template $_smarty_tpl)
 	<div class="contenedor">
 		<div class="contenedor-opciones">
 
-			<div class="card" style="background-image: url('img/2.jpg')">
+			<div class="card" style="background-image: url('img/grades.jpg')">
 				<a id="link" href="index.php?action=my_grades">Notas</a>
 				<div class="textos">
 					<h3></h3>
 				</div>
 			</div>
-			<div class="card" style="background-image: url('img/8.jpg')">
+			<div class="card" style="background-image: url('img/classroom.jpg')">
 
 				<a id="link" href="index.php?action=my_teachers">Profesores</a>
 				<div class="textos">
@@ -62,7 +62,7 @@ function content_65e8e598685bd4_09766182 (Smarty_Internal_Template $_smarty_tpl)
 				</div>
 			</div>
 
-			<div class="card" style="background-image: url('img/4.jpg')">
+			<div class="card" style="background-image: url('img/schedule.jpg')">
 				<a id="link" href="index.php?action=my_schedule">Horarios</a>
 				<div class="textos">
 					<h3></h3>
@@ -70,7 +70,7 @@ function content_65e8e598685bd4_09766182 (Smarty_Internal_Template $_smarty_tpl)
 				</div>
 			</div>
 
-			<div class="card" style="background-image: url('img/6.jpg')">
+			<div class="card" style="background-image: url('img/attendance.jpg')">
 				<a id="link" href="index.php?action=my_attendance">Asistencia</a>
 				<div class="textos">
 					<h3></h3>
@@ -88,7 +88,7 @@ function content_65e8e598685bd4_09766182 (Smarty_Internal_Template $_smarty_tpl)
 		</div>
 
 		<div class="banner" style="background-image: url('img/banner.jpg')">
-			<a id="link" href="index.php">
+			<a id="link" href="index.php?action=logout">
 				<button class="boton">Cerrar Sesión</button></a>
 		</div>
 	</div>

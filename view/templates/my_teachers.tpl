@@ -21,6 +21,7 @@
 </head>
 
 <body>
+	<h1>Profesores</h1>
 
 	<table border="1">
 		<thead>
