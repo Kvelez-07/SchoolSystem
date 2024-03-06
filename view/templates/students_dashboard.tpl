@@ -57,6 +57,14 @@
 			</div>
 		</div>
 
+		<div class="card" style="background-image: url('img/4.jpg')">
+			<a id="link" href="my_classmates.tpl">Horarios</a>
+			<div class="textos">
+				<h3></h3>
+
+			</div>
+		</div>
+
 		<div class="banner" style="background-image: url('img/banner.jpg')">
 			<a id="link" href="index.php">
 				<button class="boton">Cerrar Sesión</button></a>
