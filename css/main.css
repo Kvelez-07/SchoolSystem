@@ -1,0 +1,469 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.logo {
+display: inline-block;
+background-color: white;
+color: black;
+width: 100px;
+height: 100px;
+position: absolute;
+top: 0px; 
+left: 0px;
+border: 2px solid #4A8A97; /* Define el borde del div */
+
+}
+
+.contenido {
+display: inline-block;
+background-color: whitesmoke;
+color: black;
+width: 1314px;
+height: 566px;
+position: absolute;
+top: 91px;
+left: 0px;
+bottom: 0px;
+right:0px;
+border: 2px solid #ccc; /* Define el borde del div */
+}
+
+.piePagina {
+position: fixed;
+bottom: 0px;
+text-align: center;
+right: 0px;
+}
+
+.logo img {
+    top: 0px;
+    bottom: 0px;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0; /* La imagen se ajusta a la parte superior del contenedor */
+    left: 0; /* La imagen se ajusta a la izquierda del contenedor */
+    opacity: 0.8; 
+}
+
+a {
+text-decoration: none; /* Elimina el subrayado */
+color: black; /* Cambia el color del texto */
+}
+
+.opciones-superiores form button.signup {
+    padding: 10px 20px; /* Ajusta el padding seg�n sea necesario */
+    font-family: Arial, sans-serif; /* Cambia la fuente del texto */
+    border: none; /* Elimina el borde del bot�n */
+    border-radius: 0px; /* Agrega bordes redondeados */
+    background-color: #eaeaea; /* Color de fondo del bot�n */
+    color: #373b3d; /* Color del texto del bot�n */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el bot�n */
+    transition: all 0.3s ease; /* Agrega una transici�n suave a todos los cambios */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); /* Agrega una sombra suave */
+    font-size: 15px;
+    margin-top: -10px; /* Mueve el bot�n 10px hacia arriba */
+}
+
+.opciones-superiores header h1 {
+    margin: 5px 0 0 20px; /* Mover el t�tulo hacia arriba y agregar margen izquierdo */
+    padding: 0px; /* Eliminar el relleno */
+    text-align: left; /* Alinear el texto a la izquierda */
+    font-family: Arial, sans-serif; /* Utilizar una fuente sans-serif */
+    font-size: 20px; /* Tama�o de fuente m�s grande */
+    font-weight: bold; /* Texto en negrita */
+    color: #333; /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+}
+
+.opciones-superiores form button.signup:hover {
+    background-color: #35637e; /* Cambia el color de fondo al pasar el mouse */
+}
+
+ul {
+    list-style-type: square;
+}
+.opciones-superiores {
+    background-color: white;
+    padding: 15px;
+    border: 2px solid #ccc;
+    width: 100%; /* Opcional: si deseas que ocupe todo el ancho del contenedor padre */
+    max-width: 1300px; /* Establece un ancho m�ximo para el div de las opciones */
+    margin: 0 auto; /* Centra el div horizontalmente */
+    height: 57px;
+}
+
+.opciones-superiores ul.menu-derecha {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: flex-end; /* Alinea los elementos al lado derecho del contenedor */
+    list-style-type: none;
+    margin: 0px 0 0 0; /* Margen superior de 15px, sin margen en la parte inferior, sin margen a la izquierda, sin margen a la derecha */
+    padding: 0;
+}
+
+.opciones-superiores ul li {
+    display: inline;
+    margin-right: 20px; /* Aumenta el margen derecho a 20px */
+}
+.opciones-superiores ul.menu-derecha li a {
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s; /* Agrega una transici�n suave al color de fondo y al color del texto */
+    font-size: 18px; /* Ajusta el tama�o de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    
+    
+}
+
+.opciones-superiores ul.menu-derecha li a:hover {
+    /* Elimina la declaraci�n que establece el color de fondo */
+    background-color: transparent; 
+    color: #35637e; /* Cambia el color del texto al pasar el cursor */
+}
+
+#contenido {
+    text-align: center; /* Centrar el texto */
+    display: flex; /* Utilizar flexbox para centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100%; /* Ocupar toda la altura disponible */
+    background-color: #ccc;
+}
+
+/* Estilos para la lista de direcciones */
+#contenido ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#contenido ul li {
+    margin-bottom: 35px; /* Espacio entre elementos de la lista */
+    font-size: 20px;
+}
+
+#contenido ul li i {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+#contenido ul li a {
+    text-decoration: none;
+    color: #4A8A97; /* Color del enlace */
+}
+
+#contenido ul li a:hover {
+    text-decoration: underline; /* Subrayar enlace al pasar el cursor */
+    color: #2C3E50; /* Cambiar color al pasar el cursor */
+}
+
+/* Estilos para las redes sociales */
+#contenido ul ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#contenido ul ul li {
+    display: inline-block; /* Mostrar los elementos de redes sociales en l�nea */
+    margin-right: 10px; /* Espacio entre elementos de redes sociales */
+}
+
+#contenido ul ul li a {
+    text-decoration: none;
+    color: #4A8A97; /* Color del enlace */
+}
+
+#contenido ul ul li a:hover {
+    text-decoration: underline; /* Subrayar enlace al pasar el cursor */
+    color: #2C3E50; /* Cambiar color al pasar el cursor */
+}
+
+
+#fotos-container img:nth-child(1) {
+    /* Estilos para la primera imagen */
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    margin-left: 30px;
+}
+
+#fotos-container img:nth-child(2) {
+    /* Estilos para la segunda imagen */
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    margin-left: 350px;
+}
+
+#fotos-container img:nth-child(3) {
+    /* Estilos para la tercera imagen */
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    margin-left: 660px;
+}
+
+#fotos-container img:nth-child(4) {
+    /* Estilos para la cuarta imagen */
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    margin-left: 980px;
+}body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.logo {
+display: inline-block;
+background-color: white;
+color: black;
+width: 100px;
+height: 100px;
+position: absolute;
+top: 0px; 
+left: 0px;
+border: 2px solid #4A8A97; /* Define el borde del div */
+
+}
+
+.contenido {
+display: inline-block;
+background-color: whitesmoke;
+color: black;
+width: 1314px;
+height: 566px;
+position: absolute;
+top: 91px;
+left: 0px;
+bottom: 0px;
+right:0px;
+border: 2px solid #ccc; /* Define el borde del div */
+}
+
+.piePagina {
+position: fixed;
+bottom: 0px;
+text-align: center;
+right: 0px;
+}
+
+.logo img {
+    top: 0px;
+    bottom: 0px;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0; /* La imagen se ajusta a la parte superior del contenedor */
+    left: 0; /* La imagen se ajusta a la izquierda del contenedor */
+    opacity: 0.8; 
+}
+
+a {
+text-decoration: none; /* Elimina el subrayado */
+color: black; /* Cambia el color del texto */
+}
+
+.opciones-superiores form button.login {
+    padding: 10px 20px; /* Ajusta el padding seg�n sea necesario */
+    font-family: Arial, sans-serif; /* Cambia la fuente del texto */
+    border: none; /* Elimina el borde del bot�n */
+    border-radius: 0px; /* Agrega bordes redondeados */
+    background-color: #eaeaea; /* Color de fondo del bot�n */
+    color: #373b3d; /* Color del texto del bot�n */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el bot�n */
+    transition: all 0.3s ease; /* Agrega una transici�n suave a todos los cambios */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); /* Agrega una sombra suave */
+    font-size: 15px;
+    margin-top: -10px; /* Mueve el bot�n 10px hacia arriba */
+}
+
+.opciones-superiores header h1 {
+    margin: 5px 0 0 20px; /* Mover el t�tulo hacia arriba y agregar margen izquierdo */
+    padding: 0px; /* Eliminar el relleno */
+    text-align: left; /* Alinear el texto a la izquierda */
+    font-family: Arial, sans-serif; /* Utilizar una fuente sans-serif */
+    font-size: 20px; /* Tama�o de fuente m�s grande */
+    font-weight: bold; /* Texto en negrita */
+    color: #333; /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+}
+
+
+.opciones-superiores form button.login:hover {
+    background-color: #35637e; /* Cambia el color de fondo al pasar el mouse */
+}
+
+ul {
+    list-style-type: square;
+}
+.opciones-superiores {
+    background-color: white;
+    padding: 15px;
+    border: 2px solid #ccc;
+    width: 100%; /* Opcional: si deseas que ocupe todo el ancho del contenedor padre */
+    max-width: 1300px; /* Establece un ancho m�ximo para el div de las opciones */
+    margin: 0 auto; /* Centra el div horizontalmente */
+    height: 57px;
+}
+
+.opciones-superiores ul.menu-derecha {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: flex-end; /* Alinea los elementos al lado derecho del contenedor */
+    list-style-type: none;
+    margin: 0px 0 0 0; /* Margen superior de 15px, sin margen en la parte inferior, sin margen a la izquierda, sin margen a la derecha */
+    padding: 0;
+}
+
+.opciones-superiores ul li {
+    display: inline;
+    margin-right: 20px; /* Aumenta el margen derecho a 20px */
+}
+.opciones-superiores ul.menu-derecha li a {
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s; /* Agrega una transici�n suave al color de fondo y al color del texto */
+    font-size: 18px; /* Ajusta el tama�o de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    
+    
+}
+
+.opciones-superiores ul.menu-derecha li a:hover {
+    /* Elimina la declaraci�n que establece el color de fondo */
+    background-color: transparent; 
+    color: #35637e; /* Cambia el color del texto al pasar el cursor */
+}
+
+#contenido {
+    text-align: center; /* Centrar el texto */
+    display: flex; /* Utilizar flexbox para centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100%; /* Ocupar toda la altura disponible */
+    background-color: #ccc;
+}
+
+/* Estilos para la lista de direcciones */
+#contenido ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#contenido ul li {
+    margin-bottom: 35px; /* Espacio entre elementos de la lista */
+    font-size: 20px;
+}
+
+#contenido ul li i {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+#contenido ul li a {
+    text-decoration: none;
+    color: #4A8A97; /* Color del enlace */
+}
+
+#contenido ul li a:hover {
+    text-decoration: underline; /* Subrayar enlace al pasar el cursor */
+    color: #2C3E50; /* Cambiar color al pasar el cursor */
+}
+
+/* Estilos para las redes sociales */
+#contenido ul ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#contenido ul ul li {
+    display: inline-block; /* Mostrar los elementos de redes sociales en l�nea */
+    margin-right: 10px; /* Espacio entre elementos de redes sociales */
+}
+
+#contenido ul ul li a {
+    text-decoration: none;
+    color: #4A8A97; /* Color del enlace */
+}
+
+#contenido ul ul li a:hover {
+    text-decoration: underline; /* Subrayar enlace al pasar el cursor */
+    color: #2C3E50; /* Cambiar color al pasar el cursor */
+}
+
+#fotos-container img:nth-child(1) {
+    /* Estilos para la primera imagen */
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    margin-left: 30px;
+}
+
+#fotos-container img:nth-child(2) {
+    /* Estilos para la segunda imagen */
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    margin-left: 350px;
+}
+
+#fotos-container img:nth-child(3) {
+    /* Estilos para la tercera imagen */
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    margin-left: 660px;
+}
+
+#fotos-container img:nth-child(4) {
+    /* Estilos para la cuarta imagen */
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    margin-left: 980px;
+}
+
+#fotos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las im�genes horizontalmente */
+}
+
+#fotos-container img {
+    width: 30%; /* Ancho del 30% del contenedor para que quepan tres im�genes por fila */
+    margin: 10px; /* A�ade un margen entre las im�genes */
+    max-width: 300px; /* Establece un ancho m�ximo para las im�genes */
+    height: auto; /* Permite que la altura se ajuste autom�ticamente */
+}
+/* Estilos para el cuadro de texto de "Sobre nosotros" */
+.sobre-nosotros {
+    background-color: #f9f9f9; /* Color de fondo */
+    border: 2px solid #ddd; /* Borde */
+    padding: 75px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    
+    margin-bottom: 200px;
+}
+
+/* Estilos para el t�tulo del cuadro de texto */
+.sobre-nosotros h2 {
+    font-size: 40px; /* Tama�o de fuente del t�tulo */
+    color: #333; /* Color del texto del t�tulo */
+    margin-bottom: 50px; /* Espacio inferior */
+}
+
+/* Estilos para el p�rrafo del cuadro de texto */
+.sobre-nosotros p {
+    font-size: 20px; /* Tama�o de fuente del p�rrafo */
+    color: #666; /* Color del texto del p�rrafo */
+    line-height: 1.6; /* Altura de l�nea */
+}

@@ -13,8 +13,9 @@
 </head>
 
 <body>
+	<h1>Mi Asistencia</h1>
 	<div class="Exit1">
-		<a id="link" href="students_dashboard.tpl">
+		<a id="link" href="index.php?action=students_dashboard">
 			<button class="boton">Regresar</button></a>
 	</div>
 </body>

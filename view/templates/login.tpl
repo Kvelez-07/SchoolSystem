@@ -4,47 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script defer src="js/script.js">
-
-    </script>
-    <title>School</title>
 </head>
 
 <body>
-    <div class="opciones-superiores">
-
-        <header>
-            <h1>CENTRO EDUCATIVO SAINCTI SPIRITUS</h1>
-            <nav id="opciones">
-
-                <ul class="menu-derecha">
-
-                    <li><a href="#" onclick="mostrarContenidoInicial('contenido');">Hogar</a></li>
-                    <li><a href="#" onclick="mostrarSobreNosotros('contenido');">Sobre nosotros</a></li>
-                    <li><a href="#" onclick="MostrarUbicacion('contenido');">Contacto</a></li>
-                    <li><a href="#" onclick="MostrarInstalaciones('contenido');">Instalaciones</a></li>
-                    <li>
-                        <form action="index.php" method="post">
-                            <button type="submit" id="signup" name="signup" class='signup'>Ingresar</button>
-                        </form>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+    <div id="main-form">
+        <form action="index.php" method="post">
+            <h1>Login</h1>
+            <p>Favor rellenar todos los campos</p>
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <select name="user_type" id="user_type" name="user_type" title="user_type" required>
+                <option value="Student">Alumno</option>
+                <option value="Teacher">Profesor</option>
+            </select>
+            <input type="submit" name="logUser" value="LogIn">
+        </form>
     </div>
 
-    <div class="contenido" id="contenido">
-
-        <li><img src="img/institution.jpg" alt="Institution image" /></li>
-
+    <div class="main-page">
+        <button type="submit" id="main" name="main" onclick="window.location.href='index.php'">Back</button>
     </div>
-
-
-    <footer class="piePagina">
-        <p>&copy; 2024 My Website. All rights reserved.</p>
-    </footer>
 </body>
 
 </html>

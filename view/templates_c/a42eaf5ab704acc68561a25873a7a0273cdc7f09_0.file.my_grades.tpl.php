@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.4.1, created on 2024-03-06 22:25:43
+  from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\my_grades.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.4.1',
+  'unifunc' => 'content_65e8df576df037_07356551',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'a42eaf5ab704acc68561a25873a7a0273cdc7f09' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\my_grades.tpl',
+      1 => 1709760180,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_65e8df576df037_07356551 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -76,4 +99,5 @@
     </div>
 </body>
 
-</html>
+</html><?php }
+}

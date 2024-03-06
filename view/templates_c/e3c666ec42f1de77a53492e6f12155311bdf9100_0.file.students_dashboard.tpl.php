@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.4.1, created on 2024-03-06 22:52:24
+  from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\students_dashboard.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.4.1',
+  'unifunc' => 'content_65e8e598685bd4_09766182',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'e3c666ec42f1de77a53492e6f12155311bdf9100' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\students_dashboard.tpl',
+      1 => 1709761779,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_65e8e598685bd4_09766182 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -65,10 +88,11 @@
 		</div>
 
 		<div class="banner" style="background-image: url('img/banner.jpg')">
-			<a id="link" href="index.php?action=logout">
+			<a id="link" href="index.php">
 				<button class="boton">Cerrar Sesión</button></a>
 		</div>
 	</div>
 </body>
 
-</html>
+</html><?php }
+}
