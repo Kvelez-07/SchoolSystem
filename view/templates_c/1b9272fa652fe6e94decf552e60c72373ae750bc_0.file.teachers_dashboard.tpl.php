@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-06 23:13:06
+/* Smarty version 4.4.1, created on 2024-03-07 04:33:27
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\teachers_dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e8ea72637c64_37710481',
+  'unifunc' => 'content_65e935875f8a56_65584967',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1b9272fa652fe6e94decf552e60c72373ae750bc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\teachers_dashboard.tpl',
-      1 => 1709763154,
+      1 => 1709763301,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e8ea72637c64_37710481 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65e935875f8a56_65584967 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -53,7 +53,7 @@ function content_65e8ea72637c64_37710481 (Smarty_Internal_Template $_smarty_tpl)
 					<h3></h3>
 				</div>
 			</div>
-			<div class="card" style="background-image: url('img/8.jpg')">
+			<div class="card" style="background-image: url('img/classroom.jpg')">
 
 				<a id="link" href="index.php?action=other_teachers">Colaboradores</a>
 				<div class="textos">
@@ -62,7 +62,7 @@ function content_65e8ea72637c64_37710481 (Smarty_Internal_Template $_smarty_tpl)
 				</div>
 			</div>
 
-			<div class="card" style="background-image: url('img/4.jpg')">
+			<div class="card" style="background-image: url('img/schedule.jpg')">
 				<a id="link" href="index.php?action=teacher_schedule">Horarios</a>
 				<div class="textos">
 					<h3></h3>
@@ -70,7 +70,7 @@ function content_65e8ea72637c64_37710481 (Smarty_Internal_Template $_smarty_tpl)
 				</div>
 			</div>
 
-			<div class="card" style="background-image: url('img/6.jpg')">
+			<div class="card" style="background-image: url('img/attendance.jpg')">
 				<a id="link" href="index.php?action=students_attendance">Asistencia</a>
 				<div class="textos">
 					<h3></h3>

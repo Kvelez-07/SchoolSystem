@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-06 23:43:26
+/* Smarty version 4.4.1, created on 2024-03-07 05:40:06
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e8f18e23a764_72294431',
+  'unifunc' => 'content_65e945268c3885_27117392',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '64db2aabed8840e37379ed111f2c0fd95d26a8ff' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\main.tpl',
-      1 => 1709765002,
+      1 => 1709782736,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e8f18e23a764_72294431 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65e945268c3885_27117392 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -53,7 +53,6 @@ function content_65e8f18e23a764_72294431 (Smarty_Internal_Template $_smarty_tpl)
                     <li>
                         <form action="index.php" method="post">
                             <button type="submit" id="login" name="login" class='login'>Ingresar</button>
-                            <button type="submit" id="login" name="login" class='login'>Registrarse</button>
                         </form>
                     </li>
                 </ul>
@@ -64,7 +63,6 @@ function content_65e8f18e23a764_72294431 (Smarty_Internal_Template $_smarty_tpl)
     <div class="contenido" id="contenido">
         <li><img src="img/institution.jpg" alt="Institution image" /></li>
     </div>
-
 
     <footer class="piePagina">
         <p>&copy; 2024 My Website. All rights reserved.</p>

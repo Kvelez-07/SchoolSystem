@@ -23,11 +23,26 @@
 <body>
 	<h1>Profesores</h1>
 
-	<table border="1">
+	<form action="index.php" method="POST">
+		<select name="subject">
+			<!-- materia -->
+			<option value="javascript">JS</option>
+			<option value="php">PHP</option>
+			<option value="java">Java</option>
+			<option value="golang">Golang</option>
+			<option value="python">Python</option>
+			<option value="css">CSS</option>
+			<option value="c++">C++</option>
+			<option value="erlang">Erlang</option>
+		</select>
+		<input type="submit" name="get_teachers" value="Profesor">
+	</form>
+
+	<table border="2">
 		<thead>
 			<tr>
-				<td>Nombre del Profesor</td>
-				<td>Materia que imparte</td>
+				<td>NombreProfesor</td>
+				<td>Materia</td>
 			</tr>
 		</thead>
 		<tbody>

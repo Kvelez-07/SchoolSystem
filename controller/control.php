@@ -28,8 +28,8 @@ class Control {
     }
 
     private function processUserLogin() {
-        require_once "model/login.php"; // call the SQL login model
-        $user_type = login($conn); // Call the login function
+        require_once "model/UserModel.php"; // call the SQL login model
+        $user_type = UserModel::userLogin($conn); // Call the login function form the model
         switch($user_type) {
             case "Teacher":
                 $this->view->setDisplay("teachers_dashboard.tpl");

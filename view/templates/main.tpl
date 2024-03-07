@@ -39,7 +39,6 @@
         <li><img src="img/institution.jpg" alt="Institution image" /></li>
     </div>
 
-
     <footer class="piePagina">
         <p>&copy; 2024 My Website. All rights reserved.</p>
     </footer>
