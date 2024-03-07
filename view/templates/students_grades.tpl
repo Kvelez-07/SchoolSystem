@@ -27,7 +27,7 @@
             <option value="c++">C++</option>
             <option value="erlang">Erlang</option>
         </select>
-        <input type="submit" name="get_student_grades" value="Notas">
+        <input type="submit" name="student_grades" value="Notas">
     </form>
 
     <table border="2">
@@ -39,9 +39,10 @@
         </thead>
         <tbody>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{foreach from=$student_grades item=item key=key name=name}
+                        <!-- Controller: $this->view->setAssign->(varaible); -->
+                    {/foreach}
+                </td>
             </tr>
         </tbody>
     </table>

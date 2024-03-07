@@ -62,11 +62,6 @@ class UserModel {
                         die();
                     }
                 }
-        
-                if($blood_type != "A+" && $blood_type != "A-" && $blood_type != "B+" && $blood_type != "B-" && $blood_type != "AB+" && $blood_type != "AB-" && $blood_type != "O+" && $blood_type != "O-") {
-                    echo "Invalid blood type";
-                    die();
-                }
             
                 $sql = "SELECT * FROM users WHERE first_name = ? AND last_name = ? AND user_type = ? AND username = ?";
                 $stmt = $conn->prepare($sql);

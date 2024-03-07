@@ -27,7 +27,7 @@
             <option value="c++">C++</option>
             <option value="erlang">Erlang</option>
         </select>
-        <input type="submit" name="get_teacher_schedule" value="Horario">
+        <input type="submit" name="teacher_schedule" value="Horario">
     </form>
 
     <table border="2">
@@ -39,9 +39,10 @@
         </thead>
         <tbody>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{foreach from=$teacher_schedule item=item key=key name=name}
+                        <!-- Controller: $this->view->setAssign->(varaible); -->
+                    {/foreach}
+                </td>
             </tr>
         </tbody>
     </table>

@@ -39,9 +39,10 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>{foreach from=$attendance item=item key=key name=name}
+						<!-- Controller: $this->view->setAssign->(varaible); -->
+					{/foreach}
+				</td>
 			</tr>
 		</tbody>
 	</table>
