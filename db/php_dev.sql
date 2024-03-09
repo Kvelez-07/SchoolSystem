@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2024 at 07:51 AM
+-- Generation Time: Mar 09, 2024 at 10:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -145,18 +145,29 @@ CREATE TABLE `students` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name1` varchar(255) NOT NULL,
   `last_name2` varchar(255) NOT NULL,
-  `school_levels_id` int(11) NOT NULL
+  `school_levels_id` int(11) NOT NULL,
+  `birth` datetime NOT NULL DEFAULT current_timestamp(),
+  `blood` enum('A+','A-','B+','B-','O+','O-','AB+','AB-') NOT NULL,
+  `nationality` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `id_card` varchar(255) NOT NULL,
+  `contact1_name` varchar(255) NOT NULL,
+  `contact1_phone` varchar(255) NOT NULL,
+  `contact2_name` varchar(255) NOT NULL,
+  `contact2_phone` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `username`, `password`, `first_name`, `last_name1`, `last_name2`, `school_levels_id`) VALUES
-(1, 'Kvelez07', '$2y$10$N/DizjHKgsG9Pi3Qdva2C.NJd/p/smMY97fEnDjxoZihCZGTW/6zO', 'Kevin', 'Velez', 'Salazar', 1);
+INSERT INTO `students` (`id`, `username`, `password`, `email`, `first_name`, `last_name1`, `last_name2`, `school_levels_id`, `birth`, `blood`, `nationality`, `address`, `phone`, `id_card`, `contact1_name`, `contact1_phone`, `contact2_name`, `contact2_phone`) VALUES
+(1, 'Kvelez07', '$2y$10$DbZQ8qLuK0foTUdprhPBn.VY5m3r92BSevF7oE8lpEriOdlTgawj2', 'kvelezsalazar07@gmail.com', 'Kevin', 'Velez', 'Salazar', 1, '2024-03-09 00:00:00', 'A+', 'Costa Rica', 'Heredia', '87020253', '118940941', 'Dad', '0', 'Mom', '0');
 
 -- --------------------------------------------------------
 
@@ -197,15 +208,21 @@ CREATE TABLE `teachers` (
   `last_name1` varchar(255) NOT NULL,
   `last_name2` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `specialty` enum('spanish','social_studies','science','math') NOT NULL
+  `specialty` enum('spanish','social_studies','science','math') NOT NULL,
+  `birth` datetime NOT NULL DEFAULT current_timestamp(),
+  `blood` enum('A+','A-','B+','B-','O+','O-','AB+','AB-') NOT NULL,
+  `nationality` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `id_card` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `teachers`
 --
 
-INSERT INTO `teachers` (`id`, `username`, `password`, `first_name`, `last_name1`, `last_name2`, `email`, `specialty`) VALUES
-(1, 'Kvelez07', '$2y$10$o0/YeidOHBVBuUmN9W6tYeFvDRorjEQL5Ryb/hsJpZ93f3WOeMV5i', 'Kevin', 'Velez', 'Salazar', 'kvelezsalazar@gmail.com', 'social_studies');
+INSERT INTO `teachers` (`id`, `username`, `password`, `first_name`, `last_name1`, `last_name2`, `email`, `specialty`, `birth`, `blood`, `nationality`, `address`, `phone`, `id_card`) VALUES
+(1, 'Kvelez07', '$2y$10$o0/YeidOHBVBuUmN9W6tYeFvDRorjEQL5Ryb/hsJpZ93f3WOeMV5i', 'Kevin', 'Velez', 'Salazar', 'kvelezsalazar@gmail.com', 'social_studies', '2024-03-09 13:38:53', 'A+', '', '', '', '0');
 
 --
 -- Indexes for dumped tables
@@ -336,7 +353,7 @@ ALTER TABLE `specialties`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `subjects`
@@ -348,7 +365,7 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
