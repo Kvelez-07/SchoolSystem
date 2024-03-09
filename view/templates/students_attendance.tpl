@@ -35,10 +35,10 @@
         </thead>
         <tbody>
             <tr>
-                <td>{foreach from=$student_attendance item=item key=key name=name}
+                {* <td>{foreach from=$student_attendance item=item key=key name=name}
                     <!-- Controller: $this->view->setAssign->(varaible); -->
                     {/foreach}
-                </td>
+                </td> *}
             </tr>
         </tbody>
     </table>

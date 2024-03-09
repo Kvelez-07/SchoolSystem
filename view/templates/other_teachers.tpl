@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <h1>Otros Profesores</h1>
+    <h1>Profesores</h1>
 
     <form action="index.php" method="POST">
         <select name="subject">
@@ -35,10 +35,10 @@
         </thead>
         <tbody>
             <tr>
-                <td>{foreach from=$collaborators item=item key=key name=name}
-                    <!-- Controller: $this->view->setAssign->(varaible); -->
+                {* <td>{foreach from=$collaborators item=item key=key name=name}
+                        <!-- Controller: $this->view->setAssign->(varaible); -->
                     {/foreach}
-                </td>
+                </td> *}
             </tr>
         </tbody>
     </table>

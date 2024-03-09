@@ -12,7 +12,6 @@ class Control {
     }
 
     public function framework_manager(){
-        // $this->view->setDisplay("signup.tpl");
         if(isset($_REQUEST['login'])) {
             $this->processLogin();
         } else if(isset($_REQUEST['logUser'])) {
@@ -81,6 +80,33 @@ class Control {
                 break;
             case "teachers_dashboard":
                 $this->view->setDisplay("teachers_dashboard.tpl");
+                break;
+            case "signup":
+                $this->view->setDisplay("signup.tpl");
+                break;
+            case "read_user":
+                $this->view->setDisplay("read_user.tpl");
+                break;
+            case "update_user":
+                $this->view->setDisplay("update_user.tpl");
+                break;
+            case "delete_user":
+                $this->view->setDisplay("delete_user.tpl");
+                break;
+            case "create_subject":
+                $this->view->setDisplay("create_subject.tpl");
+                break;
+            case "read_subject":
+                $this->view->setDisplay("read_subject.tpl");
+                break;
+            case "update_subject":
+                $this->view->setDisplay("update_subject.tpl");
+                break;
+            case "delete_subject":
+                $this->view->setDisplay("delete_subject.tpl");
+                break;
+            case "admin_login":
+                $this->view->setDisplay("admin_login.tpl");
                 break;
             case "logout": // session destruction needed.
                 $this->view->setDisplay("main.tpl");

@@ -7,31 +7,40 @@ class UserModel {
     public static function userLogin($conn) {
         $username = filter_var($_POST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $password = $_POST['password'];
-        $user_type = filter_var($_POST['user_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $user_type = '';
     
         // Prepare and execute SELECT query
-        $sql = "SELECT * FROM users WHERE username = ? AND user_type = ?";
+        $sql = "SELECT * FROM students WHERE username = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->execute([$username, $user_type]);
+        $stmt->execute([$username]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC); // Fetch only one row
-    
+
         if($user) {
-            // Verify password
             if(password_verify($password, $user['password'])) {
-                switch($user_type) {
-                    case "Teacher":
-                        return "Teacher";
-                    case "Student":
-                        return "Student";
-                    default:
-                        return "Invalid user type";
-                }
+                session_start();
+                $_SESSION['username'] = $user['username'];
+                $user_type = "Student";
             } else {
-                return "Incorrect password";
+                return "Incorrect username or password";
+            }
+        } else {
+            // Prepare and execute SELECT query
+            $sql = "SELECT * FROM teachers WHERE username = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$username]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC); // Fetch only one row
+
+            if($user) {
+                if(password_verify($password, $user['password'])) {
+                    session_start();
+                    $_SESSION['username'] = $user['username'];
+                    $user_type = "Teacher";
+                }
             }
         }
         $stmt = null; // Close statement
         $conn = null; // Close connection
+        return $user_type; // Return to controller.
     }
 
     public static function createUser($conn) {
@@ -81,6 +90,46 @@ class UserModel {
                 $stmt = null;
                 $conn = null;
             }
+        }
+    }
+
+    public static function readUser($conn) {
+        if(isset($_REQUEST['read'])) {
+            $username = $_REQUEST['username'];
+            $user_type = $_REQUEST['user_type'];
+            $first_name = $_REQUEST['first_name'];
+            $last_name = $_REQUEST['last_name'];
+        
+            $username = filter_var($username, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $user_type = filter_var($user_type, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $first_name = filter_var($first_name, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $last_name = filter_var($last_name, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        
+            if(empty($username) && empty($user_type) && empty($first_name) && empty($last_name)) {
+                echo "All fields are required";
+                exit;
+            }
+        
+            if($user_type != "Student" && $user_type != "Teacher") {
+                echo "Invalid user type";
+                exit;
+            }
+            
+            $sql = "SELECT * FROM users WHERE username = ? AND user_type = ? AND first_name = ? AND last_name = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$username, $user_type, $first_name, $last_name]);
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+            if(empty($result)) {
+                echo "User not found";
+                exit;
+            }
+        
+            $stmt = null;
+            $conn = null;
+        
+        } else {
+            echo "User not found";
         }
     }
 
@@ -168,46 +217,6 @@ class UserModel {
             
             $stmt = null;
             $conn = null;
-        }
-    }
-
-    public static function getUser($conn) {
-        if(isset($_REQUEST['read'])) {
-            $username = $_REQUEST['username'];
-            $user_type = $_REQUEST['user_type'];
-            $first_name = $_REQUEST['first_name'];
-            $last_name = $_REQUEST['last_name'];
-        
-            $username = filter_var($username, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $user_type = filter_var($user_type, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $first_name = filter_var($first_name, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $last_name = filter_var($last_name, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        
-            if(empty($username) && empty($user_type) && empty($first_name) && empty($last_name)) {
-                echo "All fields are required";
-                exit;
-            }
-        
-            if($user_type != "Student" && $user_type != "Teacher") {
-                echo "Invalid user type";
-                exit;
-            }
-            
-            $sql = "SELECT * FROM users WHERE username = ? AND user_type = ? AND first_name = ? AND last_name = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->execute([$username, $user_type, $first_name, $last_name]);
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-            if(empty($result)) {
-                echo "User not found";
-                exit;
-            }
-        
-            $stmt = null;
-            $conn = null;
-        
-        } else {
-            echo "User not found";
         }
     }
 }
