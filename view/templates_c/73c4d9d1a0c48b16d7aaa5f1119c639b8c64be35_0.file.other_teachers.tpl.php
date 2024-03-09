@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-06 22:54:59
+/* Smarty version 4.4.1, created on 2024-03-09 19:55:01
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\other_teachers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e8e6336e72f1_32411137',
+  'unifunc' => 'content_65ecb0859066c0_11032559',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '73c4d9d1a0c48b16d7aaa5f1119c639b8c64be35' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\other_teachers.tpl',
-      1 => 1709761758,
+      1 => 1709967562,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e8e6336e72f1_32411137 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65ecb0859066c0_11032559 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +36,32 @@ function content_65e8e6336e72f1_32411137 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 
 <body>
-    <h1>Otros Profesores</h1>
+    <h1>Profesores</h1>
+
+    <form action="index.php" method="POST">
+        <select name="subject">
+            <!-- materia -->
+            <option value="spanish">Español</option>
+            <option value="social_studies">Estudios Sociales</option>
+            <option value="science">Ciencias</option>
+            <option value="math">Mate</option>
+        </select>
+        <input type="submit" name="get_collaborators" value="Profesor">
+    </form>
+
+    <table border="2">
+        <thead>
+            <tr>
+                <td>Profesor</td>
+                <td>Materia</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                            </tr>
+        </tbody>
+    </table>
+
     <div class="Exit1">
         <a id="link" href="index.php?action=teachers_dashboard">
             <button class="boton">Regresar</button></a>

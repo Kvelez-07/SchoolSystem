@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-09 03:34:34
+/* Smarty version 4.4.1, created on 2024-03-09 19:55:32
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\students_attendance.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65ebcaba665683_16977359',
+  'unifunc' => 'content_65ecb0a4515bb1_33821357',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '826a2fa01671b3efe8368af25b517e00966dd212' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\students_attendance.tpl',
-      1 => 1709950778,
+      1 => 1710010530,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65ebcaba665683_16977359 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65ecb0a4515bb1_33821357 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -58,19 +58,7 @@ function content_65ebcaba665683_16977359 (Smarty_Internal_Template $_smarty_tpl)
         </thead>
         <tbody>
             <tr>
-                <td><?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['student_attendance']->value, 'item', false, 'key', 'name', array (
-));
-$_smarty_tpl->tpl_vars['item']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['item']->value) {
-$_smarty_tpl->tpl_vars['item']->do_else = false;
-?>
-                    <!-- Controller: $this->view->setAssign->(varaible); -->
-                    <?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                </td>
-            </tr>
+                            </tr>
         </tbody>
     </table>
 

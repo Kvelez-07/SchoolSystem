@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.4.1, created on 2024-03-09 22:40:36
+  from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\read_user.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.4.1',
+  'unifunc' => 'content_65ecd754bab227_63964330',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'a3984f99cd3459eebf2ccd85306e0b37797a5cfe' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\read_user.tpl',
+      1 => 1710020434,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_65ecd754bab227_63964330 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -35,12 +58,10 @@
         </thead>
         <tbody>
             <td>
-                {* {foreach from=$result item=$student_data}
-                    {$student_data} <br>
-                {/foreach} *}
-            </td>
+                            </td>
         </tbody>
     </table>
 </body>
 
-</html>
+</html><?php }
+}

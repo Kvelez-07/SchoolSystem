@@ -16,7 +16,10 @@ class Control {
             $this->processLogin();
         } else if(isset($_REQUEST['logUser'])) {
             $this->processUserLogin();
-        } else if(isset($_GET['action'])) {
+        } else if(isset($_REQUEST['signup'])) {
+            $this->processSignup();
+        }
+        else if(isset($_GET['action'])) {
             $this->processAction();
         } else {
             $this->view->setDisplay("main.tpl"); // display the main page
@@ -37,10 +40,23 @@ class Control {
             case "Student":
                 $this->view->setDisplay("students_dashboard.tpl");
                 break;
+            case "Admin":
+                $this->view->setDisplay("admin_dashboard.tpl");
+                break;
             default:
                 $this->view->setDisplay("login.tpl");
                 break;
         }
+    }
+
+    private function processSignup() {
+        require_once "model/UserModel.php";
+        UserModel::createUser($conn);
+    }
+
+    private function userFetching() {
+        require_once "model/UserModel.php";
+        UserModel::readUser($conn);
     }
 
     private function processAction() {
@@ -80,6 +96,9 @@ class Control {
                 break;
             case "teachers_dashboard":
                 $this->view->setDisplay("teachers_dashboard.tpl");
+                break;
+            case "admin_dashboard":
+                $this->view->setDisplay("admin_dashboard.tpl");
                 break;
             case "signup":
                 $this->view->setDisplay("signup.tpl");

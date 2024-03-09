@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgb(144, 155, 167), rgb(83, 187, 118));
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.dashboard_header {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.dashboard_header a {
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    background: linear-gradient(rgb(60, 154, 189), rgb(126, 135, 129));
+}
+
+.user_manipulation {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-bottom: 1px solid #ccc;
+    padding: 5rem;
+}
+
+.user_manipulation a {
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    background: linear-gradient(rgb(60, 154, 189), rgb(126, 135, 129));
+}
+
+.user_manipulation a:hover {
+    background: linear-gradient(rgb(83, 187, 118), rgb(91, 67, 210));
+}
+
+.subject_manipulation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-bottom: 1px solid #ccc;
+    padding: 5rem;
+}
+
+.subject_manipulation a {
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    background: linear-gradient(rgb(60, 154, 189), rgb(126, 135, 129));
+}
+
+.subject_manipulation a:hover {
+    background: linear-gradient(rgb(83, 187, 118), rgb(91, 67, 210));
+}

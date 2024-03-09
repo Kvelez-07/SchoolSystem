@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.4.1, created on 2024-03-09 21:57:26
+  from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\update_user.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.4.1',
+  'unifunc' => 'content_65eccd36d68911_83910511',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'c4e33060db7544bd4b9ab1a61c4c054b61e270db' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\update_user.tpl',
+      1 => 1710017818,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_65eccd36d68911_83910511 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,7 +33,9 @@
 <body>
     <h1>Update</h1>
 
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+    <form action="<?php echo '<?php'; ?>
+ echo $_SERVER['PHP_SELF']; <?php echo '?>'; ?>
+" method="POST">
         <p>Past data: (double check values before updating)</p>
         <input type="text" name="username" placeholder="Old Username">
         <select name="user_type" id="user_type">
@@ -39,4 +64,5 @@
 
 </body>
 
-</html>
+</html><?php }
+}
