@@ -21,7 +21,7 @@
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <select name="user_type" id="user_type" required>
-                    <option value="Student">Alumno</option>
+                    <option value="Student">Estudiante</option>
                     <option value="Teacher">Profe</option>
                 </select> <br> <br>
                 <input type="text" name="first_name" placeholder="First Name" required>
@@ -59,7 +59,9 @@
         </form> <br>
     </div>
 
-    <a href="index.php?action=logout"><button>Back</button></a>
+    <div class="exit_button">
+        <a href="index.php?action=logout"><button>Back</button></a>
+    </div>
 </body>
 
 </html>

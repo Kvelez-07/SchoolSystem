@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-09 02:24:58
+/* Smarty version 4.4.1, created on 2024-03-09 07:46:46
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\signup.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65ebba6a396c74_81959598',
+  'unifunc' => 'content_65ec05d6cff5f6_88343052',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5759710ace54501c7855d7779b0ee4a5a8fb799f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\signup.tpl',
-      1 => 1709947493,
+      1 => 1709966778,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65ebba6a396c74_81959598 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65ec05d6cff5f6_88343052 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +44,7 @@ function content_65ebba6a396c74_81959598 (Smarty_Internal_Template $_smarty_tpl)
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <select name="user_type" id="user_type" required>
-                    <option value="Student">Alumno</option>
+                    <option value="Student">Estudiante</option>
                     <option value="Teacher">Profe</option>
                 </select> <br> <br>
                 <input type="text" name="first_name" placeholder="First Name" required>
@@ -82,7 +82,9 @@ function content_65ebba6a396c74_81959598 (Smarty_Internal_Template $_smarty_tpl)
         </form> <br>
     </div>
 
-    <a href="index.php?action=logout"><button>Back</button></a>
+    <div class="exit_button">
+        <a href="index.php?action=logout"><button>Back</button></a>
+    </div>
 </body>
 
 </html><?php }

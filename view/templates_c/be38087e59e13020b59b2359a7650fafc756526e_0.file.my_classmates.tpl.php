@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-07 06:59:19
+/* Smarty version 4.4.1, created on 2024-03-09 03:33:28
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\my_classmates.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e957b7671ea0_41865947',
+  'unifunc' => 'content_65ebca788c29c0_44239759',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'be38087e59e13020b59b2359a7650fafc756526e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\my_classmates.tpl',
-      1 => 1709791156,
+      1 => 1709950778,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e957b7671ea0_41865947 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65ebca788c29c0_44239759 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -41,19 +41,15 @@ function content_65e957b7671ea0_41865947 (Smarty_Internal_Template $_smarty_tpl)
 	<form action="index.php" method="POST">
 		<select name="subject">
 			<!-- materia -->
-			<option value="javascript">JS</option>
-			<option value="php">PHP</option>
-			<option value="java">Java</option>
-			<option value="golang">Golang</option>
-			<option value="python">Python</option>
-			<option value="css">CSS</option>
-			<option value="c++">C++</option>
-			<option value="erlang">Erlang</option>
+			<option value="spanish">Español</option>
+			<option value="social_studies">Estudios Sociales</option>
+			<option value="science">Ciencias</option>
+			<option value="math">Mate</option>
 		</select>
 		<input type="submit" name="get_classmates" value="Compañeros">
 	</form>
 
-	<table border="3">
+	<table border="2">
 		<thead>
 			<tr>
 				<td>Compañero</td>
@@ -62,9 +58,18 @@ function content_65e957b7671ea0_41865947 (Smarty_Internal_Template $_smarty_tpl)
 		</thead>
 		<tbody>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td><?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['classmate']->value, 'item', false, 'key', 'name', array (
+));
+$_smarty_tpl->tpl_vars['item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->do_else = false;
+?>
+					<!-- Controller: $this->view->setAssign->(varaible); -->
+					<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+				</td>
 			</tr>
 		</tbody>
 	</table>
