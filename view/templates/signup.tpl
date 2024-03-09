@@ -5,52 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/signup.css">
 </head>
 
 <body>
 
-    <h1>Create</h1>
+    <header class="signup_header">
+        <h1>MATRICULA SAINCTI SPIRITUS</h1>
+    </header>
 
-    <form action="index.php" method="POST">
-        <h3>Usuario:</h3>
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <select name="user_type" id="user_type" required>
-            <option value="Student">Alumno</option>
-            <option value="Teacher">Profe</option>
-        </select>
-        <input type="text" name="first_name" placeholder="First Name" required>
-        <input type="text" name="last_name" placeholder="Last Name" required>
-        <input type="text" name="id_card" placeholder="ID Card" required> <br> <br>
-        <input type="text" name="nationality" placeholder="Nationality" required>
-        <label for="birth_date">Nacimiento:</label>
-        <input type="date" name="birth_date" required>
-        Tipo Sangre:
-        <select name="blood_type" id="blood_type" required>
-            <option value="A+">A+</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B-">B-</option>
-            <option value="AB+">AB+</option>
-            <option value="AB-">AB-</option>
-            <option value="O+">O+</option>
-            <option value="O-">O-</option>
-        </select>
-        <input type="text" name="address" placeholder="Address" required>
-        <input type="text" name="email" placeholder="Email" required>
-        <input type="text" name="phone" placeholder="Phone" required>
+    <div class="signup_form">
+        <form action="index.php" method="POST">
+            <div class="personal_data">
+                <h3>Usuario:</h3>
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <select name="user_type" id="user_type" required>
+                    <option value="Student">Alumno</option>
+                    <option value="Teacher">Profe</option>
+                </select> <br> <br>
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+                <input type="text" name="id_card" placeholder="ID Card" required>
+                <input type="text" name="nationality" placeholder="Nationality" required>
+                <label for="birth_date">Nacimiento:</label> <br><br>
+                <input type="date" name="birth_date" required>
+                <label for="blood_type">Tipo de Sangre:</label>
+                <select name="blood_type" id="blood_type" required>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select> <br><br>
+                <input type="text" name="email" placeholder="Email" required>
+                <input type="text" name="phone" placeholder="Phone" required>
+                <input type="text" name="address" placeholder="Address" required>
+            </div>
 
-        <h3>Contactos:</h3>
-        <p>Papa: </p>
-        <input type="text" name="dad_name" placeholder="Dad Name">
-        <input type="text" name="dad_phone" placeholder="Dad Phone">
-        <p>Mama: </p>
-        <input type="text" name="mom_name" placeholder="Mom Name">
-        <input type="text" name="mom_phone" placeholder="Mom Phone">
-        <input type="submit" name="singup" value="signup">
-    </form> <br>
+            <div class="contact_data">
+                <h3>Contactos:</h3>
+                <p>Papa: </p>
+                <input type="text" name="dad_name" placeholder="Dad Name">
+                <input type="text" name="dad_phone" placeholder="Dad Phone">
+                <p>Mama: </p>
+                <input type="text" name="mom_name" placeholder="Mom Name">
+                <input type="text" name="mom_phone" placeholder="Mom Phone">
+                <input type="submit" name="signup" value="signup">
+            </div>
+        </form> <br>
+    </div>
 
-    <a href="index.php?action=logout">Back</a>
+    <a href="index.php?action=logout"><button>Back</button></a>
 </body>
 
 </html>

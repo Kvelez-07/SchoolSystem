@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-07 06:56:56
+/* Smarty version 4.4.1, created on 2024-03-09 02:28:23
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\my_schedule.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e957282f43c2_98366902',
+  'unifunc' => 'content_65ebbb37446745_54813651',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a09bbccc93fff63590aa372bcc26e1e4d7e5ff9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\my_schedule.tpl',
-      1 => 1709791008,
+      1 => 1709825877,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e957282f43c2_98366902 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65ebbb37446745_54813651 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -53,7 +53,7 @@ function content_65e957282f43c2_98366902 (Smarty_Internal_Template $_smarty_tpl)
         <input type="submit" name="get_schedule" value="Horario">
     </form>
 
-    <table border="1">
+    <table border="2">
         <thead>
             <tr>
                 <td>Materia</td>
@@ -62,9 +62,18 @@ function content_65e957282f43c2_98366902 (Smarty_Internal_Template $_smarty_tpl)
         </thead>
         <tbody>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['schedule']->value, 'item', false, 'key', 'name', array (
+));
+$_smarty_tpl->tpl_vars['item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->do_else = false;
+?>
+                        <!-- Controller: $this->view->setAssign->(varaible); -->
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                </td>
             </tr>
         </tbody>
     </table>

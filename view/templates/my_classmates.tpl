@@ -18,14 +18,10 @@
 	<form action="index.php" method="POST">
 		<select name="subject">
 			<!-- materia -->
-			<option value="javascript">JS</option>
-			<option value="php">PHP</option>
-			<option value="java">Java</option>
-			<option value="golang">Golang</option>
-			<option value="python">Python</option>
-			<option value="css">CSS</option>
-			<option value="c++">C++</option>
-			<option value="erlang">Erlang</option>
+			<option value="spanish">Español</option>
+			<option value="social_studies">Estudios Sociales</option>
+			<option value="science">Ciencias</option>
+			<option value="math">Mate</option>
 		</select>
 		<input type="submit" name="get_classmates" value="Compañeros">
 	</form>
@@ -40,7 +36,7 @@
 		<tbody>
 			<tr>
 				<td>{foreach from=$classmate item=item key=key name=name}
-						<!-- Controller: $this->view->setAssign->(varaible); -->
+					<!-- Controller: $this->view->setAssign->(varaible); -->
 					{/foreach}
 				</td>
 			</tr>
