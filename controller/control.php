@@ -12,6 +12,7 @@ class Control {
     }
 
     public function framework_manager(){
+        // $this->view->setDisplay("signup.tpl");
         if(isset($_REQUEST['login'])) {
             $this->processLogin();
         } else if(isset($_REQUEST['logUser'])) {

@@ -37,14 +37,10 @@
             <h1>Materias</h1>
             <p>Favor seleccionar la asignatura</p>
             <select name="subjects" id="lang" required>
-                <option value="javascript">JS</option>
-                <option value="php">PHP</option>
-                <option value="java">Java</option>
-                <option value="golang">Golang</option>
-                <option value="python">Python</option>
-                <option value="css">CSS</option>
-                <option value="c++">C++</option>
-                <option value="erlang">Erlang</option>
+                <option value="spanish">Español</option>
+                <option value="social_studies">Estudios Sociales</option>
+                <option value="science">Ciencias</option>
+                <option value="math">Mate</option>
                 <input type="submit" name="get_grades" value="Notas">
             </select>
         </form>
@@ -63,7 +59,7 @@
             <tbody>
                 <tr>
                     <td>{foreach from=$grades item=item key=key name=name}
-                            <!-- Controller: $this->view->setAssign->(varaible); -->
+                        <!-- Controller: $this->view->setAssign->(varaible); -->
                         {/foreach}
                     </td>
                 </tr>

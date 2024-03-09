@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-07 06:59:04
+/* Smarty version 4.4.1, created on 2024-03-09 02:28:26
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\my_attendance.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e957a8ec0e60_01877848',
+  'unifunc' => 'content_65ebbb3a444335_77418595',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9c3ce1381ca198aa9fc3ff9f4ed5e0b7e7b25842' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\my_attendance.tpl',
-      1 => 1709791126,
+      1 => 1709825832,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e957a8ec0e60_01877848 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65ebbb3a444335_77418595 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -53,18 +53,27 @@ function content_65e957a8ec0e60_01877848 (Smarty_Internal_Template $_smarty_tpl)
 		<input type="submit" name="get_attendance" value="Asistencia">
 	</form>
 
-	<table border="1">
+	<table border="2">
 		<thead>
 			<tr>
 				<td>Materia</td>
-				<td>Registro</td> <!-- presente/ausent -->
+				<td>Registro</td> <!-- presente/ausente -->
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td><?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['attendance']->value, 'item', false, 'key', 'name', array (
+));
+$_smarty_tpl->tpl_vars['item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->do_else = false;
+?>
+						<!-- Controller: $this->view->setAssign->(varaible); -->
+					<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+				</td>
 			</tr>
 		</tbody>
 	</table>
