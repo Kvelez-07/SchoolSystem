@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.4.1, created on 2024-03-09 21:59:03
+  from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\delete_user.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.4.1',
+  'unifunc' => 'content_65eccd977f9aa7_37774377',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'c8226102d43c1339c845ac2557b83cda558474cf' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\delete_user.tpl',
+      1 => 1710017932,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_65eccd977f9aa7_37774377 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,4 +47,5 @@
     </form>
 </body>
 
-</html>
+</html><?php }
+}

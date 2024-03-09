@@ -13,9 +13,10 @@
         <form action="index.php" method="post">
             <h1>Login</h1>
             <p>Favor rellenar todos los campos</p>
+            <input type="hidden" id="admin" name="user_type" value="Admin" required>
             <input type="text" id="username" name="username" placeholder="Username" required>
             <input type="password" id="password" name="password" placeholder="Password" required>
-            <input type="submit" name="logAdmin" value="LogIn">
+            <input type="submit" name="logUser" value="LogIn">
         </form>
     </div>
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-06 22:55:05
+/* Smarty version 4.4.1, created on 2024-03-09 19:55:04
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\teacher_schedule.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e8e6395f8833_94202961',
+  'unifunc' => 'content_65ecb088b07014_81574552',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a53ecf52bd1536330a87b6f667b8bdfa9e75b519' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\teacher_schedule.tpl',
-      1 => 1709761856,
+      1 => 1709967562,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e8e6395f8833_94202961 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65ecb088b07014_81574552 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +37,31 @@ function content_65e8e6395f8833_94202961 (Smarty_Internal_Template $_smarty_tpl)
 
 <body>
     <h1>Horarios del Profesor</h1>
+
+    <form action="index.php" method="POST">
+        <select name="subject">
+            <!-- materia -->
+            <option value="spanish">Español</option>
+            <option value="social_studies">Estudios Sociales</option>
+            <option value="science">Ciencias</option>
+            <option value="math">Mate</option>
+        </select>
+        <input type="submit" name="teacher_schedule" value="Horario">
+    </form>
+
+    <table border="2">
+        <thead>
+            <tr>
+                <td>Materia</td>
+                <td>Duracion</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                            </tr>
+        </tbody>
+    </table>
+
     <div class="Exit1">
         <a id="link" href="index.php?action=teachers_dashboard">
             <button class="boton">Regresar</button></a>

@@ -29,7 +29,7 @@
     <table border="2">
         <thead>
             <tr>
-                <td>Estudinte</td>
+                <td>Estudiante</td>
                 <td>Materia</td>
             </tr>
         </thead>
