@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgb(144, 155, 167), rgb(83, 187, 118));
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

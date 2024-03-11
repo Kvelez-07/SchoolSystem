@@ -5,37 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update</title>
+    <link rel="stylesheet" href="css/update_user.css">
 </head>
 
 <body>
-    <h1>Update</h1>
+    <header class="update_user_header">
+        <h1>Update</h1>
+    </header>
 
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-        <p>Past data: (double check values before updating)</p>
-        <input type="text" name="username" placeholder="Old Username">
-        <select name="user_type" id="user_type">
-            <option value="Student">Student</option>
-            <option value="Teacher">Teacher</option>
-        </select>
-        <input type="password" name="password" placeholder="Old Password">
-        <input type="text" name="first_name" placeholder="Old First Name">
-        <input type="text" name="last_name" placeholder="Old Last Name">
-        <input type="text" name="email" placeholder="Old Email">
-        <input type="text" name="phone" placeholder="Old Phone"><br><br>
-        <p>New data (unnecessary updates can be left with previous values):</p>
-        <input type="text" name="new_username" placeholder="New Username">
-        <select name="new_user_type" id="user_type">
-            <option value="Student">Student</option>
-            <option value="Teacher">Teacher</option>
-        </select>
-        <input type="password" name="new_password" placeholder="New Password">
-        <input type="text" name="new_first_name" placeholder="New First Name">
-        <input type="text" name="new_last_name" placeholder="New Last Name">
-        <input type="text" name="new_email" placeholder="New Email">
-        <input type="text" name="new_phone" placeholder="New Phone"><br><br>
-        <a href="index.php?action=admin_dashboard">Back</a> or
-        <input type="submit" name="update_user" value="Update">
-    </form>
+    <div class="update_user_form">
+        <form action="index.php" method="POST">
+            <p>Verification: </p>
+            <input type="text" name="username" placeholder="Username">
+            <select name="user_type" id="user_type">
+                <option value="Student">Student</option>
+                <option value="Teacher">Teacher</option>
+            </select>
+            <input type="password" name="password" placeholder="Password"><br><br>
+
+            <p>New data (unnecessary updates can be left with previous values):</p>
+            <input type="text" name="new_username" placeholder="New Username">
+            <input type="password" name="new_password" placeholder="New Password">
+            <input type="text" name="new_first_name" placeholder="New First Name">
+            <input type="text" name="new_last_name1" placeholder="New Last Name1">
+            <input type="text" name="new_last_name2" placeholder="New Last Name2">
+            <input type="text" name="new_email" placeholder="New Email">
+            <input type="text" name="new_phone" placeholder="New Phone"><br><br>
+
+            <a href="index.php?action=admin_dashboard">Back</a> or
+            <input type="submit" name="update_user" value="Update">
+        </form>
+    </div>
 
 </body>
 
