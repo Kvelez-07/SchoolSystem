@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgb(144, 155, 167), rgb(83, 187, 118));
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.read_user_header {
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 28%;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+
+.read_user_form {
+    background-color: white;
+    padding: 15px;
+    border: 2px solid #ccc;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+.read_user_table {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.read_user_table table {
+    width: 100%;
+}
+
+.read_user_table th,
+.read_user_table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.read_user_table th {
+    background-color: #007bff;
+    color: white;
+}

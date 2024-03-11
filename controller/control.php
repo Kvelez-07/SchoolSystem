@@ -7,7 +7,7 @@ class Control {
     private $view;
 
     public function __construct(){
-        $this->model = null;
+        $this->model = null; // separate Models
         $this->view = new Configuration(); // smarty configuration
     }
 
@@ -18,8 +18,13 @@ class Control {
             $this->processUserLogin();
         } else if(isset($_REQUEST['signup'])) {
             $this->processSignup();
-        }
-        else if(isset($_GET['action'])) {
+        } else if(isset($_REQUEST['delete_user'])) {
+            $this->userDeletion(); // Call the deletion function form the model
+        } else if(isset($_REQUEST['read_user'])) {
+            $this->userFetching(); // Call the fetching function form the model
+        } else if(isset($_REQUEST['update_user'])) {
+            $this->userUpdating(); // Call the updating function form the model
+        } else if(isset($_GET['action'])) {
             $this->processAction();
         } else {
             $this->view->setDisplay("main.tpl"); // display the main page
@@ -59,82 +64,47 @@ class Control {
         UserModel::readUser($conn);
     }
 
+    private function userDeletion() {
+        require_once "model/UserModel.php";
+        UserModel::deleteUser($conn);
+    }
+
+    private function userUpdating() {
+        require_once "model/UserModel.php";
+        UserModel::updateUser($conn);
+    }
+
     private function processAction() {
-        switch($_GET['action']) {
-            case "my_grades":
-                $this->view->setDisplay("my_grades.tpl");
-                break;
-            case "my_teachers":
-                $this->view->setDisplay("my_teachers.tpl");
-                break;
-            case "my_schedule":
-                $this->view->setDisplay("my_schedule.tpl");
-                break;
-            case "my_attendance":
-                $this->view->setDisplay("my_attendance.tpl");
-                break;
-            case "my_classmates":
-                $this->view->setDisplay("my_classmates.tpl");
-                break;
-            case "students_grades":
-                $this->view->setDisplay("students_grades.tpl");
-                break;
-            case "other_teachers":
-                $this->view->setDisplay("other_teachers.tpl");
-                break;
-            case "teacher_schedule":
-                $this->view->setDisplay("teacher_schedule.tpl");
-                break;
-            case "students_attendance":
-                $this->view->setDisplay("students_attendance.tpl");
-                break;
-            case "my_students":
-                $this->view->setDisplay("my_students.tpl");
-                break;
-            case "students_dashboard":
-                $this->view->setDisplay("students_dashboard.tpl");
-                break;
-            case "teachers_dashboard":
-                $this->view->setDisplay("teachers_dashboard.tpl");
-                break;
-            case "admin_dashboard":
-                $this->view->setDisplay("admin_dashboard.tpl");
-                break;
-            case "signup":
-                $this->view->setDisplay("signup.tpl");
-                break;
-            case "read_user":
-                $this->view->setDisplay("read_user.tpl");
-                break;
-            case "update_user":
-                $this->view->setDisplay("update_user.tpl");
-                break;
-            case "delete_user":
-                $this->view->setDisplay("delete_user.tpl");
-                break;
-            case "create_subject":
-                $this->view->setDisplay("create_subject.tpl");
-                break;
-            case "read_subject":
-                $this->view->setDisplay("read_subject.tpl");
-                break;
-            case "update_subject":
-                $this->view->setDisplay("update_subject.tpl");
-                break;
-            case "delete_subject":
-                $this->view->setDisplay("delete_subject.tpl");
-                break;
-            case "admin_login":
-                $this->view->setDisplay("admin_login.tpl");
-                break;
-            case "logout": // session destruction needed.
-                $this->view->setDisplay("main.tpl");
-                break;
-            default:
-                $this->view->setDisplay("main.tpl");
-                break;
-        }
-    }    
+        $actionMap = [
+            "my_grades" => "my_grades.tpl",
+            "my_teachers" => "my_teachers.tpl",
+            "my_schedule" => "my_schedule.tpl",
+            "my_attendance" => "my_attendance.tpl",
+            "my_classmates" => "my_classmates.tpl",
+            "students_grades" => "students_grades.tpl",
+            "other_teachers" => "other_teachers.tpl",
+            "teacher_schedule" => "teacher_schedule.tpl",
+            "students_attendance" => "students_attendance.tpl",
+            "my_students" => "my_students.tpl",
+            "students_dashboard" => "students_dashboard.tpl",
+            "teachers_dashboard" => "teachers_dashboard.tpl",
+            "admin_dashboard" => "admin_dashboard.tpl",
+            "signup" => "signup.tpl",
+            "read_user" => "read_user.tpl",
+            "update_user" => "update_user.tpl",
+            "delete_user" => "delete_user.tpl",
+            "create_subject" => "create_subject.tpl",
+            "read_subject" => "read_subject.tpl",
+            "update_subject" => "update_subject.tpl",
+            "delete_subject" => "delete_subject.tpl",
+            "admin_login" => "admin_login.tpl",
+            "logout" => "main.tpl",
+        ];
+    
+        $action = $_GET['action'] ?? null;
+        $template = $actionMap[$action] ?? "main.tpl";
+        $this->view->setDisplay($template);
+    }       
 
     public function getModel(){
         return $this->model;
