@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2024 at 10:53 PM
+-- Generation Time: Mar 12, 2024 at 11:47 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -138,10 +138,10 @@ CREATE TABLE `specialties` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `students`
+-- Table structure for table `student`
 --
 
-CREATE TABLE `students` (
+CREATE TABLE `student` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -163,10 +163,10 @@ CREATE TABLE `students` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `students`
+-- Dumping data for table `student`
 --
 
-INSERT INTO `students` (`id`, `username`, `password`, `email`, `first_name`, `last_name1`, `last_name2`, `school_levels_id`, `birth`, `blood`, `nationality`, `address`, `phone`, `id_card`, `contact1_name`, `contact1_phone`, `contact2_name`, `contact2_phone`) VALUES
+INSERT INTO `student` (`id`, `username`, `password`, `email`, `first_name`, `last_name1`, `last_name2`, `school_levels_id`, `birth`, `blood`, `nationality`, `address`, `phone`, `id_card`, `contact1_name`, `contact1_phone`, `contact2_name`, `contact2_phone`) VALUES
 (1, 'Kvelez07', '$2y$10$DbZQ8qLuK0foTUdprhPBn.VY5m3r92BSevF7oE8lpEriOdlTgawj2', 'kvelezsalazar07@gmail.com', 'Kevin', 'Velez', 'Salazar', 1, '2024-03-09 00:00:00', 'A+', 'Costa Rica', 'Heredia', '87020253', '118940941', 'Dad', '0', 'Mom', '0');
 
 -- --------------------------------------------------------
@@ -191,16 +191,16 @@ CREATE TABLE `subjects` (
   `id` int(11) NOT NULL,
   `school_levels_id` int(11) NOT NULL,
   `teacher_id` int(11) NOT NULL,
-  `subject_name` varchar(255) NOT NULL
+  `subject_name` enum('spanish','math','social_studies','science') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `teachers`
+-- Table structure for table `teacher`
 --
 
-CREATE TABLE `teachers` (
+CREATE TABLE `teacher` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -218,11 +218,11 @@ CREATE TABLE `teachers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `teachers`
+-- Dumping data for table `teacher`
 --
 
-INSERT INTO `teachers` (`id`, `username`, `password`, `first_name`, `last_name1`, `last_name2`, `email`, `specialty`, `birth`, `blood`, `nationality`, `address`, `phone`, `id_card`) VALUES
-(1, 'Kvelez07', '$2y$10$o0/YeidOHBVBuUmN9W6tYeFvDRorjEQL5Ryb/hsJpZ93f3WOeMV5i', 'Kevin', 'Velez', 'Salazar', 'kvelezsalazar@gmail.com', 'social_studies', '2024-03-09 13:38:53', 'A+', '', '', '', '0');
+INSERT INTO `teacher` (`id`, `username`, `password`, `first_name`, `last_name1`, `last_name2`, `email`, `specialty`, `birth`, `blood`, `nationality`, `address`, `phone`, `id_card`) VALUES
+(1, 'Kvelez07', '$2y$10$o0/YeidOHBVBuUmN9W6tYeFvDRorjEQL5Ryb/hsJpZ93f3WOeMV5i', 'Kevin', 'Velez', 'Salazar', 'kvelezsalazar@gmail.com', 'social_studies', '2024-03-09 13:38:53', 'A+', '', '', '87020253', '0');
 
 --
 -- Indexes for dumped tables
@@ -276,9 +276,9 @@ ALTER TABLE `specialties`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `students`
+-- Indexes for table `student`
 --
-ALTER TABLE `students`
+ALTER TABLE `student`
   ADD PRIMARY KEY (`id`),
   ADD KEY `school_levels` (`school_levels_id`);
 
@@ -298,9 +298,9 @@ ALTER TABLE `subjects`
   ADD KEY `teacher_id` (`teacher_id`);
 
 --
--- Indexes for table `teachers`
+-- Indexes for table `teacher`
 --
-ALTER TABLE `teachers`
+ALTER TABLE `teacher`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -350,10 +350,10 @@ ALTER TABLE `specialties`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `students`
+-- AUTO_INCREMENT for table `student`
 --
-ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `student`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `subjects`
@@ -362,10 +362,10 @@ ALTER TABLE `subjects`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `teachers`
+-- AUTO_INCREMENT for table `teacher`
 --
-ALTER TABLE `teachers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `teacher`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

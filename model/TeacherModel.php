@@ -8,7 +8,15 @@ class TeacherModel {
 
     }
 
+    public static function setAttendance($conn) {
+        
+    }
+
     public static function getGrades($conn) {
+        
+    }
+
+    public static function setGrades($conn) {
         
     }
 
