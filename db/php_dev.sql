@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2024 at 11:47 PM
+-- Generation Time: Mar 13, 2024 at 06:20 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -63,11 +63,20 @@ CREATE TABLE `attendance` (
 
 CREATE TABLE `grades` (
   `id` int(11) NOT NULL,
-  `trimester` int(11) NOT NULL,
+  `trimester` enum('1','2','3') NOT NULL,
   `grades` decimal(10,0) NOT NULL,
   `student_subject_student_id` int(11) NOT NULL,
   `student_subject_subject_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `grades`
+--
+
+INSERT INTO `grades` (`id`, `trimester`, `grades`, `student_subject_student_id`, `student_subject_subject_id`) VALUES
+(1, '1', 100, 1, 1),
+(2, '2', 100, 1, 1),
+(3, '3', 100, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -76,19 +85,9 @@ CREATE TABLE `grades` (
 --
 
 CREATE TABLE `roles` (
-  `id_rol` int(11) NOT NULL,
-  `description` varchar(200) NOT NULL
+  `id_role` int(11) NOT NULL,
+  `description` enum('Admin','Teacher','Student','Parent') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `roles`
---
-
-INSERT INTO `roles` (`id_rol`, `description`) VALUES
-(1, 'Admin'),
-(2, 'Teacher'),
-(3, 'Student'),
-(4, 'Parent');
 
 -- --------------------------------------------------------
 
@@ -103,6 +102,32 @@ CREATE TABLE `schedule` (
   `begins` enum('7am','9am','10am','2pm','3pm','4pm','5pm','6pm') NOT NULL,
   `ends` enum('10am','12pm','3pm','4pm','5pm','7pm','8pm','9pm') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `schedule`
+--
+
+INSERT INTO `schedule` (`id`, `subject_id`, `day`, `begins`, `ends`) VALUES
+(1, 1, 'L', '7am', '10am'),
+(2, 2, 'L', '10am', '12pm'),
+(3, 3, 'L', '2pm', '3pm'),
+(4, 4, 'L', '3pm', '4pm'),
+(5, 5, 'V', '7am', '10am'),
+(6, 6, 'K', '7am', '10am'),
+(7, 7, 'K', '10am', '12pm'),
+(8, 8, 'K', '2pm', '3pm'),
+(9, 9, 'K', '3pm', '4pm'),
+(10, 10, 'V', '7am', '10am'),
+(11, 11, 'M', '7am', '10am'),
+(12, 12, 'M', '10am', '12pm'),
+(13, 13, 'M', '2pm', '3pm'),
+(14, 14, 'M', '3pm', '4pm'),
+(15, 15, 'V', '7am', '10am'),
+(16, 16, 'J', '7am', '10am'),
+(17, 17, 'J', '10am', '12pm'),
+(18, 18, 'J', '2pm', '3pm'),
+(19, 19, 'J', '3pm', '4pm'),
+(20, 20, 'V', '7am', '10am');
 
 -- --------------------------------------------------------
 
@@ -122,7 +147,26 @@ CREATE TABLE `school_levels` (
 --
 
 INSERT INTO `school_levels` (`id`, `school_levels`, `course`, `room`) VALUES
-(1, '7', 'spanish', '1');
+(1, '7', 'spanish', '1'),
+(2, '8', 'spanish', '1'),
+(3, '9', 'spanish', '1'),
+(4, '10', 'spanish', '1'),
+(5, '11', 'spanish', '1'),
+(6, '7', 'social_studies', '2'),
+(7, '8', 'social_studies', '2'),
+(8, '9', 'social_studies', '2'),
+(9, '10', 'social_studies', '2'),
+(10, '11', 'social_studies', '2'),
+(11, '7', 'science', '3'),
+(12, '8', 'science', '3'),
+(13, '9', 'science', '3'),
+(14, '10', 'science', '3'),
+(15, '11', 'science', '3'),
+(16, '7', 'math', '4'),
+(17, '8', 'math', '4'),
+(18, '9', 'math', '4'),
+(19, '10', 'math', '4'),
+(20, '11', 'math', '4');
 
 -- --------------------------------------------------------
 
@@ -132,8 +176,18 @@ INSERT INTO `school_levels` (`id`, `school_levels`, `course`, `room`) VALUES
 
 CREATE TABLE `specialties` (
   `id` int(11) NOT NULL,
-  `description` varchar(255) NOT NULL
+  `description` enum('spanish','math','social_studies','science') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `specialties`
+--
+
+INSERT INTO `specialties` (`id`, `description`) VALUES
+(1, 'spanish'),
+(2, 'math'),
+(3, 'social_studies'),
+(4, 'science');
 
 -- --------------------------------------------------------
 
@@ -194,6 +248,13 @@ CREATE TABLE `subjects` (
   `subject_name` enum('spanish','math','social_studies','science') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `subjects`
+--
+
+INSERT INTO `subjects` (`id`, `school_levels_id`, `teacher_id`, `subject_name`) VALUES
+(1, 1, 1, 'spanish');
+
 -- --------------------------------------------------------
 
 --
@@ -222,7 +283,10 @@ CREATE TABLE `teacher` (
 --
 
 INSERT INTO `teacher` (`id`, `username`, `password`, `first_name`, `last_name1`, `last_name2`, `email`, `specialty`, `birth`, `blood`, `nationality`, `address`, `phone`, `id_card`) VALUES
-(1, 'Kvelez07', '$2y$10$o0/YeidOHBVBuUmN9W6tYeFvDRorjEQL5Ryb/hsJpZ93f3WOeMV5i', 'Kevin', 'Velez', 'Salazar', 'kvelezsalazar@gmail.com', 'social_studies', '2024-03-09 13:38:53', 'A+', '', '', '87020253', '0');
+(1, 'Kvelez07', '$2y$10$o0/YeidOHBVBuUmN9W6tYeFvDRorjEQL5Ryb/hsJpZ93f3WOeMV5i', 'Kevin', 'Velez', 'Salazar', 'kvelezsalazar@gmail.com', 'spanish', '2024-03-09 13:38:53', 'A+', 'Costa Rica', 'Heredia', '87020253', '0'),
+(2, 'Kvelez07', '$2y$10$o0/YeidOHBVBuUmN9W6tYeFvDRorjEQL5Ryb/hsJpZ93f3WOeMV5i', 'Kevin', 'Velez', 'Salazar', 'kvelezsalazar@gmail.com', 'social_studies', '2024-03-09 13:38:53', 'A+', 'Costa Rica', 'Heredia', '87020253', '0'),
+(3, 'Kvelez07', '$2y$10$o0/YeidOHBVBuUmN9W6tYeFvDRorjEQL5Ryb/hsJpZ93f3WOeMV5i', 'Kevin', 'Velez', 'Salazar', 'kvelezsalazar@gmail.com', 'science', '2024-03-09 13:38:53', 'A+', 'Costa Rica', 'Heredia', '87020253', '0'),
+(4, 'Kvelez07', '$2y$10$o0/YeidOHBVBuUmN9W6tYeFvDRorjEQL5Ryb/hsJpZ93f3WOeMV5i', 'Kevin', 'Velez', 'Salazar', 'kvelezsalazar@gmail.com', 'math', '2024-03-09 13:38:53', 'A+', 'Costa Rica', 'Heredia', '87020253', '0');
 
 --
 -- Indexes for dumped tables
@@ -254,7 +318,7 @@ ALTER TABLE `grades`
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
-  ADD PRIMARY KEY (`id_rol`);
+  ADD PRIMARY KEY (`id_role`);
 
 --
 -- Indexes for table `schedule`
@@ -323,31 +387,31 @@ ALTER TABLE `attendance`
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `school_levels`
 --
 ALTER TABLE `school_levels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `specialties`
 --
 ALTER TABLE `specialties`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `student`
@@ -359,13 +423,13 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
