@@ -13,35 +13,49 @@
 </head>
 
 <body>
-    <h1>Estudiantes del Profesor</h1>
+    <h1>Estudiantes</h1>
 
-    <form action="index.php" method="POST">
-        <select name="subject">
-            <!-- materia -->
-            <option value="spanish">Español</option>
-            <option value="social_studies">Estudios Sociales</option>
-            <option value="science">Ciencias</option>
-            <option value="math">Mate</option>
-        </select>
-        <input type="submit" name="get_students" value="Alumnos">
-    </form>
+    <div class="students_form">
+        <form action="index.php" method="POST">
+            <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+            <select name="course">
+                <option value="spanish">Español</option>
+                <option value="social_studies">Estudios Sociales</option>
+                <option value="science">Ciencias</option>
+                <option value="math">Mate</option>
+            </select>
+            <input type="submit" name="get_students" value="Estudiantes">
+        </form><br><br>
+    </div>
 
-    <table border="2">
-        <thead>
-            <tr>
-                <td>Estudiante</td>
-                <td>Materia</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                {* <td>{foreach from=$students item=item key=key name=name}
-                    <!-- Controller: $this->view->setAssign->(varaible); -->
+    <div class="students_table">
+        <table border="2">
+            <thead>
+                <tr>
+                    <td>User</td>
+                    <td>Email</td>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                </tr>
+            </thead>
+            <tbody>
+                {if isset($students_data)}
+                    {foreach from=$students_data item=student}
+                        <tr>
+                            <td>{$student.username}</td>
+                            <td>{$student.email}</td>
+                            <td>{$student.first_name}</td>
+                            <td>{$student.last_name1}</td>
+                        </tr>
                     {/foreach}
-                </td> *}
-            </tr>
-        </tbody>
-    </table>
+                {else}
+                    <tr>
+                        <td colspan="4">No subject data available.</td>
+                    </tr>
+                {/if}
+            </tbody>
+        </table>
+    </div>
 
     <div class="Exit1">
         <a id="link" href="index.php?action=teachers_dashboard">

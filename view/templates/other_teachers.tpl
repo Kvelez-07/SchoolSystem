@@ -15,33 +15,47 @@
 <body>
     <h1>Profesores</h1>
 
-    <form action="index.php" method="POST">
-        <select name="subject">
-            <!-- materia -->
-            <option value="spanish">Español</option>
-            <option value="social_studies">Estudios Sociales</option>
-            <option value="science">Ciencias</option>
-            <option value="math">Mate</option>
-        </select>
-        <input type="submit" name="get_collaborators" value="Profesor">
-    </form>
+    <div class="collaborators_form">
+        <form action="index.php" method="POST">
+            <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+            <select name="course">
+                <option value="spanish">Español</option>
+                <option value="social_studies">Estudios Sociales</option>
+                <option value="science">Ciencias</option>
+                <option value="math">Mate</option>
+            </select>
+            <input type="submit" name="get_collaborators" value="Profes">
+        </form><br><br>
+    </div>
 
-    <table border="2">
-        <thead>
-            <tr>
-                <td>Profesor</td>
-                <td>Materia</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                {* <td>{foreach from=$collaborators item=item key=key name=name}
-                        <!-- Controller: $this->view->setAssign->(varaible); -->
+    <div class="collaborators_table">
+        <table border="2">
+            <thead>
+                <tr>
+                    <td>User</td>
+                    <td>Email</td>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                </tr>
+            </thead>
+            <tbody>
+                {if isset($collaborators_data)}
+                    {foreach from=$collaborators_data item=collaborator}
+                        <tr>
+                            <td>{$collaborator.username}</td>
+                            <td>{$collaborator.email}</td>
+                            <td>{$collaborator.first_name}</td>
+                            <td>{$collaborator.last_name1}</td>
+                        </tr>
                     {/foreach}
-                </td> *}
-            </tr>
-        </tbody>
-    </table>
+                {else}
+                    <tr>
+                        <td colspan="4">No subject data available.</td>
+                    </tr>
+                {/if}
+            </tbody>
+        </table>
+    </div>
 
     <div class="Exit1">
         <a id="link" href="index.php?action=teachers_dashboard">

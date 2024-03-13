@@ -26,7 +26,34 @@ class Control {
             $this->view->setDisplay("read_user.tpl"); // Display the read user template
         } else if(isset($_REQUEST['update_user'])) {
             $this->userUpdating(); // Call the updating function form the model
-        } else if(isset($_GET['action'])) {
+        } else if(isset($_REQUEST['create_subject'])) {
+            $this->subjectCreation();
+        } else if(isset($_REQUEST['delete_subject'])) {
+            $this->subjectDeletion();
+        } else if(isset($_REQUEST['read_subject'])) {
+            $subject_data = $this->subjectFetching();
+            $this->view->setAssign('subject_data', $subject_data);
+            $this->view->setDisplay('read_subject.tpl');
+        } else if(isset($_REQUEST['update_subject'])) {
+            $this->subjectUpdating();
+        } else if(isset($_REQUEST['get_classmates'])) {
+            $classmates_data = $this->classmateFetching();
+            $this->view->setAssign('classmates_data', $classmates_data);
+            $this->view->setDisplay('my_classmates.tpl');
+        } else if(isset($_REQUEST['get_teachers'])) {
+            $teachers_data = $this->teacherFetching();
+            $this->view->setAssign('teachers_data', $teachers_data);
+            $this->view->setDisplay('my_teachers.tpl');
+        } else if(isset($_REQUEST['get_students'])) {
+            $students_data = $this->studentFetching();
+            $this->view->setAssign('students_data', $students_data);
+            $this->view->setDisplay('my_students.tpl');
+        } else if(isset($_REQUEST['get_collaborators'])) {
+            $collaborators_data = $this->teacherFetching();
+            $this->view->setAssign('collaborators_data', $collaborators_data);
+            $this->view->setDisplay('other_teachers.tpl');
+        }
+        else if(isset($_GET['action'])) {
             $this->processAction();
         } else {
             $this->view->setDisplay("main.tpl"); // display the main page
@@ -75,6 +102,51 @@ class Control {
     private function userUpdating() {
         require_once "model/UserModel.php";
         UserModel::updateUser($conn);
+    }
+
+    private function subjectCreation() {
+        require_once "model/SubjectModel.php";
+        SubjectModel::createSubject($conn);
+    }
+
+    private function subjectDeletion() {
+        require_once "model/SubjectModel.php";
+        SubjectModel::deleteSubject($conn);
+    }
+
+    private function subjectFetching() {
+        require_once "model/SubjectModel.php";
+        $subject_data = SubjectModel::getSubject($conn); // Fetch subject data
+        return $subject_data;
+    }
+
+    private function subjectUpdating() {
+        require_once "model/SubjectModel.php";
+        SubjectModel::updateSubject($conn);
+    }
+
+    private function classmateFetching() {
+        require_once "model/StudentModel.php";
+        $classmates_data = StudentModel::getClassmates($conn); // Fetch classmates data
+        return $classmates_data;
+    }
+
+    private function teacherFetching() {
+        require_once "model/StudentModel.php";
+        $teachers_data = StudentModel::getTeachers($conn); // Fetch teachers data
+        return $teachers_data;
+    }
+
+    private function studentFetching() {
+        require_once "model/TeacherModel.php";
+        $students_data = TeacherModel::getStudents($conn); // Fetch students data
+        return $students_data;
+    }
+
+    private function collaboratorFetching() {
+        require_once "model/TeacherModel.php";
+        $collaborators_data = TeacherModel::getCollaborators($conn); // Fetch collaborators data
+        return $collaborators_data;
     }
 
     private function processAction() {

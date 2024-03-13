@@ -13,35 +13,49 @@
 </head>
 
 <body>
-	<h1>Mis Compañeros</h1>
+	<h1>Mis Compañeros</h1><br>
 
-	<form action="index.php" method="POST">
-		<select name="subject">
-			<!-- materia -->
-			<option value="spanish">Español</option>
-			<option value="social_studies">Estudios Sociales</option>
-			<option value="science">Ciencias</option>
-			<option value="math">Mate</option>
-		</select>
-		<input type="submit" name="get_classmates" value="Compañeros">
-	</form>
+	<div class="classmates_form">
+		<form action="index.php" method="POST">
+			<input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+			<select name="course">
+				<option value="spanish">Español</option>
+				<option value="social_studies">Estudios Sociales</option>
+				<option value="science">Ciencias</option>
+				<option value="math">Mate</option>
+			</select>
+			<input type="submit" name="get_classmates" value="Compañeros">
+		</form><br><br>
+	</div>
 
-	<table border="2">
-		<thead>
-			<tr>
-				<td>Compañero</td>
-				<td>Materia</td>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				{* <td>{foreach from=$classmate item=item key=key name=name}
-					<!-- Controller: $this->view->setAssign->(varaible); -->
+	<div class="classmates_table">
+		<table border="2">
+			<thead>
+				<tr>
+					<td>User</td>
+					<td>Email</td>
+					<td>Nombre</td>
+					<td>Apellido</td>
+				</tr>
+			</thead>
+			<tbody>
+				{if isset($classmates_data)}
+					{foreach from=$classmates_data item=classmate}
+						<tr>
+							<td>{$classmate.username}</td>
+							<td>{$classmate.email}</td>
+							<td>{$classmate.first_name}</td>
+							<td>{$classmate.last_name1}</td>
+						</tr>
 					{/foreach}
-				</td> *}
-			</tr>
-		</tbody>
-	</table>
+				{else}
+					<tr>
+						<td colspan="4">No subject data available.</td>
+					</tr>
+				{/if}
+			</tbody>
+		</table>
+	</div>
 
 	<div class="Exit1">
 		<a id="link" href="index.php?action=students_dashboard">
