@@ -16,8 +16,8 @@
     <h1>Horario Estudiantil</h1><br>
 
     <form action="index.php" method="POST">
-        <select name="subject">
-            <!-- materia -->
+        <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+        <select name="course">
             <option value="spanish">Español</option>
             <option value="social_studies">Estudios Sociales</option>
             <option value="science">Ciencias</option>
@@ -29,17 +29,25 @@
     <table border="2">
         <thead>
             <tr>
-                <td>Materia</td>
-                <td>Duracion</td>
+                <td>Dia</td>
+                <td>Empieza</td>
+                <td>Termina</td>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                {* <td>{foreach from=$schedule item=item key=key name=name}
-                    <!-- Controller: $this->view->setAssign->(varaible); -->
-                    {/foreach}
-                </td> *}
-            </tr>
+            {if isset($schedule_data)}
+                {foreach from=$schedule_data item=schedule}
+                    <tr>
+                        <td>{$schedule.day}</td>
+                        <td>{$schedule.begins}</td>
+                        <td>{$schedule.ends}</td>
+                    </tr>
+                {/foreach}
+            {else}
+                <tr>
+                    <td colspan="4">No subject data available.</td>
+                </tr>
+            {/if}
         </tbody>
     </table>
 

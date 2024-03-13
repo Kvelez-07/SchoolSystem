@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-13 23:24:47
+/* Smarty version 4.4.1, created on 2024-03-14 00:43:44
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\teacher_schedule.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f227afbebc78_54540719',
+  'unifunc' => 'content_65f23a30586759_69805245',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a53ecf52bd1536330a87b6f667b8bdfa9e75b519' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\teacher_schedule.tpl',
-      1 => 1710368685,
+      1 => 1710373255,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f227afbebc78_54540719 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f23a30586759_69805245 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -36,11 +36,11 @@ function content_65f227afbebc78_54540719 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 
 <body>
-    <h1>Horarios del Profesor</h1><br>
+    <h1>Horarios</h1><br>
 
     <form action="index.php" method="POST">
-        <select name="subject">
-            <!-- materia -->
+        <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+        <select name="course">
             <option value="spanish">Español</option>
             <option value="social_studies">Estudios Sociales</option>
             <option value="science">Ciencias</option>
@@ -52,13 +52,35 @@ function content_65f227afbebc78_54540719 (Smarty_Internal_Template $_smarty_tpl)
     <table border="2">
         <thead>
             <tr>
-                <td>Materia</td>
-                <td>Duracion</td>
+                <td>Dia</td>
+                <td>Empieza</td>
+                <td>Termina</td>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                            </tr>
+            <?php if ((isset($_smarty_tpl->tpl_vars['schedule_data']->value))) {?>
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['schedule_data']->value, 'schedule');
+$_smarty_tpl->tpl_vars['schedule']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['schedule']->value) {
+$_smarty_tpl->tpl_vars['schedule']->do_else = false;
+?>
+                    <tr>
+                        <td><?php echo $_smarty_tpl->tpl_vars['schedule']->value['day'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['schedule']->value['begins'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['schedule']->value['ends'];?>
+</td>
+                    </tr>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            <?php } else { ?>
+                <tr>
+                    <td colspan="4">No subject data available.</td>
+                </tr>
+            <?php }?>
         </tbody>
     </table>
 

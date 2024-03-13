@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-09 19:55:32
+/* Smarty version 4.4.1, created on 2024-03-13 23:26:11
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\students_attendance.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65ecb0a4515bb1_33821357',
+  'unifunc' => 'content_65f22803aa9539_27735213',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '826a2fa01671b3efe8368af25b517e00966dd212' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\students_attendance.tpl',
-      1 => 1710010530,
+      1 => 1710368722,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65ecb0a4515bb1_33821357 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f22803aa9539_27735213 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +36,7 @@ function content_65ecb0a4515bb1_33821357 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 
 <body>
-    <h1>Asistencia Estudiantil</h1>
+    <h1>Asistencias</h1><br>
 
     <form action="index.php" method="POST">
         <select name="subject">
@@ -47,7 +47,7 @@ function content_65ecb0a4515bb1_33821357 (Smarty_Internal_Template $_smarty_tpl)
             <option value="math">Mate</option>
         </select>
         <input type="submit" name="student_attendance" value="Asistencia">
-    </form>
+    </form><br><br>
 
     <table border="2">
         <thead>

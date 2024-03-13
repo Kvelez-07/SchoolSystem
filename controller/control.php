@@ -49,11 +49,18 @@ class Control {
             $this->view->setAssign('students_data', $students_data);
             $this->view->setDisplay('my_students.tpl');
         } else if(isset($_REQUEST['get_collaborators'])) {
-            $collaborators_data = $this->teacherFetching();
+            $collaborators_data = $this->collaboratorFetching();
             $this->view->setAssign('collaborators_data', $collaborators_data);
             $this->view->setDisplay('other_teachers.tpl');
-        }
-        else if(isset($_GET['action'])) {
+        } else if(isset($_REQUEST['get_schedule'])) {
+            $schedule_data = $this->studentSchedule();
+            $this->view->setAssign('schedule_data', $schedule_data);
+            $this->view->setDisplay('my_schedule.tpl');
+        } else if(isset($_REQUEST['teacher_schedule'])) {
+            $schedule_data = $this->teacherSchedule();
+            $this->view->setAssign('schedule_data', $schedule_data);
+            $this->view->setDisplay('teacher_schedule.tpl');
+        } else if(isset($_GET['action'])) {
             $this->processAction();
         } else {
             $this->view->setDisplay("main.tpl"); // display the main page
@@ -83,6 +90,7 @@ class Control {
         }
     }
 
+    // Admin methods/functions
     private function processSignup() {
         require_once "model/UserModel.php";
         UserModel::createUser($conn);
@@ -125,6 +133,7 @@ class Control {
         SubjectModel::updateSubject($conn);
     }
 
+    // Student methods/functions
     private function classmateFetching() {
         require_once "model/StudentModel.php";
         $classmates_data = StudentModel::getClassmates($conn); // Fetch classmates data
@@ -137,6 +146,13 @@ class Control {
         return $teachers_data;
     }
 
+    private function studentSchedule() {
+        require_once "model/StudentModel.php";
+        $schedule_data = StudentModel::getSchedule($conn); // Fetch schedule data
+        return $schedule_data;
+    }
+
+    // Teacher methods/functions
     private function studentFetching() {
         require_once "model/TeacherModel.php";
         $students_data = TeacherModel::getStudents($conn); // Fetch students data
@@ -147,6 +163,12 @@ class Control {
         require_once "model/TeacherModel.php";
         $collaborators_data = TeacherModel::getCollaborators($conn); // Fetch collaborators data
         return $collaborators_data;
+    }
+
+    private function teacherSchedule() {
+        require_once "model/TeacherModel.php";
+        $schedule_data = TeacherModel::getSchedule($conn); // Fetch schedule data
+        return $schedule_data;
     }
 
     private function processAction() {
