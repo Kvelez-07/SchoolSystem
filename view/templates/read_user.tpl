@@ -21,8 +21,7 @@
                 <option value="Teacher">Teacher</option>
             </select>
             <input type="text" name="first_name" placeholder="First Name">
-            <input type="text" name="last_name1" placeholder="Last Name1">
-            <input type="text" name="last_name2" placeholder="Last Name2"><br><br>
+            <input type="text" name="last_name1" placeholder="Last Name1"><br><br>
             <a href="index.php?action=admin_dashboard">Back</a> or
             <input type="submit" name="read_user" value="Read">
         </form> <br><br>
@@ -33,18 +32,26 @@
             <thead>
                 <tr>
                     <td>User</td>
-                    <td>Type</td>
+                    <td>Email</td>
                     <td>First Name</td>
                     <td>Last Name1</td>
-                    <td>Last Name2</td>
                 </tr>
             </thead>
             <tbody>
-                <td>
-                    {* {foreach from=$result item=$student_data}
-                {$student_data} <br>
-            {/foreach} *}
-                </td>
+                {if isset($user_data)}
+                    {foreach from=$user_data item=user}
+                        <tr>
+                            <td>{$user.username}</td>
+                            <td>{$user.email}</td>
+                            <td>{$user.first_name}</td>
+                            <td>{$user.last_name1}</td>
+                        </tr>
+                    {/foreach}
+                {else}
+                    <tr>
+                        <td colspan="4">No user data available.</td>
+                    </tr>
+                {/if}
             </tbody>
         </table>
     </div>

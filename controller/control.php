@@ -21,7 +21,9 @@ class Control {
         } else if(isset($_REQUEST['delete_user'])) {
             $this->userDeletion(); // Call the deletion function form the model
         } else if(isset($_REQUEST['read_user'])) {
-            $this->userFetching(); // Call the fetching function form the model
+            $user_data = $this->userFetching();
+            $this->view->setAssign('user_data', $user_data); // Assign the user data to Smarty variable
+            $this->view->setDisplay("read_user.tpl"); // Display the read user template
         } else if(isset($_REQUEST['update_user'])) {
             $this->userUpdating(); // Call the updating function form the model
         } else if(isset($_GET['action'])) {
@@ -61,7 +63,8 @@ class Control {
 
     private function userFetching() {
         require_once "model/UserModel.php";
-        UserModel::readUser($conn);
+        $user_data = UserModel::readUser($conn); // Fetch user data
+        return $user_data;
     }
 
     private function userDeletion() {

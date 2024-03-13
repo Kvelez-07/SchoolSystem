@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-10 07:53:14
+/* Smarty version 4.4.1, created on 2024-03-13 01:32:35
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\read_user.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65ed58da6e2913_79597812',
+  'unifunc' => 'content_65f0f423310f49_06970868',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a3984f99cd3459eebf2ccd85306e0b37797a5cfe' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\read_user.tpl',
-      1 => 1710053592,
+      1 => 1710289950,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65ed58da6e2913_79597812 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f0f423310f49_06970868 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -44,8 +44,7 @@ function content_65ed58da6e2913_79597812 (Smarty_Internal_Template $_smarty_tpl)
                 <option value="Teacher">Teacher</option>
             </select>
             <input type="text" name="first_name" placeholder="First Name">
-            <input type="text" name="last_name1" placeholder="Last Name1">
-            <input type="text" name="last_name2" placeholder="Last Name2"><br><br>
+            <input type="text" name="last_name1" placeholder="Last Name1"><br><br>
             <a href="index.php?action=admin_dashboard">Back</a> or
             <input type="submit" name="read_user" value="Read">
         </form> <br><br>
@@ -56,15 +55,37 @@ function content_65ed58da6e2913_79597812 (Smarty_Internal_Template $_smarty_tpl)
             <thead>
                 <tr>
                     <td>User</td>
-                    <td>Type</td>
+                    <td>Email</td>
                     <td>First Name</td>
                     <td>Last Name1</td>
-                    <td>Last Name2</td>
                 </tr>
             </thead>
             <tbody>
-                <td>
-                                    </td>
+                <?php if ((isset($_smarty_tpl->tpl_vars['user_data']->value))) {?>
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['user_data']->value, 'user');
+$_smarty_tpl->tpl_vars['user']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['user']->value) {
+$_smarty_tpl->tpl_vars['user']->do_else = false;
+?>
+                        <tr>
+                            <td><?php echo $_smarty_tpl->tpl_vars['user']->value['username'];?>
+</td>
+                            <td><?php echo $_smarty_tpl->tpl_vars['user']->value['email'];?>
+</td>
+                            <td><?php echo $_smarty_tpl->tpl_vars['user']->value['first_name'];?>
+</td>
+                            <td><?php echo $_smarty_tpl->tpl_vars['user']->value['last_name1'];?>
+</td>
+                        </tr>
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                <?php } else { ?>
+                    <tr>
+                        <td colspan="4">No user data available.</td>
+                    </tr>
+                <?php }?>
             </tbody>
         </table>
     </div>

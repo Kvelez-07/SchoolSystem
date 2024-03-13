@@ -130,35 +130,32 @@ class UserModel {
     }    
 
     public static function readUser($conn) {
-        if(isset($_REQUEST['read_user'])) {
-            $username = filter_var($_REQUEST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $user_type = filter_var($_REQUEST['user_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $first_name = filter_var($_REQUEST['first_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $last_name1 = filter_var($_REQUEST['last_name1'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $last_name2 = filter_var($_REQUEST['last_name2'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        
-            if(empty($username) && empty($user_type) && empty($first_name) && empty($last_name1) && empty($last_name2)) {
-                echo "All fields are required";
-                exit;
-            }
-            
-            $sql = "SELECT * FROM $user_type WHERE username = ? AND user_type = ? AND first_name = ? AND last_name1 = ? AND last_name2 = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->execute([$username, $user_type, $first_name, $last_name1, $last_name2]);
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-            if(empty($result)) {
-                echo "User not found";
-                exit;
-            }
-        
-            $stmt = null;
-            $conn = null;
-        
-        } else {
-            echo "User not found";
+        $username = isset($_REQUEST['username']) ? filter_var($_REQUEST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : null;
+        $user_type = isset($_REQUEST['user_type']) ? filter_var($_REQUEST['user_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : null;
+        $first_name = isset($_REQUEST['first_name']) ? filter_var($_REQUEST['first_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : null;
+        $last_name1 = isset($_REQUEST['last_name1']) ? filter_var($_REQUEST['last_name1'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : null;
+    
+        if(empty($username) || empty($user_type) || empty($first_name) || empty($last_name1)) {
+            echo "All fields are required";
+            header("Refresh: 2; url=index.php?action=admin_dashboard");
+            exit;
         }
-    }
+    
+        $sql = "SELECT * FROM $user_type WHERE username = ? AND first_name = ? AND last_name1 = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$username, $first_name, $last_name1]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        if(empty($result)) {
+            echo "User not found";
+            header("Refresh: 2; url=index.php?action=admin_dashboard");
+            exit;
+        }
+    
+        $stmt = null;
+        $conn = null;
+        return $result; // Return the fetched user data
+    }    
 
     public static function updateUser($conn) {
         $username = filter_var($_POST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
