@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <h1>Horario Estudiantil</h1>
+    <h1>Horario Estudiantil</h1><br>
 
     <form action="index.php" method="POST">
         <select name="subject">
@@ -24,7 +24,7 @@
             <option value="math">Mate</option>
         </select>
         <input type="submit" name="get_schedule" value="Horario">
-    </form>
+    </form><br><br>
 
     <table border="2">
         <thead>

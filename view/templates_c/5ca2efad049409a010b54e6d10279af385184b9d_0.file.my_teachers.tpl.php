@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-13 22:47:52
+/* Smarty version 4.4.1, created on 2024-03-13 23:22:39
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\my_teachers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f21f088d4681_55885809',
+  'unifunc' => 'content_65f2272f885339_83569716',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5ca2efad049409a010b54e6d10279af385184b9d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\my_teachers.tpl',
-      1 => 1710365948,
+      1 => 1710368554,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f21f088d4681_55885809 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f2272f885339_83569716 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +44,7 @@ function content_65f21f088d4681_55885809 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 
 <body>
-	<h1>Profesores</h1>
+	<h1>Profesores</h1><br>
 
 	<div class="teachers_form">
 		<form action="index.php" method="POST">

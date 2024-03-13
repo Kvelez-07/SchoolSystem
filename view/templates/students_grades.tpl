@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <h1>Notas de los Estudiantes</h1>
+    <h1>Notas de los Estudiantes</h1><br>
 
     <form action="index.php" method="POST">
         <select name="subject">
@@ -24,7 +24,7 @@
             <option value="math">Mate</option>
         </select>
         <input type="submit" name="student_grades" value="Notas">
-    </form>
+    </form><br><br>
 
     <table border="2">
         <thead>

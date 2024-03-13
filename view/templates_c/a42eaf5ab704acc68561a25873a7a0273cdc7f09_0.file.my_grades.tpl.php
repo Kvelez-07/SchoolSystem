@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-09 06:56:30
+/* Smarty version 4.4.1, created on 2024-03-13 23:21:57
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\my_grades.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65ebfa0e6a8ea5_80919802',
+  'unifunc' => 'content_65f22705ec6e78_06712491',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a42eaf5ab704acc68561a25873a7a0273cdc7f09' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\my_grades.tpl',
-      1 => 1709963784,
+      1 => 1710368509,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65ebfa0e6a8ea5_80919802 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f22705ec6e78_06712491 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -66,29 +66,30 @@ function content_65ebfa0e6a8ea5_80919802 (Smarty_Internal_Template $_smarty_tpl)
                 <option value="math">Mate</option>
                 <input type="submit" name="get_grades" value="Notas">
             </select>
-        </form>
+        </form><br><br>
+    </div>
 
-        <table border="2">
-            <thead>
-                <tr>
-                    <td>Prueba 1</td>
-                    <td>Prueba 2</td>
-                    <td>Prueba 3</td>
-                    <td>Tarea 1</td>
-                    <td>Tarea 2</td>
-                    <td>Asistencia</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                                    </tr>
-            </tbody>
-        </table>
+    <table border="2">
+        <thead>
+            <tr>
+                <td>Prueba 1</td>
+                <td>Prueba 2</td>
+                <td>Prueba 3</td>
+                <td>Tarea 1</td>
+                <td>Tarea 2</td>
+                <td>Asistencia</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                            </tr>
+        </tbody>
+    </table>
 
-        <div class="Exit1">
-            <a id="link" href="index.php?action=students_dashboard">
-                <button class="boton">Regresar</button></a>
-        </div>
+    <div class="Exit1">
+        <a id="link" href="index.php?action=students_dashboard">
+            <button class="boton">Regresar</button></a>
+    </div>
 </body>
 
 </html><?php }

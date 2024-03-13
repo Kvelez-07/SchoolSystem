@@ -43,32 +43,33 @@
                 <option value="math">Mate</option>
                 <input type="submit" name="get_grades" value="Notas">
             </select>
-        </form>
+        </form><br><br>
+    </div>
 
-        <table border="2">
-            <thead>
-                <tr>
-                    <td>Prueba 1</td>
-                    <td>Prueba 2</td>
-                    <td>Prueba 3</td>
-                    <td>Tarea 1</td>
-                    <td>Tarea 2</td>
-                    <td>Asistencia</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    {* <td>{foreach from=$grades item=item key=key name=name}
+    <table border="2">
+        <thead>
+            <tr>
+                <td>Prueba 1</td>
+                <td>Prueba 2</td>
+                <td>Prueba 3</td>
+                <td>Tarea 1</td>
+                <td>Tarea 2</td>
+                <td>Asistencia</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {* <td>{foreach from=$grades item=item key=key name=name}
                         {/foreach}
                     </td> *}
-                </tr>
-            </tbody>
-        </table>
+            </tr>
+        </tbody>
+    </table>
 
-        <div class="Exit1">
-            <a id="link" href="index.php?action=students_dashboard">
-                <button class="boton">Regresar</button></a>
-        </div>
+    <div class="Exit1">
+        <a id="link" href="index.php?action=students_dashboard">
+            <button class="boton">Regresar</button></a>
+    </div>
 </body>
 
 </html>

@@ -20,6 +20,10 @@ class TeacherModel {
         
     }
 
+    public static function getSchedule($conn) {
+        
+    }
+
     public static function getCollaborators($conn) {
         if(!empty($_REQUEST['school_levels']) && !empty($_REQUEST['course'])) {
             $shool_levels = filter_var($_REQUEST['school_levels'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -67,9 +71,5 @@ class TeacherModel {
             }
             return $classmates_data;
         }
-    }
-
-    public static function getSchedule($conn) {
-        
     }
 }

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <h1>Estudiantes</h1>
+    <h1>Estudiantes</h1><br>
 
     <div class="students_form">
         <form action="index.php" method="POST">

@@ -21,7 +21,7 @@
 </head>
 
 <body>
-	<h1>Profesores</h1>
+	<h1>Profesores</h1><br>
 
 	<div class="teachers_form">
 		<form action="index.php" method="POST">
