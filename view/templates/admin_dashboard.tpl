@@ -26,7 +26,7 @@
         <h2>Subjects</h2>
         <a href="index.php?action=create_subject">Create</a>
         <a href="index.php?action=read_subject">Read</a>
-        <a href="index.php?action=update_subect">Update</a>
+        <a href="index.php?action=update_subject">Update</a>
         <a href="index.php?action=delete_subject">Delete</a>
     </div>
 </body>

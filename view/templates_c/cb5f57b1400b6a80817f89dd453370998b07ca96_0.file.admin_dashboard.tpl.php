@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-10 05:05:48
+/* Smarty version 4.4.1, created on 2024-03-13 02:33:59
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\admin_dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65ed319ca2d010_01055675',
+  'unifunc' => 'content_65f10287e55916_16110081',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb5f57b1400b6a80817f89dd453370998b07ca96' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\admin_dashboard.tpl',
-      1 => 1710043545,
+      1 => 1710293625,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65ed319ca2d010_01055675 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f10287e55916_16110081 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +49,7 @@ function content_65ed319ca2d010_01055675 (Smarty_Internal_Template $_smarty_tpl)
         <h2>Subjects</h2>
         <a href="index.php?action=create_subject">Create</a>
         <a href="index.php?action=read_subject">Read</a>
-        <a href="index.php?action=update_subect">Update</a>
+        <a href="index.php?action=update_subject">Update</a>
         <a href="index.php?action=delete_subject">Delete</a>
     </div>
 </body>
