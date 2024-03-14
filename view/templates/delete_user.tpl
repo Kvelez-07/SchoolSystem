@@ -16,11 +16,11 @@
 
     <div class="delete_user_form">
         <form action="index.php" method="POST">
-            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="username" placeholder="Username"><br><br>
             <select name="user_type" id="user_type">
                 <option value="Student">Student</option>
                 <option value="Teacher">Teacher</option>
-            </select>
+            </select><br><br>
             <input type="text" name="first_name" placeholder="First Name">
             <input type="text" name="last_name1" placeholder="Last Name1">
             <input type="text" name="last_name2" placeholder="Last Name2"><br><br>

@@ -17,11 +17,11 @@
         <form action="index.php" method="POST">
             <p>Verification: </p>
             <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
             <select name="user_type" id="user_type">
                 <option value="Student">Student</option>
                 <option value="Teacher">Teacher</option>
-            </select>
-            <input type="password" name="password" placeholder="Password"><br><br>
+            </select><br><br>
 
             <p>New data (unnecessary updates can be left with previous values):</p>
             <input type="text" name="new_username" placeholder="New Username">

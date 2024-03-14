@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete</title>
+    <link rel="stylesheet" href="css/delete_subject.css">
 </head>
 
 <body>
-    <h1>Subject Deletion</h1>
+    <header class="delete_subject_header">
+        <h1>Subject Deletion</h1>
+    </header>
+
     <div class="subject_form">
         <form action="index.php" method="POST">
             <input type="number" name="teacher_id" placeholder="teacher_id">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-13 18:58:40
+/* Smarty version 4.4.1, created on 2024-03-14 00:56:31
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\read_subject.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f1e950cd78f3_24999973',
+  'unifunc' => 'content_65f23d2f126805_61604742',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b5c9f6bb9d56b145c32008961ab2ffc1a72e6d30' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\read_subject.tpl',
-      1 => 1710352716,
+      1 => 1710373749,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f1e950cd78f3_24999973 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f23d2f126805_61604742 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -28,10 +28,11 @@ function content_65f1e950cd78f3_24999973 (Smarty_Internal_Template $_smarty_tpl)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read</title>
+    <link rel="stylesheet" href="css/read_subject.css">
 </head>
 
 <body>
-    <header class="read_user_header">
+    <header class="read_subject_header">
         <h1>Subject List</h1>
     </header>
 

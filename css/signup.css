@@ -82,14 +82,18 @@ body {
 }
 
 .exit_button {
-    position: absolute; 
+    position: absolute;
     top: 0;
     right: 0;
     border: none;
     background-color: transparent;
     cursor: pointer;
-    font-size: 20px;
     color: #007bff;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    transition: all 0.3s ease;
 }
 
 .exit_button:hover {

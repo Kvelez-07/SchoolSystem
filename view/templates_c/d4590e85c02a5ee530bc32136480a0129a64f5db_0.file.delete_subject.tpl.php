@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-13 19:09:37
+/* Smarty version 4.4.1, created on 2024-03-14 01:03:54
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\delete_subject.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f1ebe16e0db1_00062327',
+  'unifunc' => 'content_65f23eea583fa2_27256386',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd4590e85c02a5ee530bc32136480a0129a64f5db' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\delete_subject.tpl',
-      1 => 1710353375,
+      1 => 1710374613,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f1ebe16e0db1_00062327 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f23eea583fa2_27256386 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -28,10 +28,14 @@ function content_65f1ebe16e0db1_00062327 (Smarty_Internal_Template $_smarty_tpl)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete</title>
+    <link rel="stylesheet" href="css/delete_subject.css">
 </head>
 
 <body>
-    <h1>Subject Deletion</h1>
+    <header class="delete_subject_header">
+        <h1>Subject Deletion</h1>
+    </header>
+
     <div class="subject_form">
         <form action="index.php" method="POST">
             <input type="number" name="teacher_id" placeholder="teacher_id">

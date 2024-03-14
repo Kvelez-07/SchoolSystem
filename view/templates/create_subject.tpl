@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create</title>
+    <link rel="stylesheet" href="css/create_subject.css">
 </head>
 
 <body>
-    <h1>Subject Creation</h1>
+    <header class="create_subject_header">
+        <h1>Subject Creation</h1>
+    </header>
+
     <div class="subject_form">
         <form action="index.php" method="POST">
             <select name="subject_name">

@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read</title>
+    <link rel="stylesheet" href="css/read_subject.css">
 </head>
 
 <body>
-    <header class="read_user_header">
+    <header class="read_subject_header">
         <h1>Subject List</h1>
     </header>
 

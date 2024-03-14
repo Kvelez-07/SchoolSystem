@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-10 07:48:01
+/* Smarty version 4.4.1, created on 2024-03-14 01:05:54
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\update_user.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65ed57a11f09e3_31380896',
+  'unifunc' => 'content_65f23f62cb7603_92534415',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c4e33060db7544bd4b9ab1a61c4c054b61e270db' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\update_user.tpl',
-      1 => 1710052786,
+      1 => 1710374752,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65ed57a11f09e3_31380896 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f23f62cb7603_92534415 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -40,11 +40,11 @@ function content_65ed57a11f09e3_31380896 (Smarty_Internal_Template $_smarty_tpl)
         <form action="index.php" method="POST">
             <p>Verification: </p>
             <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
             <select name="user_type" id="user_type">
                 <option value="Student">Student</option>
                 <option value="Teacher">Teacher</option>
-            </select>
-            <input type="password" name="password" placeholder="Password"><br><br>
+            </select><br><br>
 
             <p>New data (unnecessary updates can be left with previous values):</p>
             <input type="text" name="new_username" placeholder="New Username">
