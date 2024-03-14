@@ -15,33 +15,52 @@
 <body>
 	<h1>Mi Asistencia</h1><br>
 
-	<form action="index.php" method="POST">
-		<select name="subject">
-			<!-- materia -->
-			<option value="spanish">Español</option>
-			<option value="social_studies">Estudios Sociales</option>
-			<option value="science">Ciencias</option>
-			<option value="math">Mate</option>
-		</select>
-		<input type="submit" name="get_attendance" value="Asistencia">
-	</form><br><br>
+	<div class="attendance_form">
+		<form action="index.php" method="POST">
+			<input type="text" name="username" placeholder="Username">
+			<input type="password" name="password" placeholder="Password">
+			<input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+			<select name="course">
+				<option value="spanish">Español</option>
+				<option value="social_studies">Estudios Sociales</option>
+				<option value="science">Ciencias</option>
+				<option value="math">Mate</option>
+			</select>
+			<input type="date" name="date">
+			<input type="submit" name="get_attendance" value="Asistencia">
+		</form><br><br>
+	</div>
 
-	<table border="2">
-		<thead>
-			<tr>
-				<td>Materia</td>
-				<td>Registro</td> <!-- presente/ausente -->
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				{* <td>{foreach from=$attendance item=item key=key name=name}
-					<!-- Controller: $this->view->setAssign->(varaible); -->
+	<div class="attendance_table">
+		<table border="2">
+			<thead>
+				<tr>
+					<td>Student</td>
+					<td>Username</td>
+					<td>School Level Course:</td>
+					<td>Justificado</td>
+					<td>Fecha</td>
+				</tr>
+			</thead>
+			<tbody>
+				{if isset($student_attendance)}
+					{foreach from=$student_attendance.attendance_data item=attendance}
+						<tr>
+							<td>{$student_attendance.student_full_name}</td>
+							<td>{$student_attendance.student_username}</td>
+							<td>{$student_attendance.school_level_course}</td>
+							<td>{$attendance.justified}</td>
+							<td>{$attendance.date}</td>
+						</tr>
 					{/foreach}
-				</td> *}
-			</tr>
-		</tbody>
-	</table>
+				{else}
+					<tr>
+						<td colspan="2">No attendance data available.</td>
+					</tr>
+				{/if}
+			</tbody>
+		</table>
+	</div>
 
 	<div class="Exit1">
 		<a id="link" href="index.php?action=students_dashboard">

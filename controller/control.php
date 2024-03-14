@@ -60,7 +60,16 @@ class Control {
             $schedule_data = $this->teacherSchedule();
             $this->view->setAssign('schedule_data', $schedule_data);
             $this->view->setDisplay('teacher_schedule.tpl');
-        } else if(isset($_GET['action'])) {
+        } else if(isset($_REQUEST['get_attendance'])) {
+            $student_attendance = $this->studentAttendance();
+            $this->view->setAssign('student_attendance', $student_attendance);
+            $this->view->setDisplay('my_attendance.tpl');
+        } else if(isset($_REQUEST['teacher_attendance'])) {
+            $student_attendance = $this->teacherAttendance();
+            $this->view->setAssign('student_attendance', $student_attendance);
+            $this->view->setDisplay('students_attendance.tpl');
+        }
+        else if(isset($_GET['action'])) {
             $this->processAction();
         } else {
             $this->view->setDisplay("main.tpl"); // display the main page
@@ -152,6 +161,12 @@ class Control {
         return $schedule_data;
     }
 
+    private function studentAttendance() {
+        require_once "model/StudentModel.php";
+        $attendance_data = StudentModel::getAttendance($conn); // Fetch attendance data
+        return $attendance_data;
+    }
+
     // Teacher methods/functions
     private function studentFetching() {
         require_once "model/TeacherModel.php";
@@ -169,6 +184,12 @@ class Control {
         require_once "model/TeacherModel.php";
         $schedule_data = TeacherModel::getSchedule($conn); // Fetch schedule data
         return $schedule_data;
+    }
+
+    private function teacherAttendance() {
+        require_once "model/TeacherModel.php";
+        $student_attendance = TeacherModel::getAttendance($conn); // Fetch attendance data
+        return $student_attendance;
     }
 
     private function processAction() {
