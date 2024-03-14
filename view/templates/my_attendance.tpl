@@ -15,7 +15,7 @@
 <body>
 	<h1>Mi Asistencia</h1><br>
 
-	<div class="attendance_form">
+	<div class="classmates_form">
 		<form action="index.php" method="POST">
 			<input type="text" name="username" placeholder="Username">
 			<input type="password" name="password" placeholder="Password">
@@ -35,9 +35,9 @@
 		<table border="2">
 			<thead>
 				<tr>
-					<td>Student</td>
+					<td>Estudiante</td>
 					<td>Username</td>
-					<td>School Level Course:</td>
+					<td>Curso Año:</td>
 					<td>Justificado</td>
 					<td>Fecha</td>
 				</tr>

@@ -68,6 +68,14 @@ class Control {
             $student_attendance = $this->teacherAttendance();
             $this->view->setAssign('student_attendance', $student_attendance);
             $this->view->setDisplay('students_attendance.tpl');
+        } else if(isset($_REQUEST['get_grades'])) {
+            $student_grades = $this->studentGrades();
+            $this->view->setAssign('student_grades', $student_grades);
+            $this->view->setDisplay('my_grades.tpl');
+        } else if(isset($_REQUEST['student_grades'])) {
+            $student_grades = $this->teacherGrades();
+            $this->view->setAssign('student_grades', $student_grades);
+            $this->view->setDisplay('students_grades.tpl');
         }
         else if(isset($_GET['action'])) {
             $this->processAction();
@@ -167,6 +175,12 @@ class Control {
         return $attendance_data;
     }
 
+    private function studentGrades() {
+        require_once "model/StudentModel.php";
+        $student_grades = StudentModel::getGrades($conn); // Fetch grades data
+        return $student_grades;
+    }
+
     // Teacher methods/functions
     private function studentFetching() {
         require_once "model/TeacherModel.php";
@@ -190,6 +204,12 @@ class Control {
         require_once "model/TeacherModel.php";
         $student_attendance = TeacherModel::getAttendance($conn); // Fetch attendance data
         return $student_attendance;
+    }
+
+    private function teacherGrades() {
+        require_once "model/TeacherModel.php";
+        $student_grades = TeacherModel::getGrades($conn); // Fetch grades data
+        return $student_grades;
     }
 
     private function processAction() {
