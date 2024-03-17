@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-14 21:29:23
+/* Smarty version 4.4.1, created on 2024-03-17 04:36:26
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\students_grades.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f35e235c0e90_13160199',
+  'unifunc' => 'content_65f6653a7b9527_21357271',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c0292d2130fa48c93ab2e7fadabb4ea446ebcb78' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\students_grades.tpl',
-      1 => 1710448136,
+      1 => 1710646574,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f35e235c0e90_13160199 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f6653a7b9527_21357271 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -53,12 +53,29 @@ function content_65f35e235c0e90_13160199 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 
 <body>
+    <div class="set_grades_form" id="main-form">
+        <form action="index.php" method="POST">
+            <h1>Materias</h1>
+            <p>Asinar notas</p>
+            <input type="text" name="username" placeholder="User">
+            <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+            <input type="number" name="trimester" min="1" max="3" placeholder="3mestre">
+            <input type="number" name="grades" min="1" max="100" placeholder="Nota">
+            <select name="course" id="course" required>
+                <option value="spanish">Español</option>
+                <option value="social_studies">Estudios Sociales</option>
+                <option value="science">Ciencias</option>
+                <option value="math">Mate</option>
+            </select>
+            <input type="submit" name="set_student_grades" value="Nota">
+        </form><br><br>
+    </div>
+
     <div class="grades_form" id="main-form">
         <form action="index.php" method="POST">
             <h1>Materias</h1>
-            <p>Favor seleccionar la asignatura</p>
+            <p>Obtener notas</p>
             <input type="text" name="username" placeholder="User">
-            <input type="password" name="password" placeholder="Password">
             <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
             <select name="course" id="course" required>
                 <option value="spanish">Español</option>
@@ -114,7 +131,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
 
     <div class="Exit1">
-        <a id="link" href="index.php?action=students_dashboard">
+        <a id="link" href="index.php?action=teachers_dashboard">
             <button class="boton">Regresar</button>
         </a>
     </div>

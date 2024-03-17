@@ -30,12 +30,29 @@
 </head>
 
 <body>
+    <div class="set_grades_form" id="main-form">
+        <form action="index.php" method="POST">
+            <h1>Materias</h1>
+            <p>Asinar notas</p>
+            <input type="text" name="username" placeholder="User">
+            <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+            <input type="number" name="trimester" min="1" max="3" placeholder="3mestre">
+            <input type="number" name="grades" min="1" max="100" placeholder="Nota">
+            <select name="course" id="course" required>
+                <option value="spanish">Español</option>
+                <option value="social_studies">Estudios Sociales</option>
+                <option value="science">Ciencias</option>
+                <option value="math">Mate</option>
+            </select>
+            <input type="submit" name="set_student_grades" value="Nota">
+        </form><br><br>
+    </div>
+
     <div class="grades_form" id="main-form">
         <form action="index.php" method="POST">
             <h1>Materias</h1>
-            <p>Favor seleccionar la asignatura</p>
+            <p>Obtener notas</p>
             <input type="text" name="username" placeholder="User">
-            <input type="password" name="password" placeholder="Password">
             <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
             <select name="course" id="course" required>
                 <option value="spanish">Español</option>
@@ -79,7 +96,7 @@
     </div>
 
     <div class="Exit1">
-        <a id="link" href="index.php?action=students_dashboard">
+        <a id="link" href="index.php?action=teachers_dashboard">
             <button class="boton">Regresar</button>
         </a>
     </div>

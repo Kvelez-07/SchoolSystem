@@ -13,12 +13,15 @@
 </head>
 
 <body>
-    <h1>Asistencias</h1><br>
+    <h1>Asignar Asistencias</h1><br>
 
     <div class="attendance_form">
         <form action="index.php" method="POST">
             <input type="text" name="username" placeholder="Username">
             <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+            <label for="justified">Justificacion</label>
+            <input type="radio" name="justified" value="Y"> Y
+            <input type="radio" name="justified" value="N"> N <br><br>
             <select name="course">
                 <option value="spanish">Español</option>
                 <option value="social_studies">Estudios Sociales</option>
@@ -26,7 +29,25 @@
                 <option value="math">Mate</option>
             </select>
             <input type="date" name="date">
-            <input type="submit" name="teacher_attendance" value="Asistencia">
+            <input type="submit" name="set_student_attendance" value="Asistencia">
+        </form><br><br>
+    </div>
+
+
+    <h1>Tomar Asistencias</h1><br>
+
+    <div class="attendance_form">
+        <form action="index.php" method="POST">
+            <input type="text" name="username" placeholder="Username">
+            <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°"> <br><br>
+            <select name="course">
+                <option value="spanish">Español</option>
+                <option value="social_studies">Estudios Sociales</option>
+                <option value="science">Ciencias</option>
+                <option value="math">Mate</option>
+            </select>
+            <input type="date" name="date">
+            <input type="submit" name="get_student_attendance" value="Asistencia">
         </form><br><br>
     </div>
 

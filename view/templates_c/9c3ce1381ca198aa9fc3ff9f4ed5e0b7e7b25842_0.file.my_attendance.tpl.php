@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-14 19:23:17
+/* Smarty version 4.4.1, created on 2024-03-17 05:20:03
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\my_attendance.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f3409519a8b2_27772418',
+  'unifunc' => 'content_65f66f73e41e11_90331019',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9c3ce1381ca198aa9fc3ff9f4ed5e0b7e7b25842' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\my_attendance.tpl',
-      1 => 1710440593,
+      1 => 1710649201,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f3409519a8b2_27772418 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f66f73e41e11_90331019 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -42,7 +42,7 @@ function content_65f3409519a8b2_27772418 (Smarty_Internal_Template $_smarty_tpl)
 		<form action="index.php" method="POST">
 			<input type="text" name="username" placeholder="Username">
 			<input type="password" name="password" placeholder="Password">
-			<input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+			<input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°"> <br><br>
 			<select name="course">
 				<option value="spanish">Español</option>
 				<option value="social_studies">Estudios Sociales</option>
@@ -58,9 +58,9 @@ function content_65f3409519a8b2_27772418 (Smarty_Internal_Template $_smarty_tpl)
 		<table border="2">
 			<thead>
 				<tr>
-					<td>Student</td>
+					<td>Estudiante</td>
 					<td>Username</td>
-					<td>School Level Course:</td>
+					<td>Curso Año:</td>
 					<td>Justificado</td>
 					<td>Fecha</td>
 				</tr>

@@ -72,19 +72,18 @@ class TeacherModel {
 
     public static function setAttendance($conn) {
         
-    }
-
-    public static function getGrades($conn) {
         if (
             !empty($_REQUEST['username']) &&
-            !empty($_REQUEST['password']) && 
             !empty($_REQUEST['school_levels']) && 
-            !empty($_REQUEST['course'])
+            !empty($_REQUEST['course']) && 
+            !empty($_REQUEST['date']) &&
+            !empty($_REQUEST['justified'])
         ) {
             $username = filter_var($_REQUEST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $password = filter_var($_REQUEST['password'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $school_levels = filter_var($_REQUEST['school_levels'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $course = filter_var($_REQUEST['course'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $date = filter_var($_REQUEST['date'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $justified = filter_var($_REQUEST['justified'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             $sql = "SELECT * FROM student WHERE username = ?";
             $stmt = $conn->prepare($sql);
@@ -95,8 +94,64 @@ class TeacherModel {
                 return []; // Return empty array if username or password is incorrect
             }
 
-            if (!password_verify($password, $student_data['password'])) {
-                return []; // Return empty array if password is incorrect
+            $sql = "SELECT * FROM school_levels WHERE school_levels = ? AND course = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$school_levels, $course]);
+            $school_levels_id = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($school_levels_id === false) {
+                return []; // Return empty array if school level or course not found
+            }
+
+            $sql = "SELECT * FROM subjects WHERE school_levels_id = ? AND subject_name = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$school_levels_id['id'], $course]);
+            $subject_id = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($subject_id === false) {
+                return []; // Return empty array if subject not found
+            }
+
+            $sql = "SELECT * FROM attendance WHERE student_id = ? AND subject_id = ? AND date = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$student_data['id'], $subject_id['id'], $date]);
+            $attendance_data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($attendance_data !== false) {
+                $sql = "UPDATE attendance SET justified = ? WHERE student_id = ? AND subject_id = ? AND date = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->execute([$justified, $student_data['id'], $subject_id['id'], $date]);
+                echo "Grades updated successfully!";
+                header ("Refresh: 2; url=index.php?action=students_attendance");
+                return true;
+            } else {
+                $sql = "INSERT INTO attendance (student_id, subject_id, date, justified) VALUES (?, ?, ?, ?)";
+                $stmt = $conn->prepare($sql);
+                $stmt->execute([$student_data['id'], $subject_id['id'], $date, $justified]);
+                echo "Grades assigned successfully!";
+                header ("Refresh: 2; url=index.php?action=students_attendance");
+                return true;
+            }
+        }
+    }
+
+    public static function getGrades($conn) {
+        if (
+            !empty($_REQUEST['username']) &&
+            !empty($_REQUEST['school_levels']) && 
+            !empty($_REQUEST['course'])
+        ) {
+            $username = filter_var($_REQUEST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $school_levels = filter_var($_REQUEST['school_levels'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $course = filter_var($_REQUEST['course'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            $sql = "SELECT * FROM student WHERE username = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$username]);
+            $student_data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($student_data === false) {
+                return []; // Return empty array if username or password is incorrect
             }
 
             // Fetch first_name and last_name1
@@ -153,7 +208,81 @@ class TeacherModel {
     }
 
     public static function setGrades($conn) {
-        
+        if (
+            !empty($_REQUEST['username']) &&
+            !empty($_REQUEST['school_levels']) && 
+            !empty($_REQUEST['course']) &&
+            !empty($_REQUEST['trimester']) &&
+            !empty($_REQUEST['grades'])
+        ) {
+            $username = filter_var($_REQUEST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $school_levels = filter_var($_REQUEST['school_levels'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $course = filter_var($_REQUEST['course'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $trimester = filter_var($_REQUEST['trimester'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $grades = filter_var($_REQUEST['grades'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            $sql = "SELECT * FROM student WHERE username = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$username]);
+            $student_data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($student_data === false) {
+                return []; // Return empty array if username or password is incorrect
+            }
+
+            $sql = "SELECT * FROM school_levels WHERE school_levels = ? AND course = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$school_levels, $course]);
+            $school_levels_id = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($school_levels_id === false) {
+                return []; // Return empty array if school level or course not found
+            }
+
+            $sql = "SELECT * FROM subjects WHERE school_levels_id = ? AND subject_name = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$school_levels_id['id'], $course]);
+            $subject_id = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($subject_id === false) {
+                return []; // Return empty array if subject not found
+            }
+
+            $sql = "SELECT * FROM student_has_subject WHERE student_id = ? AND subject_id = ? ";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$student_data['id'], $subject_id['id']]);
+            $student_has_subject_data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($student_has_subject_data === false) {
+                return []; // Return empty array if student has not subject
+            }
+
+            $sql = "SELECT * FROM grades WHERE student_has_subject_student_id = ? AND student_has_subject_subject_id = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$student_has_subject_data['student_id'], $student_has_subject_data['subject_id']]);
+            $grades_data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            try {
+                if ($grades_data !== false) {
+                    $sql = "UPDATE grades SET grades = ? WHERE student_has_subject_student_id = ? AND student_has_subject_subject_id = ?";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->execute([$grades, $student_has_subject_data['student_id'], $student_has_subject_data['subject_id']]);
+                    echo "Grades updated successfully!";
+                    header ("Refresh: 2; url=index.php?action=students_grades");
+                    return true;
+                } else {
+                    $sql = "INSERT INTO grades (student_has_subject_student_id, student_has_subject_subject_id, trimester, grades) VALUES (?, ?, ?, ?)";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->execute([$student_has_subject_data['student_id'], $student_has_subject_data['subject_id'], $trimester, $grades]);
+                    echo "Grades assigned successfully!";
+                    header ("Refresh: 2; url=index.php?action=students_grades");
+                    return true;
+                }
+            } catch (PDOException $e) {
+                echo "Error: " . $e->getMessage();
+                return false;
+            }
+        }
     }
 
     public static function getSchedule($conn) {

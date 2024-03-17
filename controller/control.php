@@ -64,8 +64,8 @@ class Control {
             $student_attendance = $this->studentAttendance();
             $this->view->setAssign('student_attendance', $student_attendance);
             $this->view->setDisplay('my_attendance.tpl');
-        } else if(isset($_REQUEST['teacher_attendance'])) {
-            $student_attendance = $this->teacherAttendance();
+        } else if(isset($_REQUEST['get_student_attendance'])) {
+            $student_attendance = $this->getStudentAttendance();
             $this->view->setAssign('student_attendance', $student_attendance);
             $this->view->setDisplay('students_attendance.tpl');
         } else if(isset($_REQUEST['get_grades'])) {
@@ -73,11 +73,14 @@ class Control {
             $this->view->setAssign('student_grades', $student_grades);
             $this->view->setDisplay('my_grades.tpl');
         } else if(isset($_REQUEST['student_grades'])) {
-            $student_grades = $this->teacherGrades();
+            $student_grades = $this->getStudentGrades();
             $this->view->setAssign('student_grades', $student_grades);
             $this->view->setDisplay('students_grades.tpl');
-        }
-        else if(isset($_GET['action'])) {
+        } else if(isset($_REQUEST['set_student_grades'])) {
+            $this->setStudentGrades();
+        } else if(isset($_REQUEST['set_student_attendance'])) {
+            $this->setStudentAttendance();
+        } else if(isset($_GET['action'])) {
             $this->processAction();
         } else {
             $this->view->setDisplay("main.tpl"); // display the main page
@@ -200,16 +203,26 @@ class Control {
         return $schedule_data;
     }
 
-    private function teacherAttendance() {
+    private function getStudentAttendance() {
         require_once "model/TeacherModel.php";
         $student_attendance = TeacherModel::getAttendance($conn); // Fetch attendance data
         return $student_attendance;
     }
 
-    private function teacherGrades() {
+    private function getStudentGrades() {
         require_once "model/TeacherModel.php";
         $student_grades = TeacherModel::getGrades($conn); // Fetch grades data
         return $student_grades;
+    }
+
+    private function setStudentGrades() {
+        require_once "model/TeacherModel.php";
+        TeacherModel::setGrades($conn); // Set student grades
+    }
+
+    private function setStudentAttendance() {
+        require_once "model/TeacherModel.php";
+        TeacherModel::setAttendance($conn); // Set student attendance
     }
 
     private function processAction() {

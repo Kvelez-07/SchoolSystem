@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-14 19:41:37
+/* Smarty version 4.4.1, created on 2024-03-17 05:18:59
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\students_attendance.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f344e189da46_34397522',
+  'unifunc' => 'content_65f66f33c2c121_55884805',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '826a2fa01671b3efe8368af25b517e00966dd212' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\students_attendance.tpl',
-      1 => 1710441674,
+      1 => 1710649137,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f344e189da46_34397522 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f66f33c2c121_55884805 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -36,12 +36,15 @@ function content_65f344e189da46_34397522 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 
 <body>
-    <h1>Asistencias</h1><br>
+    <h1>Asignar Asistencias</h1><br>
 
     <div class="attendance_form">
         <form action="index.php" method="POST">
             <input type="text" name="username" placeholder="Username">
             <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+            <label for="justified">Justificacion</label>
+            <input type="radio" name="justified" value="Y"> Y
+            <input type="radio" name="justified" value="N"> N <br><br>
             <select name="course">
                 <option value="spanish">Español</option>
                 <option value="social_studies">Estudios Sociales</option>
@@ -49,7 +52,25 @@ function content_65f344e189da46_34397522 (Smarty_Internal_Template $_smarty_tpl)
                 <option value="math">Mate</option>
             </select>
             <input type="date" name="date">
-            <input type="submit" name="teacher_attendance" value="Asistencia">
+            <input type="submit" name="set_student_attendance" value="Asistencia">
+        </form><br><br>
+    </div>
+
+
+    <h1>Tomar Asistencias</h1><br>
+
+    <div class="attendance_form">
+        <form action="index.php" method="POST">
+            <input type="text" name="username" placeholder="Username">
+            <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°"> <br><br>
+            <select name="course">
+                <option value="spanish">Español</option>
+                <option value="social_studies">Estudios Sociales</option>
+                <option value="science">Ciencias</option>
+                <option value="math">Mate</option>
+            </select>
+            <input type="date" name="date">
+            <input type="submit" name="get_student_attendance" value="Asistencia">
         </form><br><br>
     </div>
 

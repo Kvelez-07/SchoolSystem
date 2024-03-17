@@ -19,7 +19,7 @@
 		<form action="index.php" method="POST">
 			<input type="text" name="username" placeholder="Username">
 			<input type="password" name="password" placeholder="Password">
-			<input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+			<input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°"> <br><br>
 			<select name="course">
 				<option value="spanish">Español</option>
 				<option value="social_studies">Estudios Sociales</option>
