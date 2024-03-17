@@ -47,15 +47,16 @@ class UserModel {
             !empty($_POST['password']) && 
             !empty($_POST['user_type']) && 
             !empty($_POST['first_name']) && 
-            !empty($_POST['last_name1']) &&  // Corrected variable name
-            !empty($_POST['last_name2']) &&  // Corrected variable name
+            !empty($_POST['last_name1']) &&
+            !empty($_POST['last_name2']) &&
             !empty($_POST['id_card']) && 
             !empty($_POST['nationality']) && 
             !empty($_POST['birth']) && 
             !empty($_POST['blood']) && 
             !empty($_POST['address']) && 
             !empty($_POST['email']) && 
-            !empty($_POST['phone'])
+            !empty($_POST['phone']) &&
+            !empty($_POST['$school_levels'])
         ) {
             $user_type = filter_var($_POST['user_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $username = filter_var($_POST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -72,6 +73,7 @@ class UserModel {
             $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
             $phone = filter_var($_POST['phone'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $specialty = isset($_POST['specialty']) ? filter_var($_POST['specialty'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : null;
+            $school_levels = filter_var($_POST['school_levels'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     
             $contact1_name = filter_var($_POST['contact1_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $contact1_phone = filter_var($_POST['contact1_phone'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -96,6 +98,11 @@ class UserModel {
             $stmt = $conn->prepare($sql);
             $stmt->execute([$username]);
             $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            $sql = "SELECT * FROM school_levels WHERE school_levels = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$school_levels]);
+            $school_levels_id = $stmt->fetch(PDO::FETCH_ASSOC);
         
             if($user) {
                 echo "User already exists";
@@ -103,14 +110,14 @@ class UserModel {
             } else {
                 switch ($user_type) {
                     case "Student":
-                        $sql = "INSERT INTO $user_type (username, password, first_name, last_name1, last_name2, id_card, nationality, birth, blood, address, email, phone, contact1_name, contact1_phone, contact2_name, contact2_phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                        $sql = "INSERT INTO $user_type (username, password, first_name, last_name1, last_name2, id_card, nationality, birth, blood, address, email, phone, contact1_name, contact1_phone, contact2_name, contact2_phone, school_levels_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                         $stmt = $conn->prepare($sql);
-                        $stmt->execute([$username, $password, $first_name, $last_name1, $last_name2, $id_card, $nationality, $birth, $blood, $address, $email, $phone, $contact1_name, $contact1_phone, $contact2_name, $contact2_phone]);
+                        $stmt->execute([$username, $password, $first_name, $last_name1, $last_name2, $id_card, $nationality, $birth, $blood, $address, $email, $phone, $contact1_name, $contact1_phone, $contact2_name, $contact2_phone, $school_levels_id['id']]);
                         break;
                     case "Teacher":
-                        $sql = "INSERT INTO $user_type (username, password, first_name, last_name1, last_name2, id_card, nationality, birth, blood, address, email, phone, specialty) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                        $sql = "INSERT INTO $user_type (username, password, first_name, last_name1, last_name2, id_card, nationality, birth, blood, address, email, phone, specialty, school_levels_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                         $stmt = $conn->prepare($sql);
-                        $stmt->execute([$username, $password, $first_name, $last_name1, $last_name2, $id_card, $nationality, $birth, $blood, $address, $email, $phone, $specialty]);
+                        $stmt->execute([$username, $password, $first_name, $last_name1, $last_name2, $id_card, $nationality, $birth, $blood, $address, $email, $phone, $specialty, $school_levels_id['id']]);
                         break;
                     default:
                         echo "Invalid user type";

@@ -20,18 +20,19 @@
                 <h3>Usuario:</h3>
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
-                <label for="specialty">Especialidad: </label>
+                <label for="specialty">Materia:</label>
                 <select name="specialty" id="specialty" required>
                     <option value="spanish">Español</option>
                     <option value="social_studies">Estudios</option>
                     <option value="science">Ciencias</option>
                     <option value="math">Mate</option>
                 </select>
-                <label for="user_type">Tipo Usuario: </label>
+                <label for="user_type">Usuario:</label>
                 <select name="user_type" id="user_type" required>
                     <option value="Student">Estudiante</option>
                     <option value="Teacher">Profesor</option>
                 </select> <br> <br>
+                <input type="number" name="school_levels" min="7" max="11" placeholder="Grados/Nivel 7°-11°">
                 <input type="text" name="first_name" placeholder="First Name" required>
                 <input type="text" name="last_name1" placeholder="Last Name1" required>
                 <input type="text" name="last_name2" placeholder="Last Name2" required>
