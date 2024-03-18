@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-17 05:32:19
+/* Smarty version 4.4.1, created on 2024-03-18 06:05:37
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\signup.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f6725330be90_96392354',
+  'unifunc' => 'content_65f7cba1d96156_01833095',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5759710ace54501c7855d7779b0ee4a5a8fb799f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\signup.tpl',
-      1 => 1710649936,
+      1 => 1710737277,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f6725330be90_96392354 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f7cba1d96156_01833095 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -79,6 +79,7 @@ function content_65f6725330be90_96392354 (Smarty_Internal_Template $_smarty_tpl)
                 <input type="text" name="address" placeholder="Address" required>
             </div>
 
+            <!-- only for students and parent table in DB -->
             <div class="contact_data">
                 <h3>Contactos:</h3>
                 <p>Contacto 1: </p>

@@ -1,5 +1,5 @@
 <?php
 
 require_once('controller/Control.php');
-$controller = new Control();
-$controller->framework_manager(); // call the framework manager
+$controller = new Control(); // Master Controller
+$controller->framework_manager();

@@ -43,24 +43,24 @@ class UserModel {
 
     public static function createUser($conn) { // values based on view variable names
         if(
-            !empty($_POST['username']) && 
-            !empty($_POST['password']) && 
-            !empty($_POST['user_type']) && 
-            !empty($_POST['first_name']) && 
-            !empty($_POST['last_name1']) &&
-            !empty($_POST['last_name2']) &&
-            !empty($_POST['id_card']) && 
-            !empty($_POST['nationality']) && 
-            !empty($_POST['birth']) && 
-            !empty($_POST['blood']) && 
-            !empty($_POST['address']) && 
-            !empty($_POST['email']) && 
-            !empty($_POST['phone']) &&
-            !empty($_POST['$school_levels'])
+            !empty($_REQUEST['username']) && 
+            !empty($_REQUEST['password']) && 
+            !empty($_REQUEST['user_type']) && 
+            !empty($_REQUEST['first_name']) && 
+            !empty($_REQUEST['last_name1']) &&
+            !empty($_REQUEST['last_name2']) &&
+            !empty($_REQUEST['id_card']) && 
+            !empty($_REQUEST['nationality']) && 
+            !empty($_REQUEST['birth']) && 
+            !empty($_REQUEST['blood']) && 
+            !empty($_REQUEST['address']) && 
+            !empty($_REQUEST['email']) && 
+            !empty($_REQUEST['phone']) &&
+            !empty($_REQUEST['school_levels'])
         ) {
-            $user_type = filter_var($_POST['user_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $username = filter_var($_POST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $password = filter_var($_POST['password'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $user_type = filter_var($_POST['user_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $password = password_hash($password, PASSWORD_DEFAULT);
             $first_name = filter_var($_POST['first_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $last_name1 = filter_var($_POST['last_name1'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -106,6 +106,7 @@ class UserModel {
         
             if($user) {
                 echo "User already exists";
+                header("Refresh: 2; url=index.php?action=admin_dashboard");
                 die();
             } else {
                 switch ($user_type) {
@@ -113,6 +114,11 @@ class UserModel {
                         $sql = "INSERT INTO $user_type (username, password, first_name, last_name1, last_name2, id_card, nationality, birth, blood, address, email, phone, contact1_name, contact1_phone, contact2_name, contact2_phone, school_levels_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                         $stmt = $conn->prepare($sql);
                         $stmt->execute([$username, $password, $first_name, $last_name1, $last_name2, $id_card, $nationality, $birth, $blood, $address, $email, $phone, $contact1_name, $contact1_phone, $contact2_name, $contact2_phone, $school_levels_id['id']]);
+
+                        $sql = "INSERT INTO parent (contact_name, contact_phone) VALUES (?, ?)"; // parents
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute([$contact1_name, $contact1_phone]);
+                        $stmt->execute([$contact2_name, $contact2_phone]);
                         break;
                     case "Teacher":
                         $sql = "INSERT INTO $user_type (username, password, first_name, last_name1, last_name2, id_card, nationality, birth, blood, address, email, phone, specialty, school_levels_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
