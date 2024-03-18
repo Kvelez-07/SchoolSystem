@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-14 01:05:54
+/* Smarty version 4.4.1, created on 2024-03-18 19:39:24
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\update_user.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f23f62cb7603_92534415',
+  'unifunc' => 'content_65f88a5c1de2c3_41994479',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c4e33060db7544bd4b9ab1a61c4c054b61e270db' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\update_user.tpl',
-      1 => 1710374752,
+      1 => 1710737508,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f23f62cb7603_92534415 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f88a5c1de2c3_41994479 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -38,6 +38,7 @@ function content_65f23f62cb7603_92534415 (Smarty_Internal_Template $_smarty_tpl)
 
     <div class="update_user_form">
         <form action="index.php" method="POST">
+            <!-- based on DB values -->
             <p>Verification: </p>
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">

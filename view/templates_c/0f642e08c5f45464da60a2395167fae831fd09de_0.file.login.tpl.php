@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-09 07:38:22
+/* Smarty version 4.4.1, created on 2024-03-18 19:14:13
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65ec03de61a0f7_06681087',
+  'unifunc' => 'content_65f88475a7e084_16566463',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0f642e08c5f45464da60a2395167fae831fd09de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\login.tpl',
-      1 => 1709963883,
+      1 => 1710785652,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65ec03de61a0f7_06681087 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f88475a7e084_16566463 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +35,7 @@ function content_65ec03de61a0f7_06681087 (Smarty_Internal_Template $_smarty_tpl)
     <div id="main-form">
         <form action="index.php" method="post">
             <h1>Login</h1>
-            <p>Favor rellenar todos los campos</p>
+            <p>Favor rellenar todos los campos</p> <!-- Valid for common users -->
             <input type="text" id="username" name="username" placeholder="Username" required>
             <input type="password" id="password" name="password" placeholder="Password" required>
             <select name="user_type" id="user_type" name="user_type" title="user_type" required>

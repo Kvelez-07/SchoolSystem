@@ -5,10 +5,10 @@ require_once "connection/Database.php";
 class UserModel {
 
     public static function userLogin($conn) { // values based on view variable names
-        if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['user_type'])) {
-            $username = filter_var($_POST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $password = $_POST['password'];
-            $user_type = filter_var($_POST['user_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        if(!empty($_REQUEST['username']) && !empty($_REQUEST['password']) && !empty($_REQUEST['user_type'])) {
+            $username = filter_var($_REQUEST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $password = $_REQUEST['password'];
+            $user_type = filter_var($_REQUEST['user_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             if($user_type == "Student") {
                 $sql = "SELECT * FROM $user_type WHERE username = ?";
@@ -58,27 +58,27 @@ class UserModel {
             !empty($_REQUEST['phone']) &&
             !empty($_REQUEST['school_levels'])
         ) {
-            $username = filter_var($_POST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $password = filter_var($_POST['password'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $user_type = filter_var($_POST['user_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $username = filter_var($_REQUEST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $password = filter_var($_REQUEST['password'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $user_type = filter_var($_REQUEST['user_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $password = password_hash($password, PASSWORD_DEFAULT);
-            $first_name = filter_var($_POST['first_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $last_name1 = filter_var($_POST['last_name1'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $last_name2 = filter_var($_POST['last_name2'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $id_card = filter_var($_POST['id_card'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $nationality = filter_var($_POST['nationality'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $birth = filter_var($_POST['birth'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $blood = filter_var($_POST['blood'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $address = filter_var($_POST['address'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-            $phone = filter_var($_POST['phone'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $specialty = isset($_POST['specialty']) ? filter_var($_POST['specialty'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : null;
-            $school_levels = filter_var($_POST['school_levels'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $first_name = filter_var($_REQUEST['first_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $last_name1 = filter_var($_REQUEST['last_name1'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $last_name2 = filter_var($_REQUEST['last_name2'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $id_card = filter_var($_REQUEST['id_card'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $nationality = filter_var($_REQUEST['nationality'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $birth = filter_var($_REQUEST['birth'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $blood = filter_var($_REQUEST['blood'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $address = filter_var($_REQUEST['address'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $email = filter_var($_REQUEST['email'], FILTER_SANITIZE_EMAIL);
+            $phone = filter_var($_REQUEST['phone'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $specialty = isset($_REQUEST['specialty']) ? filter_var($_REQUEST['specialty'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : null;
+            $school_levels = filter_var($_REQUEST['school_levels'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     
-            $contact1_name = filter_var($_POST['contact1_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $contact1_phone = filter_var($_POST['contact1_phone'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $contact2_name = filter_var($_POST['contact2_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $contact2_phone = filter_var($_POST['contact2_phone'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $contact1_name = filter_var($_REQUEST['contact1_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $contact1_phone = filter_var($_REQUEST['contact1_phone'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $contact2_name = filter_var($_REQUEST['contact2_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $contact2_phone = filter_var($_REQUEST['contact2_phone'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     
             // Query the users table
             if($user_type == "Student") {
@@ -140,7 +140,7 @@ class UserModel {
         // Close statement and connection
         $stmt = null;
         $conn = null;
-    }    
+    }
 
     public static function readUser($conn) { // values based on view variable names
         $username = isset($_REQUEST['username']) ? filter_var($_REQUEST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : null;

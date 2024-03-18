@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-06 23:19:28
+/* Smarty version 4.4.1, created on 2024-03-18 18:21:05
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\students_dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65e8ebf08fcd05_67929740',
+  'unifunc' => 'content_65f87801574826_18825422',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e3c666ec42f1de77a53492e6f12155311bdf9100' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\students_dashboard.tpl',
-      1 => 1709763422,
+      1 => 1710737615,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e8ebf08fcd05_67929740 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f87801574826_18825422 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -46,6 +46,7 @@ function content_65e8ebf08fcd05_67929740 (Smarty_Internal_Template $_smarty_tpl)
 <body>
 	<div class="contenedor">
 		<div class="contenedor-opciones">
+			<!-- Views with GET action redirection -->
 
 			<div class="card" style="background-image: url('img/grades.jpg')">
 				<a id="link" href="index.php?action=my_grades">Notas</a>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-09 07:21:11
+/* Smarty version 4.4.1, created on 2024-03-18 18:20:13
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65ebffd75dae75_20837973',
+  'unifunc' => 'content_65f877cd038a70_00031966',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '64db2aabed8840e37379ed111f2c0fd95d26a8ff' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\main.tpl',
-      1 => 1709964910,
+      1 => 1710737584,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65ebffd75dae75_20837973 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f877cd038a70_00031966 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -45,8 +45,8 @@ function content_65ebffd75dae75_20837973 (Smarty_Internal_Template $_smarty_tpl)
             <nav id="opciones">
 
                 <ul class="menu-derecha">
-
-                    <li><a href="index.php?action=admin_login">Registro</a></li>
+                    <!-- JS functions -->
+                    <li><a href="index.php?action=admin_login">Registro</a></li> <!-- Admin Privileges -->
                     <li><a href="#" onclick="mostrarContenidoInicial('contenido');">Hogar</a></li>
                     <li><a href="#" onclick="mostrarSobreNosotros('contenido');">Sobre nosotros</a></li>
                     <li><a href="#" onclick="MostrarUbicacion('contenido');">Contacto</a></li>
