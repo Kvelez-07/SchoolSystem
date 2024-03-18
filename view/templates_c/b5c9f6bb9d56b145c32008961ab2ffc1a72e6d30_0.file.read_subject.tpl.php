@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-18 02:42:16
+/* Smarty version 4.4.1, created on 2024-03-18 19:52:23
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\read_subject.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f79bf8f14a66_43198706',
+  'unifunc' => 'content_65f88d6765bce8_01094207',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b5c9f6bb9d56b145c32008961ab2ffc1a72e6d30' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\read_subject.tpl',
-      1 => 1710713893,
+      1 => 1710737240,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f79bf8f14a66_43198706 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f88d6765bce8_01094207 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -82,6 +82,7 @@ $_smarty_tpl->tpl_vars['subject']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <?php } else { ?>
                     <tr>
+                        <!-- match empty spaces with header -->
                         <td colspan="4">No subject data available.</td>
                     </tr>
                 <?php }?>

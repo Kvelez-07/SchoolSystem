@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-18 02:18:54
+/* Smarty version 4.4.1, created on 2024-03-18 19:54:04
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\create_subject.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f7967ed5cab1_58332562',
+  'unifunc' => 'content_65f88dcc6b16f1_01048692',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '94d5f2a77405f1402da50ee25859a39520a5a515' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\create_subject.tpl',
-      1 => 1710724732,
+      1 => 1710736989,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f7967ed5cab1_58332562 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f88dcc6b16f1_01048692 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +38,7 @@ function content_65f7967ed5cab1_58332562 (Smarty_Internal_Template $_smarty_tpl)
 
     <div class="subject_form">
         <form action="index.php" method="POST">
-            <label for="begins">Begin: </label>
+            <label for="begins">Begin: </label> <!-- for the schedule DB table -->
             <select name="begins">
                 <option value="7am">7am</option>
                 <option value="9am">9am</option>
@@ -49,7 +49,7 @@ function content_65f7967ed5cab1_58332562 (Smarty_Internal_Template $_smarty_tpl)
                 <option value="5pm">5pm</option>
                 <option value="6pm">6pm</option>
             </select>
-            <label for="ends">End: </label>
+            <label for="ends">End: </label> <!-- for the schedule DB table -->
             <select name="ends">
                 <option value="10am">10am</option>
                 <option value="12pm">12pm</option>
