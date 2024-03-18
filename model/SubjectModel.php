@@ -4,10 +4,21 @@ require_once "connection/Database.php";
 
 class SubjectModel {
 
-    public static function createSubject($conn) {
+    public static function createSubject($conn) { // values based on view variable names
         if (!empty($_REQUEST['subject_name'])) {
             $subject_name = filter_var($_REQUEST['subject_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    
+            $begins = filter_var($_REQUEST['begins'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $ends = filter_var($_REQUEST['ends'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $day = filter_var($_REQUEST ['day'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $allowed_schedule = (($begins == "7am" && $ends == "10am") || ($begins == "10am" && $ends == "12pm") || ($begins == "2pm" && $ends == "3pm") 
+            || ($begins == "3pm" && $ends == "4pm") || ($begins == "4pm" && $ends == "5pm") || ($begins == "6pm" && $ends == "7pm"));
+
+            if (!$allowed_schedule) {
+                echo "Schedule settings not allowed.";
+                header("Refresh: 2; url=index.php?action=admin_dashboard"); // Refresh page after 2 seconds
+                return; // Exit function after inserting subject
+            }
+
             // Retrieve school level ID
             $sql = "SELECT id FROM school_levels WHERE course = ?";
             $stmt = $conn->prepare($sql);
@@ -41,6 +52,15 @@ class SubjectModel {
                         $sql = "INSERT INTO subjects (subject_name, school_levels_id, teacher_id) VALUES (?, ?, ?)";
                         $stmt = $conn->prepare($sql);
                         $stmt->execute([$subject_name, $school_levels_id, $teacher_id]);
+
+                        // Retrieve the subject_id of the last inserted subject
+                        $subject_id = $conn->lastInsertId();
+
+                        // Insert into schedule table using the retrieved subject_id
+                        $sql = "INSERT INTO schedule (begins, ends, day, subject_id) VALUES (?, ?, ?, ?)";
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute([$begins, $ends, $day, $subject_id]);
+                        
                         echo "Subject created successfully!";
                         header("Refresh: 2; url=index.php?action=admin_dashboard"); // Refresh page after 2 seconds
                         return; // Exit function after inserting subject
@@ -52,9 +72,9 @@ class SubjectModel {
         }
         $conn = null;
         $stmt = null;
-    }       
+    }
 
-    public static function updateSubject($conn) {
+    public static function updateSubject($conn) { // values based on view variable names
         if (
             !empty($_REQUEST['school_levels_id']) && 
             !empty($_REQUEST['teacher_id']) && 
@@ -83,7 +103,7 @@ class SubjectModel {
         $stmt = null;
     }
 
-    public static function deleteSubject($conn) {
+    public static function deleteSubject($conn) { // values based on view variable names
         if (!empty($_REQUEST['school_levels_id']) && !empty($_REQUEST['teacher_id']) && !empty($_REQUEST['subject_name'])) {
             $school_levels_id = filter_var($_REQUEST['school_levels_id'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $teacher_id = filter_var($_REQUEST['teacher_id'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -101,7 +121,7 @@ class SubjectModel {
         $stmt = null;
     }
 
-    public static function getSubject($conn) {
+    public static function getSubject($conn) { // values based on view variable names
         if (!empty($_REQUEST['subject_name'])) {
             $subject_name = filter_var($_REQUEST['subject_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 

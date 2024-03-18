@@ -23,6 +23,7 @@
     </div>
 
     <div class="subject_manipulation">
+        <!-- Generate Subjects based on DB tables and FKs -->
         <h2>Subjects</h2>
         <a href="index.php?action=create_subject">Create</a>
         <a href="index.php?action=read_subject">Read</a>

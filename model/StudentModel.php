@@ -4,7 +4,7 @@ require_once "connection/Database.php";
 
 class StudentModel {
 
-    public static function getAttendance($conn) {
+    public static function getAttendance($conn) { // values based on view variable names
         if (
             !empty($_REQUEST['username']) &&
             !empty($_REQUEST['password']) && 
@@ -76,7 +76,7 @@ class StudentModel {
         }
     }
 
-    public static function getGrades($conn) {
+    public static function getGrades($conn) { // values based on view variable names
         if (
             !empty($_REQUEST['username']) &&
             !empty($_REQUEST['password']) && 
@@ -143,6 +143,10 @@ class StudentModel {
                 $grades_data[] = $row;
             }
 
+            if($grades_data === false) {
+                return []; // Return empty array if student has no grades
+            }
+
             $student_grades = [
                 'student_username' => $username,
                 'student_full_name' => $student_full_name,
@@ -154,7 +158,7 @@ class StudentModel {
         }
     }
 
-    public static function getSchedule($conn) {
+    public static function getSchedule($conn) { // values based on view variable names
         if(!empty($_REQUEST['school_levels']) && !empty($_REQUEST['course'])) {
     
             try {
@@ -197,7 +201,7 @@ class StudentModel {
         }
     }      
 
-    public static function getTeachers($conn) {
+    public static function getTeachers($conn) { // values based on view variable names
         if(!empty($_REQUEST['school_levels']) && !empty($_REQUEST['course'])) {
     
             try {
@@ -238,7 +242,7 @@ class StudentModel {
         }
     }    
 
-    public static function getClassmates($conn) {
+    public static function getClassmates($conn) { // values based on view variable names
         if(!empty($_REQUEST['school_levels']) && !empty($_REQUEST['course'])) {
 
             try {

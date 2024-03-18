@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-17 05:18:59
+/* Smarty version 4.4.1, created on 2024-03-18 01:42:38
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\students_attendance.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f66f33c2c121_55884805',
+  'unifunc' => 'content_65f78dfe022ed0_09940997',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '826a2fa01671b3efe8368af25b517e00966dd212' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\students_attendance.tpl',
-      1 => 1710649137,
+      1 => 1710722555,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f66f33c2c121_55884805 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f78dfe022ed0_09940997 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -32,16 +32,19 @@ function content_65f66f33c2c121_55884805 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/teacher.css">
+    <link rel="stylesheet" href="css/students_attendance.css">
     <title>Asistencias</title>
 </head>
 
 <body>
-    <h1>Asignar Asistencias</h1><br>
+    <header class="first_attendance_header">
+        <h1>Asignar Asistencias</h1><br>
+    </header>
 
-    <div class="attendance_form">
+    <div class="first_attendance_form">
         <form action="index.php" method="POST">
             <input type="text" name="username" placeholder="Username">
-            <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+            <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°"><br><br>
             <label for="justified">Justificacion</label>
             <input type="radio" name="justified" value="Y"> Y
             <input type="radio" name="justified" value="N"> N <br><br>
@@ -56,10 +59,11 @@ function content_65f66f33c2c121_55884805 (Smarty_Internal_Template $_smarty_tpl)
         </form><br><br>
     </div>
 
+    <header class="second_attendance_header">
+        <h1>Tomar Asistencias</h1><br>
+    </header>
 
-    <h1>Tomar Asistencias</h1><br>
-
-    <div class="attendance_form">
+    <div class="second_attendance_form">
         <form action="index.php" method="POST">
             <input type="text" name="username" placeholder="Username">
             <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°"> <br><br>
@@ -110,7 +114,7 @@ $_smarty_tpl->tpl_vars['attendance']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <?php } else { ?>
                     <tr>
-                        <td colspan="2">No attendance data available.</td>
+                        <td colspan="5">No attendance data available.</td>
                     </tr>
                 <?php }?>
             </tbody>

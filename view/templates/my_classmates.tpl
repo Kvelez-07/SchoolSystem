@@ -9,26 +9,16 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/student.css">
+	<link rel="stylesheet" href="css/my_classmates.css">
 	<title>Compañeros</title>
 </head>
 
 <body>
-	<h1>Mis Compañeros</h1><br>
+	<header class="my_classmates_header">
+		<h1>Mis Compañeros</h1><br>
+	</header>
 
-	<div class="classmates_form">
-		<form action="index.php" method="POST">
-			<input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
-			<select name="course">
-				<option value="spanish">Español</option>
-				<option value="social_studies">Estudios Sociales</option>
-				<option value="science">Ciencias</option>
-				<option value="math">Mate</option>
-			</select>
-			<input type="submit" name="get_classmates" value="Compañeros">
-		</form><br><br>
-	</div>
-
-	<div class="classmates_table">
+	<div class="my_classmates_table">
 		<table border="2">
 			<thead>
 				<tr>
@@ -39,6 +29,7 @@
 				</tr>
 			</thead>
 			<tbody>
+				<!-- availability -->
 				{if isset($classmates_data)}
 					{foreach from=$classmates_data item=classmate}
 						<tr>
@@ -50,11 +41,25 @@
 					{/foreach}
 				{else}
 					<tr>
+						<!-- match empty spaces with header -->
 						<td colspan="4">No subject data available.</td>
 					</tr>
 				{/if}
 			</tbody>
 		</table>
+	</div>
+
+	<div class="my_classmates_form">
+		<form action="index.php" method="POST">
+			<input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+			<select name="course">
+				<option value="spanish">Español</option>
+				<option value="social_studies">Estudios Sociales</option>
+				<option value="science">Ciencias</option>
+				<option value="math">Mate</option>
+			</select>
+			<input type="submit" name="get_classmates" value="Compañeros">
+		</form><br><br>
 	</div>
 
 	<div class="Exit1">

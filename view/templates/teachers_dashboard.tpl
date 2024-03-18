@@ -23,6 +23,7 @@
 <body>
 	<div class="contenedor">
 		<div class="contenedor-opciones">
+			<!-- Views with GET action redirection -->
 
 			<div class="card" style="background-image: url('img/grades.jpg')">
 				<a id="link" href="index.php?action=students_grades">Notas</a>

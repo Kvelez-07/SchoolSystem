@@ -15,6 +15,7 @@
 
     <div class="update_user_form">
         <form action="index.php" method="POST">
+            <!-- based on DB values -->
             <p>Verification: </p>
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">

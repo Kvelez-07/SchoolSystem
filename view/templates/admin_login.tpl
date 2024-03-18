@@ -11,6 +11,7 @@
 <body>
     <div id="main-form">
         <form action="index.php" method="post">
+            <!-- Exclusive Login for Admin -->
             <h1>Login</h1>
             <p>Favor rellenar todos los campos</p>
             <input type="hidden" id="admin" name="user_type" value="Admin" required>

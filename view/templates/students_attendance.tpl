@@ -9,16 +9,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/teacher.css">
+    <link rel="stylesheet" href="css/students_attendance.css">
     <title>Asistencias</title>
 </head>
 
 <body>
-    <h1>Asignar Asistencias</h1><br>
+    <header class="first_attendance_header">
+        <h1>Asignar Asistencias</h1><br>
+    </header>
 
-    <div class="attendance_form">
+    <div class="first_attendance_form">
         <form action="index.php" method="POST">
             <input type="text" name="username" placeholder="Username">
-            <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+            <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°"><br><br>
             <label for="justified">Justificacion</label>
             <input type="radio" name="justified" value="Y"> Y
             <input type="radio" name="justified" value="N"> N <br><br>
@@ -33,10 +36,11 @@
         </form><br><br>
     </div>
 
+    <header class="second_attendance_header">
+        <h1>Tomar Asistencias</h1><br>
+    </header>
 
-    <h1>Tomar Asistencias</h1><br>
-
-    <div class="attendance_form">
+    <div class="second_attendance_form">
         <form action="index.php" method="POST">
             <input type="text" name="username" placeholder="Username">
             <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°"> <br><br>
@@ -75,7 +79,8 @@
                     {/foreach}
                 {else}
                     <tr>
-                        <td colspan="2">No attendance data available.</td>
+                        <!-- match empty spaces with header -->
+                        <td colspan="5">No attendance data available.</td>
                     </tr>
                 {/if}
             </tbody>

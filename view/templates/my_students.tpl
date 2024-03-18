@@ -9,11 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/teacher.css">
+    <link rel="stylesheet" href="css/my_students.css">
     <title>Mis Estudiantes</title>
 </head>
 
 <body>
-    <h1>Estudiantes</h1><br>
+    <header class="students_header">
+        <h1>Estudiantes</h1><br>
+    </header>
 
     <div class="students_form">
         <form action="index.php" method="POST">
@@ -50,6 +53,7 @@
                     {/foreach}
                 {else}
                     <tr>
+                        <!-- match empty spaces with header -->
                         <td colspan="4">No subject data available.</td>
                     </tr>
                 {/if}

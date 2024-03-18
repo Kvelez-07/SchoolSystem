@@ -9,47 +9,55 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/student.css">
+    <link rel="stylesheet" href="css/my_schedule.css">
     <title>Horarios</title>
 </head>
 
 <body>
-    <h1>Horario Estudiantil</h1><br>
+    <header class="my_schedule_header">
+        <h1>Horario Estudiantil</h1><br>
+    </header>
 
-    <form action="index.php" method="POST">
-        <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
-        <select name="course">
-            <option value="spanish">Español</option>
-            <option value="social_studies">Estudios Sociales</option>
-            <option value="science">Ciencias</option>
-            <option value="math">Mate</option>
-        </select>
-        <input type="submit" name="get_schedule" value="Horario">
-    </form><br><br>
-
-    <table border="2">
-        <thead>
-            <tr>
-                <td>Dia</td>
-                <td>Empieza</td>
-                <td>Termina</td>
-            </tr>
-        </thead>
-        <tbody>
-            {if isset($schedule_data)}
-                {foreach from=$schedule_data item=schedule}
-                    <tr>
-                        <td>{$schedule.day}</td>
-                        <td>{$schedule.begins}</td>
-                        <td>{$schedule.ends}</td>
-                    </tr>
-                {/foreach}
-            {else}
+    <div class="my_schedule_table">
+        <table border="2">
+            <thead>
                 <tr>
-                    <td colspan="4">No subject data available.</td>
+                    <td>Dia</td>
+                    <td>Empieza</td>
+                    <td>Termina</td>
                 </tr>
-            {/if}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {if isset($schedule_data)}
+                    {foreach from=$schedule_data item=schedule}
+                        <tr>
+                            <td>{$schedule.day}</td>
+                            <td>{$schedule.begins}</td>
+                            <td>{$schedule.ends}</td>
+                        </tr>
+                    {/foreach}
+                {else}
+                    <tr>
+                        <!-- match empty spaces with header -->
+                        <td colspan="4">No subject data available.</td>
+                    </tr>
+                {/if}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="my_schedule_form">
+        <form action="index.php" method="POST">
+            <input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°">
+            <select name="course">
+                <option value="spanish">Español</option>
+                <option value="social_studies">Estudios Sociales</option>
+                <option value="science">Ciencias</option>
+                <option value="math">Mate</option>
+            </select>
+            <input type="submit" name="get_schedule" value="Horario">
+        </form><br><br>
+    </div>
 
     <div class="Exit1">
         <a id="link" href="index.php?action=students_dashboard">

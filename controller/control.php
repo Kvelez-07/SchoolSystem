@@ -11,76 +11,76 @@ class Control {
         $this->view = new Configuration(); // smarty configuration
     }
 
-    public function framework_manager(){
-        if(isset($_REQUEST['login'])) {
+    public function framework_manager(){ // open to modular changes with functions.
+        if(isset($_REQUEST['login'])) { // login page call
             $this->processLogin();
-        } else if(isset($_REQUEST['logUser'])) {
+        } else if(isset($_REQUEST['logUser'])) { // login process
             $this->processUserLogin();
-        } else if(isset($_REQUEST['signup'])) {
+        } else if(isset($_REQUEST['signup'])) { // signup with admin privileges
             $this->processSignup();
-        } else if(isset($_REQUEST['delete_user'])) {
-            $this->userDeletion(); // Call the deletion function form the model
-        } else if(isset($_REQUEST['read_user'])) {
+        } else if(isset($_REQUEST['delete_user'])) { // admin DELETE
+            $this->userDeletion();
+        } else if(isset($_REQUEST['read_user'])) { // admin READ
             $user_data = $this->userFetching();
             $this->view->setAssign('user_data', $user_data); // Assign the user data to Smarty variable
             $this->view->setDisplay("read_user.tpl"); // Display the read user template
-        } else if(isset($_REQUEST['update_user'])) {
-            $this->userUpdating(); // Call the updating function form the model
-        } else if(isset($_REQUEST['create_subject'])) {
+        } else if(isset($_REQUEST['update_user'])) { // admin UPDATE
+            $this->userUpdating();
+        } else if(isset($_REQUEST['create_subject'])) { // admin CREATE
             $this->subjectCreation();
-        } else if(isset($_REQUEST['delete_subject'])) {
+        } else if(isset($_REQUEST['delete_subject'])) { // admin DELETE
             $this->subjectDeletion();
-        } else if(isset($_REQUEST['read_subject'])) {
+        } else if(isset($_REQUEST['read_subject'])) { // admin READ
             $subject_data = $this->subjectFetching();
             $this->view->setAssign('subject_data', $subject_data);
             $this->view->setDisplay('read_subject.tpl');
-        } else if(isset($_REQUEST['update_subject'])) {
+        } else if(isset($_REQUEST['update_subject'])) { // admin UPDATE
             $this->subjectUpdating();
-        } else if(isset($_REQUEST['get_classmates'])) {
+        } else if(isset($_REQUEST['get_classmates'])) { // student READ
             $classmates_data = $this->classmateFetching();
             $this->view->setAssign('classmates_data', $classmates_data);
             $this->view->setDisplay('my_classmates.tpl');
-        } else if(isset($_REQUEST['get_teachers'])) {
+        } else if(isset($_REQUEST['get_teachers'])) { // student READ
             $teachers_data = $this->teacherFetching();
             $this->view->setAssign('teachers_data', $teachers_data);
             $this->view->setDisplay('my_teachers.tpl');
-        } else if(isset($_REQUEST['get_students'])) {
+        } else if(isset($_REQUEST['get_students'])) { // teacher READ
             $students_data = $this->studentFetching();
             $this->view->setAssign('students_data', $students_data);
             $this->view->setDisplay('my_students.tpl');
-        } else if(isset($_REQUEST['get_collaborators'])) {
+        } else if(isset($_REQUEST['get_collaborators'])) { // teacher READ
             $collaborators_data = $this->collaboratorFetching();
             $this->view->setAssign('collaborators_data', $collaborators_data);
             $this->view->setDisplay('other_teachers.tpl');
-        } else if(isset($_REQUEST['get_schedule'])) {
+        } else if(isset($_REQUEST['get_schedule'])) { // student READ
             $schedule_data = $this->studentSchedule();
             $this->view->setAssign('schedule_data', $schedule_data);
             $this->view->setDisplay('my_schedule.tpl');
-        } else if(isset($_REQUEST['teacher_schedule'])) {
+        } else if(isset($_REQUEST['teacher_schedule'])) { // teacher READ
             $schedule_data = $this->teacherSchedule();
             $this->view->setAssign('schedule_data', $schedule_data);
             $this->view->setDisplay('teacher_schedule.tpl');
-        } else if(isset($_REQUEST['get_attendance'])) {
+        } else if(isset($_REQUEST['get_attendance'])) { // student READ
             $student_attendance = $this->studentAttendance();
             $this->view->setAssign('student_attendance', $student_attendance);
             $this->view->setDisplay('my_attendance.tpl');
-        } else if(isset($_REQUEST['get_student_attendance'])) {
+        } else if(isset($_REQUEST['get_student_attendance'])) { // teacher READ
             $student_attendance = $this->getStudentAttendance();
             $this->view->setAssign('student_attendance', $student_attendance);
             $this->view->setDisplay('students_attendance.tpl');
-        } else if(isset($_REQUEST['get_grades'])) {
+        } else if(isset($_REQUEST['get_grades'])) { // student READ
             $student_grades = $this->studentGrades();
             $this->view->setAssign('student_grades', $student_grades);
             $this->view->setDisplay('my_grades.tpl');
-        } else if(isset($_REQUEST['student_grades'])) {
+        } else if(isset($_REQUEST['student_grades'])) { // teacher READ
             $student_grades = $this->getStudentGrades();
             $this->view->setAssign('student_grades', $student_grades);
             $this->view->setDisplay('students_grades.tpl');
-        } else if(isset($_REQUEST['set_student_grades'])) {
+        } else if(isset($_REQUEST['set_student_grades'])) { // teacher UPDATE
             $this->setStudentGrades();
-        } else if(isset($_REQUEST['set_student_attendance'])) {
+        } else if(isset($_REQUEST['set_student_attendance'])) { // teacher UPDATE
             $this->setStudentAttendance();
-        } else if(isset($_GET['action'])) {
+        } else if(isset($_GET['action'])) { // if action is set, redirect...
             $this->processAction();
         } else {
             $this->view->setDisplay("main.tpl"); // display the main page
@@ -225,7 +225,7 @@ class Control {
         TeacherModel::setAttendance($conn); // Set student attendance
     }
 
-    private function processAction() {
+    private function processAction() { // Process page redirection
         $actionMap = [
             "my_grades" => "my_grades.tpl",
             "my_teachers" => "my_teachers.tpl",
@@ -253,10 +253,11 @@ class Control {
         ];
     
         $action = $_GET['action'] ?? null;
-        $template = $actionMap[$action] ?? "main.tpl";
+        $template = $actionMap[$action] ?? "main.tpl"; // Set template to main if action not found
         $this->view->setDisplay($template);
     }       
 
+    // Getters and Setters
     public function getModel(){
         return $this->model;
     }

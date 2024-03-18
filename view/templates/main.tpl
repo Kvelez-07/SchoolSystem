@@ -20,8 +20,8 @@
             <nav id="opciones">
 
                 <ul class="menu-derecha">
-
-                    <li><a href="index.php?action=admin_login">Registro</a></li>
+                    <!-- JS functions -->
+                    <li><a href="index.php?action=admin_login">Registro</a></li> <!-- Admin Privileges -->
                     <li><a href="#" onclick="mostrarContenidoInicial('contenido');">Hogar</a></li>
                     <li><a href="#" onclick="mostrarSobreNosotros('contenido');">Sobre nosotros</a></li>
                     <li><a href="#" onclick="MostrarUbicacion('contenido');">Contacto</a></li>

@@ -12,7 +12,7 @@
     <div id="main-form">
         <form action="index.php" method="post">
             <h1>Login</h1>
-            <p>Favor rellenar todos los campos</p>
+            <p>Favor rellenar todos los campos</p> <!-- Valid for common users -->
             <input type="text" id="username" name="username" placeholder="Username" required>
             <input type="password" id="password" name="password" placeholder="Password" required>
             <select name="user_type" id="user_type" name="user_type" title="user_type" required>

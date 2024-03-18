@@ -15,6 +15,7 @@
 
     <div class="subject_form">
         <form action="index.php" method="POST">
+            <!-- base on DB tables -->
             <input type="number" name="teacher_id" placeholder="teacher_id">
             <input type="number" name="school_levels_id" placeholder="school_levels_id"><br><br>
             <select name="subject_name">

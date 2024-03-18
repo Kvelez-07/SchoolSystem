@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-17 20:19:46
+/* Smarty version 4.4.1, created on 2024-03-18 02:42:16
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\read_subject.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f74252a34d56_53356146',
+  'unifunc' => 'content_65f79bf8f14a66_43198706',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b5c9f6bb9d56b145c32008961ab2ffc1a72e6d30' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\read_subject.tpl',
-      1 => 1710703181,
+      1 => 1710713893,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f74252a34d56_53356146 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f79bf8f14a66_43198706 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +36,7 @@ function content_65f74252a34d56_53356146 (Smarty_Internal_Template $_smarty_tpl)
         <h1>Subject List</h1>
     </header>
 
-    <div class="subject_form">
+    <div class="read_subject_form">
         <form action="index.php" method="POST">
             <select name="subject_name">
                 <option value="spanish">Español</option>

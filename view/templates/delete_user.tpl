@@ -16,6 +16,7 @@
 
     <div class="delete_user_form">
         <form action="index.php" method="POST">
+            <!-- GUI DELETE -->
             <input type="text" name="username" placeholder="Username"><br><br>
             <select name="user_type" id="user_type">
                 <option value="Student">Student</option>

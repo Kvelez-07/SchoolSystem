@@ -9,16 +9,20 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/student.css">
+	<link rel="stylesheet" href="css/my_attendance.css">
 	<title>Asistencia</title>
 </head>
 
 <body>
-	<h1>Mi Asistencia</h1><br>
+	<header class="attendance_header">
+		<h1>Mi Asistencia</h1><br>
+	</header>
 
-	<div class="classmates_form">
+	<div class="attendance_form">
 		<form action="index.php" method="POST">
 			<input type="text" name="username" placeholder="Username">
 			<input type="password" name="password" placeholder="Password">
+			<!-- Grade and Subject + Justification Record -->
 			<input type="number" name="school_levels" min="7" max="11" placeholder="7°-11°"> <br><br>
 			<select name="course">
 				<option value="spanish">Español</option>
@@ -43,6 +47,7 @@
 				</tr>
 			</thead>
 			<tbody>
+				<!-- array availability -->
 				{if isset($student_attendance)}
 					{foreach from=$student_attendance.attendance_data item=attendance}
 						<tr>
@@ -55,7 +60,8 @@
 					{/foreach}
 				{else}
 					<tr>
-						<td colspan="2">No attendance data available.</td>
+						<!-- match empty spaces with header -->
+						<td colspan="5">No attendance data available.</td>
 					</tr>
 				{/if}
 			</tbody>

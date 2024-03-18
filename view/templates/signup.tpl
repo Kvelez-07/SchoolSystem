@@ -56,6 +56,7 @@
                 <input type="text" name="address" placeholder="Address" required>
             </div>
 
+            <!-- only for students and parent table in DB -->
             <div class="contact_data">
                 <h3>Contactos:</h3>
                 <p>Contacto 1: </p>

@@ -4,7 +4,7 @@ require_once "connection/Database.php";
 
 class TeacherModel {
 
-    public static function getAttendance($conn) {
+    public static function getAttendance($conn) { // values based on view variable names
         if (
             !empty($_REQUEST['username']) &&
             !empty($_REQUEST['school_levels']) && 
@@ -70,7 +70,7 @@ class TeacherModel {
         }
     }
 
-    public static function setAttendance($conn) {
+    public static function setAttendance($conn) { // values based on view variable names
         
         if (
             !empty($_REQUEST['username']) &&
@@ -135,7 +135,7 @@ class TeacherModel {
         }
     }
 
-    public static function getGrades($conn) {
+    public static function getGrades($conn) { // values based on view variable names
         if (
             !empty($_REQUEST['username']) &&
             !empty($_REQUEST['school_levels']) && 
@@ -196,6 +196,10 @@ class TeacherModel {
                 $grades_data[] = $row;
             }
 
+            if($grades_data === false) {
+                return []; // Return empty array if no grades found
+            }
+
             $student_grades = [
                 'student_username' => $username,
                 'student_full_name' => $student_full_name,
@@ -207,7 +211,7 @@ class TeacherModel {
         }
     }
 
-    public static function setGrades($conn) {
+    public static function setGrades($conn) { // values based on view variable names
         if (
             !empty($_REQUEST['username']) &&
             !empty($_REQUEST['school_levels']) && 
@@ -242,38 +246,47 @@ class TeacherModel {
             $sql = "SELECT * FROM subjects WHERE school_levels_id = ? AND subject_name = ?";
             $stmt = $conn->prepare($sql);
             $stmt->execute([$school_levels_id['id'], $course]);
-            $subject_id = $stmt->fetch(PDO::FETCH_ASSOC);
+            $subject_data = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($subject_id === false) {
+            if ($subject_data === false) {
                 return []; // Return empty array if subject not found
-            }
-
-            $sql = "SELECT * FROM student_has_subject WHERE student_id = ? AND subject_id = ? ";
-            $stmt = $conn->prepare($sql);
-            $stmt->execute([$student_data['id'], $subject_id['id']]);
-            $student_has_subject_data = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if ($student_has_subject_data === false) {
-                return []; // Return empty array if student has not subject
             }
 
             $sql = "SELECT * FROM grades WHERE student_has_subject_student_id = ? AND student_has_subject_subject_id = ?";
             $stmt = $conn->prepare($sql);
-            $stmt->execute([$student_has_subject_data['student_id'], $student_has_subject_data['subject_id']]);
+            $stmt->execute([$student_data['student_id'], $subject_data['subject_id']]);
             $grades_data = $stmt->fetch(PDO::FETCH_ASSOC);
 
             try {
                 if ($grades_data !== false) {
                     $sql = "UPDATE grades SET grades = ? WHERE student_has_subject_student_id = ? AND student_has_subject_subject_id = ?";
                     $stmt = $conn->prepare($sql);
-                    $stmt->execute([$grades, $student_has_subject_data['student_id'], $student_has_subject_data['subject_id']]);
+                    $stmt->execute([$grades, $student_data['student_id'], $subject_data['subject_id']]);
                     echo "Grades updated successfully!";
                     header ("Refresh: 2; url=index.php?action=students_grades");
                     return true;
                 } else {
                     $sql = "INSERT INTO grades (student_has_subject_student_id, student_has_subject_subject_id, trimester, grades) VALUES (?, ?, ?, ?)";
                     $stmt = $conn->prepare($sql);
-                    $stmt->execute([$student_has_subject_data['student_id'], $student_has_subject_data['subject_id'], $trimester, $grades]);
+                    $stmt->execute([$student_data['student_id'], $subject_data['subject_id'], $trimester, $grades]);
+
+                    $grades_id = $conn->lastInsertId(); // student_has_subject setup
+
+                    $sql = "SELECT * FROM student_has_subject WHERE student_id = ? AND subject_id = ? AND grades_id = ?";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->execute([$student_data['student_id'], $subject_data['subject_id'], $grades_id]);
+                    $student_has_subject_data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                    if ($student_has_subject_data === false) {
+                        $sql = "INSERT INTO student_has_subject (student_id, subject_id, grades_id) VALUES (?, ?, ?)";
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute([$student_data['student_id'], $subject_data['subject_id'], $grades_id]); 
+                    } else {
+                        $sql = "UPDATE student_has_subject SET grades_id = ? WHERE student_id = ? AND subject_id = ?";
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute([$grades_id, $student_data['student_id'], $subject_data['subject_id']]);
+                    }
+
                     echo "Grades assigned successfully!";
                     header ("Refresh: 2; url=index.php?action=students_grades");
                     return true;
@@ -285,7 +298,7 @@ class TeacherModel {
         }
     }
 
-    public static function getSchedule($conn) {
+    public static function getSchedule($conn) { // values based on view variable names
         if(!empty($_REQUEST['school_levels']) && !empty($_REQUEST['course'])) {
     
             try {
@@ -328,7 +341,7 @@ class TeacherModel {
         }
     }
 
-    public static function getCollaborators($conn) {
+    public static function getCollaborators($conn) { // values based on view variable names
         if(!empty($_REQUEST['school_levels']) && !empty($_REQUEST['course'])) {
     
             try {
@@ -371,7 +384,7 @@ class TeacherModel {
         }
     }    
 
-    public static function getStudents($conn) {
+    public static function getStudents($conn) { // values based on view variable names
         if(!empty($_REQUEST['school_levels']) && !empty($_REQUEST['course'])) {
 
             try {

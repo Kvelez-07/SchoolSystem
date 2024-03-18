@@ -49,6 +49,7 @@
                     {/foreach}
                 {else}
                     <tr>
+                        <!-- match empty spaces with header -->
                         <td colspan="4">No user data available.</td>
                     </tr>
                 {/if}

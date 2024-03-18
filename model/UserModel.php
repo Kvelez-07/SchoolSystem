@@ -4,7 +4,7 @@ require_once "connection/Database.php";
 
 class UserModel {
 
-    public static function userLogin($conn) {
+    public static function userLogin($conn) { // values based on view variable names
         if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['user_type'])) {
             $username = filter_var($_POST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $password = $_POST['password'];
@@ -41,7 +41,7 @@ class UserModel {
         $conn = null; // Close connection
     }
 
-    public static function createUser($conn) {
+    public static function createUser($conn) { // values based on view variable names
         if(
             !empty($_POST['username']) && 
             !empty($_POST['password']) && 
@@ -136,7 +136,7 @@ class UserModel {
         $conn = null;
     }    
 
-    public static function readUser($conn) {
+    public static function readUser($conn) { // values based on view variable names
         $username = isset($_REQUEST['username']) ? filter_var($_REQUEST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : null;
         $user_type = isset($_REQUEST['user_type']) ? filter_var($_REQUEST['user_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : null;
         $first_name = isset($_REQUEST['first_name']) ? filter_var($_REQUEST['first_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : null;
@@ -164,7 +164,7 @@ class UserModel {
         return $result; // Return the fetched user data
     }    
 
-    public static function updateUser($conn) {
+    public static function updateUser($conn) { // values based on view variable names
         $username = filter_var($_POST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $user_type = filter_var($_POST['user_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $password = filter_var($_POST['password'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -213,7 +213,7 @@ class UserModel {
         $conn = null;
     }    
 
-    public static function deleteUser($conn) {
+    public static function deleteUser($conn) { // values based on view variable names
         $username = filter_var($_REQUEST['username'], FILTER_SANITIZE_SPECIAL_CHARS);
         $user_type = filter_var($_REQUEST['user_type'], FILTER_SANITIZE_SPECIAL_CHARS);
         $first_name = filter_var($_REQUEST['first_name'], FILTER_SANITIZE_SPECIAL_CHARS);

@@ -13,7 +13,7 @@
         <h1>Subject List</h1>
     </header>
 
-    <div class="subject_form">
+    <div class="read_subject_form">
         <form action="index.php" method="POST">
             <select name="subject_name">
                 <option value="spanish">Español</option>
@@ -48,6 +48,7 @@
                     {/foreach}
                 {else}
                     <tr>
+                        <!-- match empty spaces with header -->
                         <td colspan="4">No subject data available.</td>
                     </tr>
                 {/if}

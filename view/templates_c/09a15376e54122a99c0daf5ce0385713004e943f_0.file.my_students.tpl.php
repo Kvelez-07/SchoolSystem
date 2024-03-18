@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-13 23:24:05
+/* Smarty version 4.4.1, created on 2024-03-18 01:06:17
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\my_students.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f227851cd6a7_55670445',
+  'unifunc' => 'content_65f7857929e9f2_26912528',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '09a15376e54122a99c0daf5ce0385713004e943f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\my_students.tpl',
-      1 => 1710368637,
+      1 => 1710720132,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f227851cd6a7_55670445 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f7857929e9f2_26912528 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -32,11 +32,14 @@ function content_65f227851cd6a7_55670445 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/teacher.css">
+    <link rel="stylesheet" href="css/my_students.css">
     <title>Mis Estudiantes</title>
 </head>
 
 <body>
-    <h1>Estudiantes</h1><br>
+    <header class="students_header">
+        <h1>Estudiantes</h1><br>
+    </header>
 
     <div class="students_form">
         <form action="index.php" method="POST">

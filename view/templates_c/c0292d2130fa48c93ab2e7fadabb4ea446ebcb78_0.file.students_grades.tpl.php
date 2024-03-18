@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-17 04:36:26
+/* Smarty version 4.4.1, created on 2024-03-18 05:23:43
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\students_grades.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f6653a7b9527_21357271',
+  'unifunc' => 'content_65f7c1cfc93100_45877713',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c0292d2130fa48c93ab2e7fadabb4ea446ebcb78' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\students_grades.tpl',
-      1 => 1710646574,
+      1 => 1710735818,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f6653a7b9527_21357271 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f7c1cfc93100_45877713 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -99,7 +99,7 @@ function content_65f6653a7b9527_21357271 (Smarty_Internal_Template $_smarty_tpl)
                 </tr>
             </thead>
             <tbody>
-                <?php if ((isset($_smarty_tpl->tpl_vars['student_grades']->value))) {?>
+                <?php if ((isset($_smarty_tpl->tpl_vars['student_grades']->value)) && (isset($_smarty_tpl->tpl_vars['student_grades']->value['grades_data']))) {?>
                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['student_grades']->value['grades_data'], 'grades');
 $_smarty_tpl->tpl_vars['grades']->do_else = true;
@@ -123,7 +123,7 @@ $_smarty_tpl->tpl_vars['grades']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <?php } else { ?>
                     <tr>
-                        <td colspan="2">No attendance data available.</td>
+                        <td colspan="5">No grades found for this student.</td>
                     </tr>
                 <?php }?>
             </tbody>

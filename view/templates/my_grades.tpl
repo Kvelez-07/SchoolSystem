@@ -59,7 +59,7 @@
                 </tr>
             </thead>
             <tbody>
-                {if isset($student_grades)}
+                {if isset($student_grades) && isset($student_grades['grades_data'])}
                     {foreach from=$student_grades.grades_data item=grades}
                         <tr>
                             <td>{$student_grades.student_full_name}</td>
@@ -71,7 +71,8 @@
                     {/foreach}
                 {else}
                     <tr>
-                        <td colspan="2">No attendance data available.</td>
+                        <!-- match empty spaces with header -->
+                        <td colspan="5">No attendance data available.</td>
                     </tr>
                 {/if}
             </tbody>
