@@ -1,4 +1,4 @@
 <?php
 
-// open for testing purposes
-// Postman is a better choice.
+// ws\client.php
+// Client-side can be accessed with POSTMAN.

@@ -4,7 +4,7 @@ $http_method = $_SERVER['REQUEST_METHOD']; // URI
 
 switch ($http_method) { // API-REST methods
     case 'GET':
-        handleGET();
+        handleGET(); // $REQUEST triggers the method
         break;
     case 'POST':
         handlePOST();
@@ -16,7 +16,7 @@ switch ($http_method) { // API-REST methods
         handleDELETE();
         break;
     default:
-        runDefault();
+        runDefault(); // Checking if main.tpl will be displayed first is pending.
         break;
 }
 
