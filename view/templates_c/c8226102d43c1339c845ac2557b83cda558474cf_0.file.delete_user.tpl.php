@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-14 01:06:28
+/* Smarty version 4.4.1, created on 2024-03-19 05:24:35
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\delete_user.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f23f84d7ac76_36626871',
+  'unifunc' => 'content_65f913835e1dc9_58732983',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c8226102d43c1339c845ac2557b83cda558474cf' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\delete_user.tpl',
-      1 => 1710374786,
+      1 => 1710737045,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f23f84d7ac76_36626871 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f913835e1dc9_58732983 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -39,6 +39,7 @@ function content_65f23f84d7ac76_36626871 (Smarty_Internal_Template $_smarty_tpl)
 
     <div class="delete_user_form">
         <form action="index.php" method="POST">
+            <!-- GUI DELETE -->
             <input type="text" name="username" placeholder="Username"><br><br>
             <select name="user_type" id="user_type">
                 <option value="Student">Student</option>

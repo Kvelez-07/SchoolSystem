@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-18 19:08:34
+/* Smarty version 4.4.1, created on 2024-03-19 05:24:33
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\signup.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f88322962a81_11625410',
+  'unifunc' => 'content_65f9138193e247_82259501',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5759710ace54501c7855d7779b0ee4a5a8fb799f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\signup.tpl',
-      1 => 1710785253,
+      1 => 1710785663,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f88322962a81_11625410 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f9138193e247_82259501 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +38,7 @@ function content_65f88322962a81_11625410 (Smarty_Internal_Template $_smarty_tpl)
     </header>
 
     <div class="signup_form">
-        <form action="index.php?signup" method="POST">
+        <form action="index.php" method="POST">
             <div class="personal_data">
                 <h3>Usuario:</h3>
                 <input type="text" name="username" placeholder="Username" required>

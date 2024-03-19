@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-17 20:24:48
+/* Smarty version 4.4.1, created on 2024-03-19 05:27:36
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\delete_subject.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f74380b1be03_31527707',
+  'unifunc' => 'content_65f914382565e9_27171212',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd4590e85c02a5ee530bc32136480a0129a64f5db' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\delete_subject.tpl',
-      1 => 1710703485,
+      1 => 1710737017,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f74380b1be03_31527707 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f914382565e9_27171212 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -39,6 +39,7 @@ function content_65f74380b1be03_31527707 (Smarty_Internal_Template $_smarty_tpl)
     <div class="subject_form">
         <form action="index.php" method="POST">
             <input type="number" name="teacher_id" placeholder="teacher_id">
+            <!-- admin has acces to IDs and complete DB -->
             <input type="number" name="school_levels_id" placeholder="school_levels_id"><br><br>
             <select name="subject_name">
                 <option value="spanish">Español</option>

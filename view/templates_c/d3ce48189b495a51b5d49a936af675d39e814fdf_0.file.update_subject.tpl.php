@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-14 01:01:51
+/* Smarty version 4.4.1, created on 2024-03-19 05:27:35
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\update_subject.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f23e6f0c9765_81702247',
+  'unifunc' => 'content_65f91437689430_97701696',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd3ce48189b495a51b5d49a936af675d39e814fdf' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\update_subject.tpl',
-      1 => 1710374508,
+      1 => 1710737474,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f23e6f0c9765_81702247 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f91437689430_97701696 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -38,6 +38,7 @@ function content_65f23e6f0c9765_81702247 (Smarty_Internal_Template $_smarty_tpl)
 
     <div class="subject_form">
         <form action="index.php" method="POST">
+            <!-- base on DB tables -->
             <input type="number" name="teacher_id" placeholder="teacher_id">
             <input type="number" name="school_levels_id" placeholder="school_levels_id"><br><br>
             <select name="subject_name">

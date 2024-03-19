@@ -4,7 +4,7 @@ require_once "connection/Database.php";
 
 class TeacherModel {
 
-    public static function getAttendance($conn) { // values based on view variable names
+    public static function getStudentAttendance($conn) { // values based on view variable names
         if (
             !empty($_REQUEST['username']) &&
             !empty($_REQUEST['school_levels']) && 
@@ -70,7 +70,7 @@ class TeacherModel {
         }
     }
 
-    public static function setAttendance($conn) { // values based on view variable names
+    public static function setStudentAttendance($conn) { // values based on view variable names
         
         if (
             !empty($_REQUEST['username']) &&
@@ -135,7 +135,7 @@ class TeacherModel {
         }
     }
 
-    public static function getGrades($conn) { // values based on view variable names
+    public static function getStudentGrades($conn) { // values based on view variable names
         if (
             !empty($_REQUEST['username']) &&
             !empty($_REQUEST['school_levels']) && 
@@ -211,7 +211,7 @@ class TeacherModel {
         }
     }
 
-    public static function setGrades($conn) { // values based on view variable names
+    public static function setStudentGrades($conn) { // values based on view variable names
         if (
             !empty($_REQUEST['username']) &&
             !empty($_REQUEST['school_levels']) && 
@@ -298,7 +298,7 @@ class TeacherModel {
         }
     }
 
-    public static function getSchedule($conn) { // values based on view variable names
+    public static function getTeacherSchedule($conn) { // values based on view variable names
         if(!empty($_REQUEST['school_levels']) && !empty($_REQUEST['course'])) {
     
             try {

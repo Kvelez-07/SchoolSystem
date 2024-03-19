@@ -74,6 +74,21 @@ class SubjectModel {
         $stmt = null;
     }
 
+    public static function readSubject($conn) { // values based on view variable names
+        if (!empty($_REQUEST['subject_name'])) {
+            $subject_name = filter_var($_REQUEST['subject_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            $sql = "SELECT * FROM subjects WHERE subject_name = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$subject_name]);
+            $subject_data = [];
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $subject_data[] = $row;
+            }
+            return $subject_data;
+        }
+    }
+
     public static function updateSubject($conn) { // values based on view variable names
         if (
             !empty($_REQUEST['school_levels_id']) && 
@@ -119,20 +134,5 @@ class SubjectModel {
         header("Refresh: 2; url=index.php?action=admin_dashboard"); // Refresh page after 2 seconds
         $conn = null;
         $stmt = null;
-    }
-
-    public static function getSubject($conn) { // values based on view variable names
-        if (!empty($_REQUEST['subject_name'])) {
-            $subject_name = filter_var($_REQUEST['subject_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
-            $sql = "SELECT * FROM subjects WHERE subject_name = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->execute([$subject_name]);
-            $subject_data = [];
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $subject_data[] = $row;
-            }
-            return $subject_data;
-        }
     }
 }

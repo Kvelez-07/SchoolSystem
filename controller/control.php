@@ -18,24 +18,24 @@ class Control {
             $this->processUserLogin();
         } else if(isset($_REQUEST['signup'])) { // signup with admin privileges
             $this->processSignup();
-        } else if(isset($_REQUEST['delete_user'])) { // admin DELETE
-            $this->userDeletion();
         } else if(isset($_REQUEST['read_user'])) { // admin READ
             $user_data = $this->userFetching();
             $this->view->setAssign('user_data', $user_data); // Assign the user data to Smarty variable
             $this->view->setDisplay("read_user.tpl"); // Display the read user template
         } else if(isset($_REQUEST['update_user'])) { // admin UPDATE
             $this->userUpdating();
+        }  else if(isset($_REQUEST['delete_user'])) { // admin DELETE
+            $this->userDeletion();
         } else if(isset($_REQUEST['create_subject'])) { // admin CREATE
             $this->subjectCreation();
-        } else if(isset($_REQUEST['delete_subject'])) { // admin DELETE
-            $this->subjectDeletion();
         } else if(isset($_REQUEST['read_subject'])) { // admin READ
             $subject_data = $this->subjectFetching();
             $this->view->setAssign('subject_data', $subject_data);
             $this->view->setDisplay('read_subject.tpl');
         } else if(isset($_REQUEST['update_subject'])) { // admin UPDATE
             $this->subjectUpdating();
+        } else if(isset($_REQUEST['delete_subject'])) { // admin DELETE
+            $this->subjectDeletion();
         } else if(isset($_REQUEST['get_classmates'])) { // student READ
             $classmates_data = $this->classmateFetching();
             $this->view->setAssign('classmates_data', $classmates_data);
@@ -44,6 +44,18 @@ class Control {
             $teachers_data = $this->teacherFetching();
             $this->view->setAssign('teachers_data', $teachers_data);
             $this->view->setDisplay('my_teachers.tpl');
+        } else if(isset($_REQUEST['get_grades'])) { // student READ
+            $student_grades = $this->studentGrades();
+            $this->view->setAssign('student_grades', $student_grades);
+            $this->view->setDisplay('my_grades.tpl');
+        } else if(isset($_REQUEST['get_schedule'])) { // student READ
+            $schedule_data = $this->studentSchedule();
+            $this->view->setAssign('schedule_data', $schedule_data);
+            $this->view->setDisplay('my_schedule.tpl');
+        } else if(isset($_REQUEST['get_attendance'])) { // student READ
+            $student_attendance = $this->studentAttendance();
+            $this->view->setAssign('student_attendance', $student_attendance);
+            $this->view->setDisplay('my_attendance.tpl');
         } else if(isset($_REQUEST['get_students'])) { // teacher READ
             $students_data = $this->studentFetching();
             $this->view->setAssign('students_data', $students_data);
@@ -52,26 +64,14 @@ class Control {
             $collaborators_data = $this->collaboratorFetching();
             $this->view->setAssign('collaborators_data', $collaborators_data);
             $this->view->setDisplay('other_teachers.tpl');
-        } else if(isset($_REQUEST['get_schedule'])) { // student READ
-            $schedule_data = $this->studentSchedule();
-            $this->view->setAssign('schedule_data', $schedule_data);
-            $this->view->setDisplay('my_schedule.tpl');
         } else if(isset($_REQUEST['teacher_schedule'])) { // teacher READ
             $schedule_data = $this->teacherSchedule();
             $this->view->setAssign('schedule_data', $schedule_data);
             $this->view->setDisplay('teacher_schedule.tpl');
-        } else if(isset($_REQUEST['get_attendance'])) { // student READ
-            $student_attendance = $this->studentAttendance();
-            $this->view->setAssign('student_attendance', $student_attendance);
-            $this->view->setDisplay('my_attendance.tpl');
         } else if(isset($_REQUEST['get_student_attendance'])) { // teacher READ
             $student_attendance = $this->getStudentAttendance();
             $this->view->setAssign('student_attendance', $student_attendance);
             $this->view->setDisplay('students_attendance.tpl');
-        } else if(isset($_REQUEST['get_grades'])) { // student READ
-            $student_grades = $this->studentGrades();
-            $this->view->setAssign('student_grades', $student_grades);
-            $this->view->setDisplay('my_grades.tpl');
         } else if(isset($_REQUEST['student_grades'])) { // teacher READ
             $student_grades = $this->getStudentGrades();
             $this->view->setAssign('student_grades', $student_grades);
@@ -144,7 +144,7 @@ class Control {
 
     private function subjectFetching() {
         require_once "model/SubjectModel.php";
-        $subject_data = SubjectModel::getSubject($conn); // Fetch subject data
+        $subject_data = SubjectModel::readSubject($conn); // Fetch subject data
         return $subject_data;
     }
 
@@ -199,30 +199,30 @@ class Control {
 
     private function teacherSchedule() {
         require_once "model/TeacherModel.php";
-        $schedule_data = TeacherModel::getSchedule($conn); // Fetch schedule data
+        $schedule_data = TeacherModel::getTeacherSchedule($conn); // Fetch schedule data
         return $schedule_data;
     }
 
     private function getStudentAttendance() {
         require_once "model/TeacherModel.php";
-        $student_attendance = TeacherModel::getAttendance($conn); // Fetch attendance data
+        $student_attendance = TeacherModel::getStudentAttendance($conn); // Fetch attendance data
         return $student_attendance;
     }
 
     private function getStudentGrades() {
         require_once "model/TeacherModel.php";
-        $student_grades = TeacherModel::getGrades($conn); // Fetch grades data
+        $student_grades = TeacherModel::getStudentGrades($conn); // Fetch grades data
         return $student_grades;
     }
 
     private function setStudentGrades() {
         require_once "model/TeacherModel.php";
-        TeacherModel::setGrades($conn); // Set student grades
+        TeacherModel::setStudentGrades($conn); // Set student grades
     }
 
     private function setStudentAttendance() {
         require_once "model/TeacherModel.php";
-        TeacherModel::setAttendance($conn); // Set student attendance
+        TeacherModel::setStudentAttendance($conn); // Set student attendance
     }
 
     private function processAction() { // Process page redirection
