@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once "libs/smarty-4.4.1/Configuration.php";
 
 class Control {
@@ -12,6 +14,7 @@ class Control {
     }
 
     public function framework_manager(){ // open to modular changes with functions.
+        $this->validateInactivity();
         if(isset($_REQUEST['login'])) { // login page call
             $this->processLogin();
         } else if(isset($_REQUEST['logUser'])) { // login process
@@ -255,7 +258,25 @@ class Control {
         $action = $_GET['action'] ?? null;
         $template = $actionMap[$action] ?? "main.tpl"; // Set template to main if action not found
         $this->view->setDisplay($template);
-    }       
+    }
+    
+    public function validateInactivity() {
+        if(isset($_SESSION['time']) ) {
+            $inactive = 20;
+            $session_life = time() - $_SESSION['time'];
+
+            if($session_life > $inactive) {
+                session_unset();
+                session_destroy();
+                header("Location: index.php?action=logout");
+                exit();
+            } else {
+                $_SESSION['time'] = time();
+            }
+        } else {
+            $_SESSION['time'] = time();
+        }
+    }
 
     // Getters and Setters
     public function getModel(){

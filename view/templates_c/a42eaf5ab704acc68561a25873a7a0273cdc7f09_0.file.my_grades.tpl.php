@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-03-18 05:26:13
+/* Smarty version 4.4.1, created on 2024-03-20 01:56:28
   from 'C:\xampp\htdocs\code\SchoolSystem\view\templates\my_grades.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_65f7c265db62c7_03266486',
+  'unifunc' => 'content_65fa343c92a883_40047000',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a42eaf5ab704acc68561a25873a7a0273cdc7f09' => 
     array (
       0 => 'C:\\xampp\\htdocs\\code\\SchoolSystem\\view\\templates\\my_grades.tpl',
-      1 => 1710735945,
+      1 => 1710737211,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f7c265db62c7_03266486 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65fa343c92a883_40047000 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -106,6 +106,7 @@ $_smarty_tpl->tpl_vars['grades']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <?php } else { ?>
                     <tr>
+                        <!-- match empty spaces with header -->
                         <td colspan="5">No attendance data available.</td>
                     </tr>
                 <?php }?>
